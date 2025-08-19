@@ -3,7 +3,7 @@
 class OnThisDay {
     constructor() {
         this.currentDate = new Date();
-        this.currentLanguage = 'zh-CN';
+        this.currentLanguage = 'en-US';
         this.activeSection = 'events';
         this.init();
     }
@@ -28,11 +28,21 @@ class OnThisDay {
         const checkBirthday = document.getElementById('checkBirthday');
         checkBirthday.addEventListener('click', () => this.checkBirthday());
 
-        // Date navigation
+        // Date navigation - Desktop
         const prevDate = document.getElementById('prevDate');
         const nextDate = document.getElementById('nextDate');
-        prevDate.addEventListener('click', () => this.navigateDate(-1));
-        nextDate.addEventListener('click', () => this.navigateDate(1));
+        if (prevDate && nextDate) {
+            prevDate.addEventListener('click', () => this.navigateDate(-1));
+            nextDate.addEventListener('click', () => this.navigateDate(1));
+        }
+
+        // Date navigation - Mobile
+        const prevDateMobile = document.getElementById('prevDateMobile');
+        const nextDateMobile = document.getElementById('nextDateMobile');
+        if (prevDateMobile && nextDateMobile) {
+            prevDateMobile.addEventListener('click', () => this.navigateDate(-1));
+            nextDateMobile.addEventListener('click', () => this.navigateDate(1));
+        }
 
         // Sidebar navigation
         this.setupSidebarNavigation();
@@ -191,6 +201,7 @@ class OnThisDay {
         const nextDate = new Date(this.currentDate);
         nextDate.setDate(nextDate.getDate() + 1);
 
+        // Update desktop navigation
         const prevDateText = document.getElementById('prevDateText');
         const nextDateText = document.getElementById('nextDateText');
 
@@ -206,6 +217,23 @@ class OnThisDay {
             prevDateText.textContent = prevText;
             nextDateText.textContent = nextText;
         }
+
+        // Update mobile navigation
+        const prevDateTextMobile = document.getElementById('prevDateTextMobile');
+        const nextDateTextMobile = document.getElementById('nextDateTextMobile');
+
+        if (prevDateTextMobile && nextDateTextMobile) {
+            const prevTextMobile = this.currentLanguage === 'zh-CN' 
+                ? `${prevDate.getDate()}日`
+                : `${prevDate.getDate()}`;
+
+            const nextTextMobile = this.currentLanguage === 'zh-CN' 
+                ? `${nextDate.getDate()}日`
+                : `${nextDate.getDate()}`;
+
+            prevDateTextMobile.textContent = prevTextMobile;
+            nextDateTextMobile.textContent = nextTextMobile;
+        }
     }
 
     loadContent() {
@@ -220,66 +248,92 @@ class OnThisDay {
     loadHistoryEvents(month, day) {
         const data = getDataForDate(month, day);
         const container = document.getElementById('historyEvents');
+        const t = translations[this.currentLanguage];
         
         if (!data.events || data.events.length === 0) {
-            container.innerHTML = '<div class="loading">暂无历史事件数据</div>';
+            container.innerHTML = `<div class="loading">${t.noData || '暂无历史事件数据'}</div>`;
             return;
         }
 
-        container.innerHTML = data.events.slice(0, 10).map(event => `
-            <div class="timeline-event">
-                <span class="event-year">${event.year}</span>
-                <div class="event-content">
-                    <p class="event-description">${event.description}</p>
-                    ${event.image ? `
-                        <div class="event-image">
-                            <img src="${event.image}" alt="${event.description}" onerror="this.style.display='none'">
-                        </div>
-                    ` : ''}
+        container.innerHTML = data.events.slice(0, 10).map(event => {
+            const description = typeof event.description === 'object' 
+                ? event.description[this.currentLanguage] || event.description['zh-CN']
+                : event.description;
+            
+            return `
+                <div class="timeline-event">
+                    <span class="event-year">${event.year}</span>
+                    <div class="event-content">
+                        <p class="event-description">${description}</p>
+                        ${event.image ? `
+                            <div class="event-image">
+                                <img src="${event.image}" alt="${description}" onerror="this.style.display='none'">
+                            </div>
+                        ` : ''}
+                    </div>
                 </div>
-            </div>
-        `).join('');
+            `;
+        }).join('');
     }
 
     loadFamousPeople(month, day) {
         const data = getDataForDate(month, day);
+        const t = translations[this.currentLanguage];
         
         // Load famous birthdays
         const birthdaysContainer = document.getElementById('famousBirthdays');
         if (data.birthdays && data.birthdays.length > 0) {
-            birthdaysContainer.innerHTML = data.birthdays.slice(0, 6).map(person => `
-                <div class="person-card">
-                    <div class="person-image">
-                        <img src="${person.image}" alt="${person.name}" onerror="this.style.display='none'">
+            birthdaysContainer.innerHTML = data.birthdays.slice(0, 6).map(person => {
+                const name = typeof person.name === 'object' 
+                    ? person.name[this.currentLanguage] || person.name['zh-CN']
+                    : person.name;
+                const description = typeof person.description === 'object' 
+                    ? person.description[this.currentLanguage] || person.description['zh-CN']
+                    : person.description;
+                
+                return `
+                    <div class="person-card">
+                        <div class="person-image">
+                            <img src="${person.image}" alt="${name}" onerror="this.style.display='none'">
+                        </div>
+                        <div class="person-info">
+                            <h4 class="person-name">${name}</h4>
+                            <p class="person-years">${person.years}</p>
+                            <p class="person-description">${description}</p>
+                        </div>
                     </div>
-                    <div class="person-info">
-                        <h4 class="person-name">${person.name}</h4>
-                        <p class="person-years">${person.years}</p>
-                        <p class="person-description">${person.description}</p>
-                    </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
         } else {
-            birthdaysContainer.innerHTML = '<div class="loading">暂无名人生日数据</div>';
+            birthdaysContainer.innerHTML = `<div class="loading">${t.noData || '暂无名人生日数据'}</div>`;
         }
 
         // Load famous deaths
         const deathsContainer = document.getElementById('famousDeaths');
         if (data.deaths && data.deaths.length > 0) {
-            deathsContainer.innerHTML = data.deaths.slice(0, 6).map(person => `
-                <div class="person-card">
-                    <div class="person-image">
-                        <img src="${person.image}" alt="${person.name}" onerror="this.style.display='none'">
+            deathsContainer.innerHTML = data.deaths.slice(0, 6).map(person => {
+                const name = typeof person.name === 'object' 
+                    ? person.name[this.currentLanguage] || person.name['zh-CN']
+                    : person.name;
+                const description = typeof person.description === 'object' 
+                    ? person.description[this.currentLanguage] || person.description['zh-CN']
+                    : person.description;
+                
+                return `
+                    <div class="person-card">
+                        <div class="person-image">
+                            <img src="${person.image}" alt="${name}" onerror="this.style.display='none'">
+                        </div>
+                        <div class="person-info">
+                            <h4 class="person-name">${name}</h4>
+                            <p class="person-years">${person.years}</p>
+                            <p class="person-description">${description}</p>
+                        </div>
                     </div>
-                    <div class="person-info">
-                        <h4 class="person-name">${person.name}</h4>
-                        <p class="person-years">${person.years}</p>
-                        <p class="person-description">${person.description}</p>
-                    </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
         } else {
-            deathsContainer.innerHTML = '<div class="loading">暂无名人逝世数据</div>';
+            deathsContainer.innerHTML = `<div class="loading">${t.noData || '暂无名人逝世数据'}</div>`;
         }
     }
 
@@ -333,59 +387,109 @@ class OnThisDay {
             option.classList.toggle('active', option.dataset.lang === language);
         });
         
-        // Update flag in header
-        const flag = document.querySelector('.language-selector .flag');
-        flag.textContent = language === 'zh-CN' ? '🇨🇳' : '🇺🇸';
+        // Update flag and text in header
+        const flag = document.querySelector('#languageSelector .flag');
+        const langText = document.querySelector('#languageSelector span:not(.flag)');
+        
+        if (flag) {
+            flag.textContent = language === 'zh-CN' ? '🇨🇳' : '🇺🇸';
+        }
+        
+        if (langText) {
+            const t = translations[language];
+            langText.textContent = t.languageSelector;
+        }
         
         // Update content
         this.updateLanguageContent();
         this.initializeSelectors();
         this.updateDateDisplay();
+        this.loadContent(); // Reload content to display in the new language
         this.hideModal('languageModal');
     }
 
     updateLanguageContent() {
         const t = translations[this.currentLanguage];
         
-        // Update site title
-        document.querySelector('.site-title').textContent = t.siteTitle;
+        // Update brand
+        const brandTitle = document.querySelector('.brand-title');
+        const brandSubtitle = document.querySelector('.brand-subtitle');
+        if (brandTitle) brandTitle.textContent = t.siteTitle;
+        if (brandSubtitle) brandSubtitle.textContent = t.siteSubtitle;
         
-        // Update section titles
-        const sectionTitles = [
-            { selector: '.history-section .section-title', text: t.todayInHistory },
-            { selector: '.famous-section:nth-of-type(3) .section-title', text: t.famousBirthdays },
-            { selector: '.famous-section:nth-of-type(4) .section-title', text: t.famousDeaths }
-        ];
+        // Update navigation buttons
+        const dateBtn = document.querySelector('#dateSelector span');
+        if (dateBtn) dateBtn.textContent = t.dateSelector;
         
-        sectionTitles.forEach(item => {
-            const element = document.querySelector(item.selector);
-            if (element) {
-                const icon = element.querySelector('i');
-                element.innerHTML = icon.outerHTML + ' ' + item.text;
-            }
-        });
+        // Update section titles and subtitles
+        const historyTitle = document.querySelector('#events .section-title');
+        const historySubtitle = document.querySelector('#events .section-subtitle');
+        if (historyTitle) historyTitle.textContent = t.todayInHistory;
+        if (historySubtitle) historySubtitle.textContent = t.todayInHistoryEn;
         
-        // Update birthday checker
-        document.querySelector('.birthday-title').textContent = t.birthdayChecker;
-        document.querySelector('.birthday-subtitle').textContent = t.birthdaySubtitle;
-        document.getElementById('checkBirthday').textContent = t.checkButton;
+        const birthdayTitle = document.querySelector('#births .section-title');
+        const birthdaySubtitle = document.querySelector('#births .section-subtitle');
+        if (birthdayTitle) birthdayTitle.textContent = t.famousBirthdays;
+        if (birthdaySubtitle) birthdaySubtitle.textContent = t.famousBirthdaysEn;
+        
+        const deathTitle = document.querySelector('#deaths .section-title');
+        const deathSubtitle = document.querySelector('#deaths .section-subtitle');
+        if (deathTitle) deathTitle.textContent = t.famousDeaths;
+        if (deathSubtitle) deathSubtitle.textContent = t.famousDeathsEn;
+        
+        // Update sidebar
+        const sidebarTitles = document.querySelectorAll('.sidebar-title');
+        if (sidebarTitles[0]) sidebarTitles[0].textContent = t.birthdayChecker;
+        if (sidebarTitles[1]) sidebarTitles[1].textContent = t.todayNavigation;
+        
+        const sidebarDesc = document.querySelector('.sidebar-desc');
+        if (sidebarDesc) sidebarDesc.textContent = t.birthdayCheckerDesc;
+        
+        const birthdayBtn = document.getElementById('checkBirthday');
+        if (birthdayBtn) birthdayBtn.textContent = t.birthdayButton;
+        
+        // Update navigation links
+        const navLinks = document.querySelectorAll('.nav-link');
+        if (navLinks[0]) navLinks[0].textContent = t.historyEvents;
+        if (navLinks[1]) navLinks[1].textContent = t.famousBirthdays;
+        if (navLinks[2]) navLinks[2].textContent = t.famousDeaths;
         
         // Update footer
-        const footerLinks = document.querySelectorAll('.footer-links a');
-        const linkTexts = [t.about, t.contact, t.privacy, t.terms];
+        const footerBrand = document.querySelector('.footer-brand h3');
+        const footerDesc = document.querySelector('.footer-brand p');
+        if (footerBrand) footerBrand.textContent = t.siteTitle;
+        if (footerDesc) footerDesc.textContent = t.footerDesc;
+        
+        // Update footer columns
+        const footerH4s = document.querySelectorAll('.footer-column h4');
+        if (footerH4s[0]) footerH4s[0].textContent = t.websiteInfo;
+        if (footerH4s[1]) footerH4s[1].textContent = t.legalTerms;
+        if (footerH4s[2]) footerH4s[2].textContent = t.followUs;
+        
+        // Update footer links
+        const footerLinks = document.querySelectorAll('.footer-column a');
+        const linkTexts = [
+            t.about, t.contact, t.dataSourceNav,
+            t.privacy, t.terms, t.cookies
+        ];
         footerLinks.forEach((link, index) => {
             if (linkTexts[index]) link.textContent = linkTexts[index];
         });
         
-        const footerInfo = document.querySelector('.footer-info');
-        footerInfo.innerHTML = `
-            <p>${t.copyright}</p>
-            <p>${t.dataSource}</p>
-        `;
+        // Update footer bottom
+        const footerBottom = document.querySelectorAll('.footer-bottom p');
+        if (footerBottom[0]) footerBottom[0].textContent = t.copyright;
+        if (footerBottom[1]) footerBottom[1].textContent = t.dataSource;
         
-        // Update modal buttons
-        document.getElementById('modalCancel').textContent = t.cancel;
-        document.getElementById('modalConfirm').textContent = t.confirm;
+        // Update modal content
+        const modalTitles = document.querySelectorAll('.modal-header h3');
+        if (modalTitles[0]) modalTitles[0].textContent = t.selectDate;
+        if (modalTitles[1]) modalTitles[1].textContent = t.selectLanguage;
+        
+        const modalCancel = document.getElementById('modalCancel');
+        const modalConfirm = document.getElementById('modalConfirm');
+        if (modalCancel) modalCancel.textContent = t.cancel;
+        if (modalConfirm) modalConfirm.textContent = t.confirm;
     }
 
     navigateDate(direction) {

@@ -20,18 +20,18 @@
                 </div>
                 <div class="brand-text">
                     <h1 class="brand-title">OnThisDay</h1>
-                    <span class="brand-subtitle">历史上的今天</span>
+                    <span class="brand-subtitle">Today in History</span>
                 </div>
             </div>
             
             <div class="nav-controls">
                 <button class="nav-btn" id="dateSelector">
                     <i class="fas fa-calendar-alt"></i>
-                    <span>选择日期</span>
+                    <span>Select Date</span>
                 </button>
                 <button class="nav-btn" id="languageSelector">
-                    <span class="flag">🇨🇳</span>
-                    <span>中文</span>
+                    <span class="flag">🇺🇸</span>
+                    <span>English</span>
                 </button>
             </div>
         </div>
@@ -44,17 +44,17 @@
             <div class="hero-content">
                 <div class="date-header">
                     <h2 class="current-date" id="currentDate">AUGUST 19</h2>
-                    <p class="date-subtitle">今天是2024年8月19日，星期一</p>
+                    <p class="date-subtitle">Today is Monday, August 19, 2024</p>
                 </div>
                 
                 <!-- Date Navigation Compact -->
                 <div class="date-nav-compact">
                     <button class="nav-compact-btn" id="prevDate">
                         <i class="fas fa-chevron-left"></i>
-                        <span id="prevDateText">18日</span>
+                        <span id="prevDateText">18</span>
                     </button>
                     <button class="nav-compact-btn" id="nextDate">
-                        <span id="nextDateText">20日</span>
+                        <span id="nextDateText">20</span>
                         <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
@@ -67,26 +67,26 @@
             <aside class="sidebar">
                 <!-- Birthday Checker -->
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title">生日查询</h3>
-                    <p class="sidebar-desc">查看你的生日当天发生了什么</p>
+                    <h3 class="sidebar-title">Birthday Query</h3>
+                    <p class="sidebar-desc">What happened on your birthday?</p>
                     <div class="birthday-form">
                         <select id="birthMonth" class="select-minimal">
-                            <option value="">月份</option>
+                            <option value="">Month</option>
                         </select>
                         <select id="birthDay" class="select-minimal">
-                            <option value="">日期</option>
+                            <option value="">Day</option>
                         </select>
-                        <button class="btn-primary" id="checkBirthday">查看生日</button>
+                        <button class="btn-primary" id="checkBirthday">Check Birthday</button>
                     </div>
                 </div>
 
                 <!-- On This Day Navigation -->
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title">今日导航</h3>
+                    <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
-                        <a href="#events" class="nav-link active">历史事件</a>
-                        <a href="#births" class="nav-link">名人生日</a>
-                        <a href="#deaths" class="nav-link">名人逝世</a>
+                        <a href="#events" class="nav-link active">Historical Events</a>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
                     </nav>
                 </div>
             </aside>
@@ -96,7 +96,7 @@
                 <!-- Historical Events -->
                 <section class="content-section" id="events">
                     <header class="section-header">
-                        <h2 class="section-title">历史上的今天</h2>
+                        <h2 class="section-title">Today in History</h2>
                         <p class="section-subtitle">Historical Events</p>
                     </header>
                     
@@ -110,7 +110,7 @@
                 <!-- Famous Birthdays -->
                 <section class="content-section" id="births">
                     <header class="section-header">
-                        <h2 class="section-title">名人生日</h2>
+                        <h2 class="section-title">Famous Birthdays</h2>
                         <p class="section-subtitle">Born on This Day</p>
                     </header>
                     
@@ -122,7 +122,7 @@
                 <!-- Famous Deaths -->
                 <section class="content-section" id="deaths">
                     <header class="section-header">
-                        <h2 class="section-title">名人逝世</h2>
+                        <h2 class="section-title">Famous Deaths</h2>
                         <p class="section-subtitle">Died on This Day</p>
                     </header>
                     
@@ -132,6 +132,18 @@
                 </section>
             </main>
         </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">18</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">20</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
     </div>
 
     <!-- Footer -->
@@ -140,26 +152,26 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>OnThisDay</h3>
-                    <p>探索历史，发现精彩</p>
+                    <p>Explore history, discover the extraordinary</p>
                 </div>
                 
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h4>网站信息</h4>
-                        <a href="#about">关于我们</a>
-                        <a href="#contact">联系方式</a>
-                        <a href="#api">数据源</a>
+                        <h4>Website Info</h4>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#api">Data Source</a>
                     </div>
                     
                     <div class="footer-column">
-                        <h4>法律条款</h4>
-                        <a href="#privacy">隐私政策</a>
-                        <a href="#terms">使用条款</a>
-                        <a href="#cookies">Cookie政策</a>
+                        <h4>Legal Terms</h4>
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#cookies">Cookie Policy</a>
                     </div>
                     
                     <div class="footer-column">
-                        <h4>关注我们</h4>
+                        <h4>Follow Us</h4>
                         <div class="social-links">
                             <a href="#"><i class="fab fa-weibo"></i></a>
                             <a href="#"><i class="fab fa-wechat"></i></a>
@@ -170,8 +182,8 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 OnThisDay. 保留所有权利</p>
-                <p>数据来源：维基百科、历史数据库</p>
+                <p>&copy; 2024 OnThisDay. All rights reserved</p>
+                <p>Data Source: Wikipedia, Historical Database</p>
             </div>
         </div>
     </footer>
@@ -180,22 +192,22 @@
     <div class="modal" id="dateModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>选择日期</h3>
+                <h3>Select Date</h3>
                 <button class="modal-close" id="modalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">选择月份</option>
+                        <option value="">Select Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">选择日期</option>
+                        <option value="">Select Day</option>
                     </select>
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn-secondary" id="modalCancel">取消</button>
-                <button class="btn-primary" id="modalConfirm">确认</button>
+                <button class="btn-secondary" id="modalCancel">Cancel</button>
+                <button class="btn-primary" id="modalConfirm">Confirm</button>
             </div>
         </div>
     </div>
@@ -204,18 +216,18 @@
     <div class="modal" id="languageModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>选择语言</h3>
+                <h3>Select Language</h3>
                 <button class="modal-close" id="langModalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="zh-CN">
-                        <span class="flag">🇨🇳</span>
-                        <span>中文</span>
-                    </button>
-                    <button class="lang-option" data-lang="en-US">
+                    <button class="lang-option active" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
+                    </button>
+                    <button class="lang-option" data-lang="zh-CN">
+                        <span class="flag">🇨🇳</span>
+                        <span>中文</span>
                     </button>
                 </div>
             </div>
