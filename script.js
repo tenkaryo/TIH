@@ -24,10 +24,8 @@ class OnThisDay {
         const languageSelector = document.getElementById('languageSelector');
         languageSelector.addEventListener('click', () => this.showLanguageModal());
 
-        // Quick search and birthday checker
-        const quickSearch = document.getElementById('quickSearch');
+        // Birthday checker
         const checkBirthday = document.getElementById('checkBirthday');
-        quickSearch.addEventListener('click', () => this.quickDateSearch());
         checkBirthday.addEventListener('click', () => this.checkBirthday());
 
         // Date navigation
@@ -115,10 +113,8 @@ class OnThisDay {
     }
 
     initializeSelectors() {
-        this.populateMonthSelector('quickMonth');
         this.populateMonthSelector('birthMonth');
         this.populateMonthSelector('modalMonth');
-        this.populateDaySelector('quickDay');
         this.populateDaySelector('birthDay');
         this.populateDaySelector('modalDay');
     }
@@ -398,25 +394,6 @@ class OnThisDay {
         this.updateDateDisplay();
     }
 
-    quickDateSearch() {
-        const quickMonth = document.getElementById('quickMonth');
-        const quickDay = document.getElementById('quickDay');
-        
-        const month = parseInt(quickMonth.value);
-        const day = parseInt(quickDay.value);
-        
-        if (month && day) {
-            this.currentDate.setMonth(month - 1);
-            this.currentDate.setDate(day);
-            this.loadContent();
-            this.updateDateDisplay();
-            
-            // Smooth scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-            alert(this.currentLanguage === 'zh-CN' ? '请选择完整的日期' : 'Please select a complete date');
-        }
-    }
 
     checkBirthday() {
         const birthMonth = document.getElementById('birthMonth');

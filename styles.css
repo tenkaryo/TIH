@@ -258,7 +258,6 @@ body {
     line-height: 1.5;
 }
 
-.quick-date-selector,
 .birthday-form {
     display: flex;
     flex-direction: column;
