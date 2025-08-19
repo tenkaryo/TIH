@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnThisDay - 历史上的今天</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <i class="fas fa-calendar-day"></i>
+                </div>
+                <div class="brand-text">
+                    <h1 class="brand-title">OnThisDay</h1>
+                    <span class="brand-subtitle">历史上的今天</span>
+                </div>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="nav-btn" id="dateSelector">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>选择日期</span>
+                </button>
+                <button class="nav-btn" id="languageSelector">
+                    <span class="flag">🇨🇳</span>
+                    <span>中文</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="date-header">
+                    <h2 class="current-date" id="currentDate">AUGUST 19</h2>
+                    <p class="date-subtitle">今天是2024年8月19日，星期一</p>
+                </div>
+                
+                <!-- Date Navigation Compact -->
+                <div class="date-nav-compact">
+                    <button class="nav-compact-btn" id="prevDate">
+                        <i class="fas fa-chevron-left"></i>
+                        <span id="prevDateText">18日</span>
+                    </button>
+                    <button class="nav-compact-btn" id="nextDate">
+                        <span id="nextDateText">20日</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <div class="content-wrapper">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Quick Date Selector -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">快速查询</h3>
+                    <div class="quick-date-selector">
+                        <select id="quickMonth" class="select-minimal">
+                            <option value="">选择月份</option>
+                        </select>
+                        <select id="quickDay" class="select-minimal">
+                            <option value="">选择日期</option>
+                        </select>
+                        <button class="btn-minimal" id="quickSearch">查看</button>
+                    </div>
+                </div>
+
+                <!-- Birthday Checker -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">生日查询</h3>
+                    <p class="sidebar-desc">查看你的生日当天发生了什么</p>
+                    <div class="birthday-form">
+                        <select id="birthMonth" class="select-minimal">
+                            <option value="">月份</option>
+                        </select>
+                        <select id="birthDay" class="select-minimal">
+                            <option value="">日期</option>
+                        </select>
+                        <button class="btn-primary" id="checkBirthday">查看生日</button>
+                    </div>
+                </div>
+
+                <!-- On This Day Navigation -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">今日导航</h3>
+                    <nav class="today-nav">
+                        <a href="#events" class="nav-link active">历史事件</a>
+                        <a href="#births" class="nav-link">名人生日</a>
+                        <a href="#deaths" class="nav-link">名人逝世</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">历史上的今天</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            <!-- Events will be loaded here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">名人生日</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        <!-- Birthdays will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">名人逝世</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        <!-- Deaths will be loaded here -->
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>OnThisDay</h3>
+                    <p>探索历史，发现精彩</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>网站信息</h4>
+                        <a href="#about">关于我们</a>
+                        <a href="#contact">联系方式</a>
+                        <a href="#api">数据源</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>法律条款</h4>
+                        <a href="#privacy">隐私政策</a>
+                        <a href="#terms">使用条款</a>
+                        <a href="#cookies">Cookie政策</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>关注我们</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-weibo"></i></a>
+                            <a href="#"><i class="fab fa-wechat"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 OnThisDay. 保留所有权利</p>
+                <p>数据来源：维基百科、历史数据库</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Date Picker Modal -->
+    <div class="modal" id="dateModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>选择日期</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="date-picker">
+                    <select id="modalMonth" class="date-select">
+                        <option value="">选择月份</option>
+                    </select>
+                    <select id="modalDay" class="date-select">
+                        <option value="">选择日期</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="modalCancel">取消</button>
+                <button class="btn-primary" id="modalConfirm">确认</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Modal -->
+    <div class="modal" id="languageModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>选择语言</h3>
+                <button class="modal-close" id="langModalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="language-options">
+                    <button class="lang-option active" data-lang="zh-CN">
+                        <span class="flag">🇨🇳</span>
+                        <span>中文</span>
+                    </button>
+                    <button class="lang-option" data-lang="en-US">
+                        <span class="flag">🇺🇸</span>
+                        <span>English</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
