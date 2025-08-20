@@ -416,6 +416,7 @@ const translations = {
     'zh-CN': {
         siteTitle: 'OnThisDay',
         siteSubtitle: '历史上的今天',
+        pageTitle: 'OnThisDay - 历史上的今天',
         todayInHistory: '历史上的今天',
         todayInHistoryEn: 'Today in History',
         famousBirthdays: '名人生日',
@@ -453,6 +454,7 @@ const translations = {
     'en-US': {
         siteTitle: 'OnThisDay',
         siteSubtitle: 'Today in History',
+        pageTitle: 'OnThisDay - Today in History',
         todayInHistory: 'Today in History',
         todayInHistoryEn: 'Historical Events',
         famousBirthdays: 'Famous Birthdays',

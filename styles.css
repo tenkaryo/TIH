@@ -131,6 +131,7 @@ body {
     font-size: 0.875rem;
     color: var(--text-medium);
     font-weight: 400;
+    transition: opacity 0.3s ease;
 }
 
 .nav-controls {

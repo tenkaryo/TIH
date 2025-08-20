@@ -6,6 +6,7 @@ class OnThisDay {
         this.currentLanguage = 'en-US';
         this.activeSection = 'events';
         this.lastClickTime = 0;
+        this.originalSubtitle = '';
         this.init();
     }
 
@@ -15,6 +16,9 @@ class OnThisDay {
         this.loadContent();
         this.updateDateDisplay();
         this.setupNavigation();
+        this.setupScrollListener();
+        this.saveOriginalSubtitle();
+        this.updatePageTitle();
     }
 
     setupEventListeners() {
@@ -112,6 +116,61 @@ class OnThisDay {
             top: 0,
             behavior: 'smooth'
         });
+    }
+
+    saveOriginalSubtitle() {
+        const brandSubtitle = document.querySelector('.brand-subtitle');
+        if (brandSubtitle) {
+            const t = translations[this.currentLanguage];
+            this.originalSubtitle = t.siteSubtitle;
+        }
+    }
+
+    setupScrollListener() {
+        let ticking = false;
+        
+        const handleScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    this.updateBrandSubtitle();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+    }
+
+    updateBrandSubtitle() {
+        const heroSection = document.querySelector('.hero-section');
+        const brandSubtitle = document.querySelector('.brand-subtitle');
+        
+        if (!heroSection || !brandSubtitle) return;
+
+        const heroRect = heroSection.getBoundingClientRect();
+        const isHeroVisible = heroRect.bottom > 0;
+
+        if (isHeroVisible) {
+            // Hero section is visible, show original subtitle
+            brandSubtitle.textContent = this.originalSubtitle;
+        } else {
+            // Hero section is not visible, show current date
+            const currentDateText = this.getCurrentDateText();
+            brandSubtitle.textContent = currentDateText;
+        }
+    }
+
+    getCurrentDateText() {
+        const month = this.currentDate.getMonth() + 1;
+        const day = this.currentDate.getDate();
+        return formatDateDisplay(month, day, this.currentLanguage);
+    }
+
+    updatePageTitle() {
+        const t = translations[this.currentLanguage];
+        document.title = t.pageTitle;
+        document.documentElement.lang = this.currentLanguage;
     }
 
     setupModalControls() {
@@ -410,6 +469,7 @@ class OnThisDay {
             this.loadContent();
             this.updateDateDisplay();
             this.hideModal('dateModal');
+            this.updateBrandSubtitle(); // Update subtitle with new date
             this.scrollToTop();
         }
     }
@@ -441,6 +501,9 @@ class OnThisDay {
         this.initializeSelectors();
         this.updateDateDisplay();
         this.loadContent(); // Reload content to display in the new language
+        this.saveOriginalSubtitle(); // Update original subtitle for new language
+        this.updateBrandSubtitle(); // Update current subtitle display
+        this.updatePageTitle(); // Update page title for new language
         this.hideModal('languageModal');
     }
 
@@ -532,6 +595,7 @@ class OnThisDay {
         this.currentDate.setDate(this.currentDate.getDate() + direction);
         this.loadContent();
         this.updateDateDisplay();
+        this.updateBrandSubtitle(); // Update subtitle with new date
         this.scrollToTop();
     }
 
@@ -549,7 +613,8 @@ class OnThisDay {
             this.loadContent();
             this.updateDateDisplay();
             
-            // Scroll to top when date changes
+            // Update subtitle with new date and scroll to top
+            this.updateBrandSubtitle();
             this.scrollToTop();
         } else {
             alert(this.currentLanguage === 'zh-CN' ? '请选择完整的日期' : 'Please select a complete date');
