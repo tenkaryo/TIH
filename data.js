@@ -2,7 +2,7 @@
 // In production, this would be replaced with API calls
 
 const sampleHistoryData = {
-    "08-19": {
+    "08-20": {
         events: [
             {
                 year: "1969",

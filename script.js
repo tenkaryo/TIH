@@ -5,6 +5,7 @@ class OnThisDay {
         this.currentDate = new Date();
         this.currentLanguage = 'en-US';
         this.activeSection = 'events';
+        this.lastClickTime = 0;
         this.init();
     }
 
@@ -49,6 +50,33 @@ class OnThisDay {
 
         // Modal controls
         this.setupModalControls();
+
+        // Nav brand double-click to scroll to top
+        const navBrand = document.querySelector('.nav-brand');
+        if (navBrand) {
+            // Use custom double-click detection to avoid zoom issues
+            navBrand.addEventListener('click', (e) => {
+                e.preventDefault();
+                const currentTime = new Date().getTime();
+                const timeDiff = currentTime - this.lastClickTime;
+                
+                if (timeDiff < 500 && timeDiff > 0) {
+                    // This is a double click
+                    e.stopPropagation();
+                    e.stopImmediatePropagation();
+                    this.scrollToTop();
+                }
+                
+                this.lastClickTime = currentTime;
+            });
+            
+            // Also handle the native dblclick event with prevention
+            navBrand.addEventListener('dblclick', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+            });
+        }
     }
 
     setupSidebarNavigation() {
@@ -77,6 +105,13 @@ class OnThisDay {
         if (section) {
             section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+    }
+
+    scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }
 
     setupModalControls() {

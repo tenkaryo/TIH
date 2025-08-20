@@ -29,6 +29,7 @@
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     
     /* Spacing */
+    --space-2xs: 0.15rem;
     --space-xs: 0.25rem;
     --space-sm: 0.5rem;
     --space-md: 1rem;
@@ -86,6 +87,20 @@ body {
     display: flex;
     align-items: center;
     gap: var(--space-md);
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    /* Prevent double-tap zoom on mobile */
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.nav-brand:hover {
+    opacity: 0.8;
 }
 
 .brand-logo {
@@ -437,11 +452,11 @@ body {
     top: var(--space-lg);
     background: var(--accent-gold);
     color: var(--bg-white);
-    padding: var(--space-xs) var(--space-md);
+    padding: var(--space-2xs) var(--space-xs);
     border-radius: var(--radius-md);
     font-weight: 600;
-    font-size: 0.875rem;
-    min-width: 60px;
+    font-size: 0.985rem;
+    min-width: 50px;
     text-align: center;
 }
 
@@ -813,6 +828,11 @@ body {
     }
     
     .nav-btn span:not(.flag) {
+        display: none;
+    }
+    
+    /* Hide today navigation on mobile */
+    .sidebar-section:nth-child(2) {
         display: none;
     }
     
