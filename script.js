@@ -173,6 +173,29 @@ class OnThisDay {
         document.documentElement.lang = this.currentLanguage;
     }
 
+    showLoadingState() {
+        const t = translations[this.currentLanguage];
+        const loadingHtml = `
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                ${t.loading || 'Loading...'}
+            </div>
+        `;
+        
+        document.getElementById('historyEvents').innerHTML = loadingHtml;
+        document.getElementById('famousBirthdays').innerHTML = loadingHtml;
+        document.getElementById('famousDeaths').innerHTML = loadingHtml;
+    }
+
+    showErrorState() {
+        const t = translations[this.currentLanguage];
+        const errorHtml = `<div class="loading">${t.noData || 'Unable to load data. Please try again later.'}</div>`;
+        
+        document.getElementById('historyEvents').innerHTML = errorHtml;
+        document.getElementById('famousBirthdays').innerHTML = errorHtml;
+        document.getElementById('famousDeaths').innerHTML = errorHtml;
+    }
+
     setupModalControls() {
         // Date modal controls
         const dateModal = document.getElementById('dateModal');
@@ -330,104 +353,130 @@ class OnThisDay {
         }
     }
 
-    loadContent() {
+    async loadContent() {
         const month = this.currentDate.getMonth() + 1;
         const day = this.currentDate.getDate();
         
-        this.loadHistoryEvents(month, day);
-        this.loadFamousPeople(month, day);
-        this.updateLanguageContent();
+        // Show loading state
+        this.showLoadingState();
+        
+        try {
+            await this.loadHistoryEvents(month, day);
+            await this.loadFamousPeople(month, day);
+            this.updateLanguageContent();
+            
+            // Preload adjacent dates
+            if (typeof preloadAdjacentDates === 'function') {
+                preloadAdjacentDates(month, day);
+            }
+        } catch (error) {
+            console.error('Failed to load content:', error);
+            this.showErrorState();
+        }
     }
 
-    loadHistoryEvents(month, day) {
-        const data = getDataForDate(month, day);
+    async loadHistoryEvents(month, day) {
         const container = document.getElementById('historyEvents');
         const t = translations[this.currentLanguage];
         
-        if (!data.events || data.events.length === 0) {
-            container.innerHTML = `<div class="loading">${t.noData || '暂无历史事件数据'}</div>`;
-            return;
-        }
-
-        container.innerHTML = data.events.slice(0, 10).map(event => {
-            const description = typeof event.description === 'object' 
-                ? event.description[this.currentLanguage] || event.description['zh-CN']
-                : event.description;
+        try {
+            const data = await getDataForDate(month, day);
             
-            return `
-                <div class="timeline-event">
-                    <span class="event-year">${event.year}</span>
-                    <div class="event-content">
-                        <p class="event-description">${description}</p>
-                        ${event.image ? `
-                            <div class="event-image">
-                                <img src="${event.image}" alt="${description}" onerror="this.style.display='none'">
-                            </div>
-                        ` : ''}
+            if (!data.events || data.events.length === 0) {
+                container.innerHTML = `<div class="loading">${t.noData || 'No historical events data available'}</div>`;
+                return;
+            }
+
+            container.innerHTML = data.events.slice(0, 10).map(event => {
+                const description = typeof event.description === 'object' 
+                    ? event.description[this.currentLanguage] || event.description['zh-CN'] || event.description['en-US']
+                    : event.description;
+                
+                return `
+                    <div class="timeline-event">
+                        <span class="event-year">${event.year}</span>
+                        <div class="event-content">
+                            <p class="event-description">${description}</p>
+                            ${event.image ? `
+                                <div class="event-image">
+                                    <img src="${event.image}" alt="${description}" onerror="this.style.display='none'">
+                                </div>
+                            ` : ''}
+                        </div>
                     </div>
-                </div>
-            `;
-        }).join('');
+                `;
+            }).join('');
+        } catch (error) {
+            console.error('Failed to load historical events:', error);
+            container.innerHTML = `<div class="loading">${t.loading || 'Loading error'}</div>`;
+        }
     }
 
-    loadFamousPeople(month, day) {
-        const data = getDataForDate(month, day);
+    async loadFamousPeople(month, day) {
         const t = translations[this.currentLanguage];
         
-        // Load famous birthdays
-        const birthdaysContainer = document.getElementById('famousBirthdays');
-        if (data.birthdays && data.birthdays.length > 0) {
-            birthdaysContainer.innerHTML = data.birthdays.slice(0, 6).map(person => {
-                const name = typeof person.name === 'object' 
-                    ? person.name[this.currentLanguage] || person.name['zh-CN']
-                    : person.name;
-                const description = typeof person.description === 'object' 
-                    ? person.description[this.currentLanguage] || person.description['zh-CN']
-                    : person.description;
-                
-                return `
-                    <div class="person-card">
-                        <div class="person-image">
-                            <img src="${person.image}" alt="${name}" onerror="this.style.display='none'">
+        try {
+            const data = await getDataForDate(month, day);
+            
+            // Load famous birthdays
+            const birthdaysContainer = document.getElementById('famousBirthdays');
+            if (data.birthdays && data.birthdays.length > 0) {
+                birthdaysContainer.innerHTML = data.birthdays.slice(0, 6).map(person => {
+                    const name = typeof person.name === 'object' 
+                        ? person.name[this.currentLanguage] || person.name['zh-CN'] || person.name['en-US']
+                        : person.name;
+                    const description = typeof person.description === 'object' 
+                        ? person.description[this.currentLanguage] || person.description['zh-CN'] || person.description['en-US']
+                        : person.description;
+                    
+                    return `
+                        <div class="person-card">
+                            <div class="person-image">
+                                <img src="${person.image}" alt="${name}" onerror="this.style.display='none'">
+                            </div>
+                            <div class="person-info">
+                                <h4 class="person-name">${name}</h4>
+                                <p class="person-years">${person.years}</p>
+                                <p class="person-description">${description}</p>
+                            </div>
                         </div>
-                        <div class="person-info">
-                            <h4 class="person-name">${name}</h4>
-                            <p class="person-years">${person.years}</p>
-                            <p class="person-description">${description}</p>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        } else {
-            birthdaysContainer.innerHTML = `<div class="loading">${t.noData || '暂无名人生日数据'}</div>`;
-        }
+                    `;
+                }).join('');
+            } else {
+                birthdaysContainer.innerHTML = `<div class="loading">${t.noData || 'No birthday data available'}</div>`;
+            }
 
-        // Load famous deaths
-        const deathsContainer = document.getElementById('famousDeaths');
-        if (data.deaths && data.deaths.length > 0) {
-            deathsContainer.innerHTML = data.deaths.slice(0, 6).map(person => {
-                const name = typeof person.name === 'object' 
-                    ? person.name[this.currentLanguage] || person.name['zh-CN']
-                    : person.name;
-                const description = typeof person.description === 'object' 
-                    ? person.description[this.currentLanguage] || person.description['zh-CN']
-                    : person.description;
-                
-                return `
-                    <div class="person-card">
-                        <div class="person-image">
-                            <img src="${person.image}" alt="${name}" onerror="this.style.display='none'">
+            // Load famous deaths
+            const deathsContainer = document.getElementById('famousDeaths');
+            if (data.deaths && data.deaths.length > 0) {
+                deathsContainer.innerHTML = data.deaths.slice(0, 6).map(person => {
+                    const name = typeof person.name === 'object' 
+                        ? person.name[this.currentLanguage] || person.name['zh-CN'] || person.name['en-US']
+                        : person.name;
+                    const description = typeof person.description === 'object' 
+                        ? person.description[this.currentLanguage] || person.description['zh-CN'] || person.description['en-US']
+                        : person.description;
+                    
+                    return `
+                        <div class="person-card">
+                            <div class="person-image">
+                                <img src="${person.image}" alt="${name}" onerror="this.style.display='none'">
+                            </div>
+                            <div class="person-info">
+                                <h4 class="person-name">${name}</h4>
+                                <p class="person-years">${person.years}</p>
+                                <p class="person-description">${description}</p>
+                            </div>
                         </div>
-                        <div class="person-info">
-                            <h4 class="person-name">${name}</h4>
-                            <p class="person-years">${person.years}</p>
-                            <p class="person-description">${description}</p>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        } else {
-            deathsContainer.innerHTML = `<div class="loading">${t.noData || '暂无名人逝世数据'}</div>`;
+                    `;
+                }).join('');
+            } else {
+                deathsContainer.innerHTML = `<div class="loading">${t.noData || 'No death data available'}</div>`;
+            }
+        } catch (error) {
+            console.error('Failed to load famous people:', error);
+            document.getElementById('famousBirthdays').innerHTML = `<div class="loading">${t.loading || 'Loading error'}</div>`;
+            document.getElementById('famousDeaths').innerHTML = `<div class="loading">${t.loading || 'Loading error'}</div>`;
         }
     }
 

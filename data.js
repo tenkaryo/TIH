@@ -1,392 +1,17 @@
-// Sample data for the history website
-// In production, this would be replaced with API calls
+// Data utilities and API integration for OnThisDay website
 
-const sampleHistoryData = {
-    "08-20": {
-        events: [
-            {
-                year: "1969",
-                description: {
-                    "zh-CN": "美国阿波罗11号宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林首次登月成功",
-                    "en-US": "American astronauts Neil Armstrong and Buzz Aldrin successfully land on the moon during the Apollo 11 mission"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQabuqJXLYG_5zAZlzuzdsAwg09ecJZJLrEpw&s"
-            },
-            {
-                year: "1991",
-                description: {
-                    "zh-CN": "苏联发生八一九事件，保守派发动政变试图阻止苏联解体",
-                    "en-US": "The August Coup occurs in the Soviet Union, as hardliners attempt to prevent the dissolution of the USSR"
-                },
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/a5/1991_coup_attempt1.jpg"
-            },
-            {
-                year: "1960",
-                description: {
-                    "zh-CN": "苏联发射载有两只狗的宇宙飞船，为载人航天做准备",
-                    "en-US": "The Soviet Union launches a spacecraft carrying two dogs to prepare for human spaceflight"
-                },
-                image: "https://starwalk.space/gallery/images/belka-and-strelka-space/1920x1080.jpg"
-            },
-            {
-                year: "2005",
-                description: {
-                    "zh-CN": "YouTube网站正式上线，改变了全球视频分享方式",
-                    "en-US": "YouTube officially launches, revolutionizing global video sharing"
-                },
-                image: "https://q7.itc.cn/images01/20250707/731964ef563d4facb566632e24402e9e.jpeg"
-            },
-            {
-                year: "1839",
-                description: {
-                    "zh-CN": "法国政府宣布达盖尔摄影法为公共财产，摄影技术开始普及",
-                    "en-US": "The French government announces the daguerreotype photography process as public property, popularizing photography"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQVTRyb-ZUkGkisBbvrW5X77CvMT2rZ9cswQ&s"
-            }
-        ],
-        birthdays: [
-            {
-                name: {
-                    "zh-CN": "比尔·克林顿",
-                    "en-US": "Bill Clinton"
-                },
-                years: "1946-",
-                description: {
-                    "zh-CN": "美国第42任总统",
-                    "en-US": "42nd President of the United States"
-                },
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Bill_Clinton.jpg/250px-Bill_Clinton.jpg"
-            },
-            {
-                name: {
-                    "zh-CN": "马修·佩里",
-                    "en-US": "Matthew Perry"
-                },
-                years: "1969-2023",
-                description: {
-                    "zh-CN": "美国演员，以《老友记》中钱德勒一角闻名",
-                    "en-US": "American actor, famous for playing Chandler in 'Friends'"
-                },
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Matthew_Perry_in_support_of_Awareness_on_Drug_Courts_and_Reduced_Substance_Abuse.jpg/250px-Matthew_Perry_in_support_of_Awareness_on_Drug_Courts_and_Reduced_Substance_Abuse.jpg"
-            },
-            {
-                name: {
-                    "zh-CN": "奥维尔·莱特",
-                    "en-US": "Orville Wright"
-                },
-                years: "1871-1948",
-                description: {
-                    "zh-CN": "美国航空先驱，与其兄弟发明了世界上第一架飞机",
-                    "en-US": "American aviation pioneer who invented the first airplane with his brother"
-                },
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Orville_Wright_1905-crop.jpg/1200px-Orville_Wright_1905-crop.jpg"
-            },
-            {
-                name: {
-                    "zh-CN": "可可·香奈儿",
-                    "en-US": "Coco Chanel"
-                },
-                years: "1883-1971",
-                description: {
-                    "zh-CN": "法国时装设计师，香奈儿品牌创始人",
-                    "en-US": "French fashion designer and founder of the Chanel brand"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzQcXwFBALkrZxvcPCTGV3itsFAZ7EVImmjw&s"
-            },
-            {
-                name: {
-                    "zh-CN": "约翰·德赖登",
-                    "en-US": "John Dryden"
-                },
-                years: "1631-1700",
-                description: {
-                    "zh-CN": "英国诗人、文学批评家和戏剧家",
-                    "en-US": "English poet, literary critic, and playwright"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYf0nkeXRwAQuDf4FXyIi2zDCNOLJ8UEg8rg&s"
-            },
-            {
-                name: {
-                    "zh-CN": "弗雷德里克·威廉·德·克拉克",
-                    "en-US": "Frederick William de Klerk"
-                },
-                years: "1936-2021",
-                description: {
-                    "zh-CN": "南非前总统，诺贝尔和平奖获得者",
-                    "en-US": "Former President of South Africa, Nobel Peace Prize winner"
-                },
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Frederik_Willem_de_Klerk%2C_1990.jpg/250px-Frederik_Willem_de_Klerk%2C_1990.jpg"
-            }
-        ],
-        deaths: [
-            {
-                name: {
-                    "zh-CN": "奥古斯都",
-                    "en-US": "Augustus"
-                },
-                years: "63 BC-14 AD",
-                description: {
-                    "zh-CN": "罗马帝国第一位皇帝",
-                    "en-US": "First Emperor of the Roman Empire"
-                },
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Statue-Augustus.jpg/960px-Statue-Augustus.jpg"
-            },
-            {
-                name: {
-                    "zh-CN": "布莱兹·帕斯卡",
-                    "en-US": "Blaise Pascal"
-                },
-                years: "1623-1662",
-                description: {
-                    "zh-CN": "法国数学家、物理学家和哲学家",
-                    "en-US": "French mathematician, physicist, and philosopher"
-                },
-                image: "https://upload.wikimedia.org/wikipedia/commons/9/98/Blaise_Pascal_Versailles.JPG"
-            },
-            {
-                name: {
-                    "zh-CN": "奥古斯特·罗丹",
-                    "en-US": "Auguste Rodin"
-                },
-                years: "1840-1917",
-                description: {
-                    "zh-CN": "法国雕塑家，《思想者》作者",
-                    "en-US": "French sculptor, creator of 'The Thinker'"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6m1-xlIPRA-wzQPQXtDWy3GaGsnelmpNGiA&s"
-            },
-            {
-                name: {
-                    "zh-CN": "格拉迪·斯通",
-                    "en-US": "Grady Stanton"
-                },
-                years: "1890-1977",
-                description: {
-                    "zh-CN": "美国发明家和企业家",
-                    "en-US": "American inventor and entrepreneur"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAK4RszVSq1ONtqRolzIdb0Ea8dSNGoyZxQw&s"
-            },
-            {
-                name: {
-                    "zh-CN": "莱纳斯·鲍林",
-                    "en-US": "Linus Pauling"
-                },
-                years: "1901-1994",
-                description: {
-                    "zh-CN": "美国化学家，两次诺贝尔奖获得者",
-                    "en-US": "American chemist, two-time Nobel Prize winner"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlpFqJ6RMa9KuwqAnvjRHlaEDwHHijQwELew&s"
-            },
-            {
-                name: {
-                    "zh-CN": "弗雷德里克·桑格",
-                    "en-US": "Frederick Sanger"
-                },
-                years: "1918-2013",
-                description: {
-                    "zh-CN": "英国生物化学家，两次诺贝尔化学奖获得者",
-                    "en-US": "British biochemist, two-time Nobel Prize winner in Chemistry"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAow2fCLmmETJEgNlScuRtJN1rPnaIW5rQLw&s"
-            }
-        ]
-    },
-    "08-21": {
-        events: [
-            {
-                year: "1969",
-                description: {
-                    "zh-CN": "美国阿波罗11号宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林首次登月成功",
-                    "en-US": "American astronauts Neil Armstrong and Buzz Aldrin successfully land on the moon during the Apollo 11 mission"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQabuqJXLYG_5zAZlzuzdsAwg09ecJZJLrEpw&s"
-            },
-            {
-                year: "1991",
-                description: {
-                    "zh-CN": "苏联发生八一九事件，保守派发动政变试图阻止苏联解体",
-                    "en-US": "The August Coup occurs in the Soviet Union, as hardliners attempt to prevent the dissolution of the USSR"
-                },
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/a5/1991_coup_attempt1.jpg"
-            },
-            {
-                year: "1960",
-                description: {
-                    "zh-CN": "苏联发射载有两只狗的宇宙飞船，为载人航天做准备",
-                    "en-US": "The Soviet Union launches a spacecraft carrying two dogs to prepare for human spaceflight"
-                },
-                image: "https://starwalk.space/gallery/images/belka-and-strelka-space/1920x1080.jpg"
-            },
-            {
-                year: "2005",
-                description: {
-                    "zh-CN": "YouTube网站正式上线，改变了全球视频分享方式",
-                    "en-US": "YouTube officially launches, revolutionizing global video sharing"
-                },
-                image: "https://q7.itc.cn/images01/20250707/731964ef563d4facb566632e24402e9e.jpeg"
-            },
-            {
-                year: "1839",
-                description: {
-                    "zh-CN": "法国政府宣布达盖尔摄影法为公共财产，摄影技术开始普及",
-                    "en-US": "The French government announces the daguerreotype photography process as public property, popularizing photography"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQVTRyb-ZUkGkisBbvrW5X77CvMT2rZ9cswQ&s"
-            }
-        ],
-        birthdays: [
-            {
-                name: {
-                    "zh-CN": "比尔·克林顿",
-                    "en-US": "Bill Clinton"
-                },
-                years: "1946-",
-                description: {
-                    "zh-CN": "美国第42任总统",
-                    "en-US": "42nd President of the United States"
-                },
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Bill_Clinton.jpg/250px-Bill_Clinton.jpg"
-            },
-            {
-                name: {
-                    "zh-CN": "马修·佩里",
-                    "en-US": "Matthew Perry"
-                },
-                years: "1969-2023",
-                description: {
-                    "zh-CN": "美国演员，以《老友记》中钱德勒一角闻名",
-                    "en-US": "American actor, famous for playing Chandler in 'Friends'"
-                },
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Matthew_Perry_in_support_of_Awareness_on_Drug_Courts_and_Reduced_Substance_Abuse.jpg/250px-Matthew_Perry_in_support_of_Awareness_on_Drug_Courts_and_Reduced_Substance_Abuse.jpg"
-            },
-            {
-                name: {
-                    "zh-CN": "奥维尔·莱特",
-                    "en-US": "Orville Wright"
-                },
-                years: "1871-1948",
-                description: {
-                    "zh-CN": "美国航空先驱，与其兄弟发明了世界上第一架飞机",
-                    "en-US": "American aviation pioneer who invented the first airplane with his brother"
-                },
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Orville_Wright_1905-crop.jpg/1200px-Orville_Wright_1905-crop.jpg"
-            },
-            {
-                name: {
-                    "zh-CN": "可可·香奈儿",
-                    "en-US": "Coco Chanel"
-                },
-                years: "1883-1971",
-                description: {
-                    "zh-CN": "法国时装设计师，香奈儿品牌创始人",
-                    "en-US": "French fashion designer and founder of the Chanel brand"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzQcXwFBALkrZxvcPCTGV3itsFAZ7EVImmjw&s"
-            },
-            {
-                name: {
-                    "zh-CN": "约翰·德赖登",
-                    "en-US": "John Dryden"
-                },
-                years: "1631-1700",
-                description: {
-                    "zh-CN": "英国诗人、文学批评家和戏剧家",
-                    "en-US": "English poet, literary critic, and playwright"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYf0nkeXRwAQuDf4FXyIi2zDCNOLJ8UEg8rg&s"
-            },
-            {
-                name: {
-                    "zh-CN": "弗雷德里克·威廉·德·克拉克",
-                    "en-US": "Frederick William de Klerk"
-                },
-                years: "1936-2021",
-                description: {
-                    "zh-CN": "南非前总统，诺贝尔和平奖获得者",
-                    "en-US": "Former President of South Africa, Nobel Peace Prize winner"
-                },
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Frederik_Willem_de_Klerk%2C_1990.jpg/250px-Frederik_Willem_de_Klerk%2C_1990.jpg"
-            }
-        ],
-        deaths: [
-            {
-                name: {
-                    "zh-CN": "奥古斯都",
-                    "en-US": "Augustus"
-                },
-                years: "63 BC-14 AD",
-                description: {
-                    "zh-CN": "罗马帝国第一位皇帝",
-                    "en-US": "First Emperor of the Roman Empire"
-                },
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Statue-Augustus.jpg/960px-Statue-Augustus.jpg"
-            },
-            {
-                name: {
-                    "zh-CN": "布莱兹·帕斯卡",
-                    "en-US": "Blaise Pascal"
-                },
-                years: "1623-1662",
-                description: {
-                    "zh-CN": "法国数学家、物理学家和哲学家",
-                    "en-US": "French mathematician, physicist, and philosopher"
-                },
-                image: "https://upload.wikimedia.org/wikipedia/commons/9/98/Blaise_Pascal_Versailles.JPG"
-            },
-            {
-                name: {
-                    "zh-CN": "奥古斯特·罗丹",
-                    "en-US": "Auguste Rodin"
-                },
-                years: "1840-1917",
-                description: {
-                    "zh-CN": "法国雕塑家，《思想者》作者",
-                    "en-US": "French sculptor, creator of 'The Thinker'"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6m1-xlIPRA-wzQPQXtDWy3GaGsnelmpNGiA&s"
-            },
-            {
-                name: {
-                    "zh-CN": "格拉迪·斯通",
-                    "en-US": "Grady Stanton"
-                },
-                years: "1890-1977",
-                description: {
-                    "zh-CN": "美国发明家和企业家",
-                    "en-US": "American inventor and entrepreneur"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAK4RszVSq1ONtqRolzIdb0Ea8dSNGoyZxQw&s"
-            },
-            {
-                name: {
-                    "zh-CN": "莱纳斯·鲍林",
-                    "en-US": "Linus Pauling"
-                },
-                years: "1901-1994",
-                description: {
-                    "zh-CN": "美国化学家，两次诺贝尔奖获得者",
-                    "en-US": "American chemist, two-time Nobel Prize winner"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlpFqJ6RMa9KuwqAnvjRHlaEDwHHijQwELew&s"
-            },
-            {
-                name: {
-                    "zh-CN": "弗雷德里克·桑格",
-                    "en-US": "Frederick Sanger"
-                },
-                years: "1918-2013",
-                description: {
-                    "zh-CN": "英国生物化学家，两次诺贝尔化学奖获得者",
-                    "en-US": "British biochemist, two-time Nobel Prize winner in Chemistry"
-                },
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAow2fCLmmETJEgNlScuRtJN1rPnaIW5rQLw&s"
-            }
-        ]
-    }
+// API Configuration
+const API_CONFIG = {
+    baseUrl: (typeof window !== 'undefined' && window.location.hostname === 'tih-sigma.vercel.app') 
+        ? 'https://tih-sigma.vercel.app/api' 
+        : 'http://localhost:3001/api',
+    token: 'onthisday-secure-token-2024',
+    timeout: 10000 // 10 seconds timeout for production
 };
+
+// Cache for storing API responses to reduce requests
+const dataCache = new Map();
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 // Month and day names for localization
 const monthNames = {
@@ -496,13 +121,106 @@ function formatDateKey(month, day) {
     return `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
 }
 
-function getDataForDate(month, day) {
+// API request with authentication and error handling
+async function makeApiRequest(endpoint) {
+    const url = `${API_CONFIG.baseUrl}${endpoint}`;
+    
+    try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), API_CONFIG.timeout);
+        
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${API_CONFIG.token}`,
+                'Content-Type': 'application/json',
+                'User-Agent': 'OnThisDay-Frontend/1.0'
+            },
+            signal: controller.signal
+        });
+        
+        clearTimeout(timeoutId);
+        
+        if (!response.ok) {
+            throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+        }
+        
+        const data = await response.json();
+        
+        if (!data.success) {
+            throw new Error(data.error || 'API returned unsuccessful response');
+        }
+        
+        return data.data;
+        
+    } catch (error) {
+        console.error('API Request Error:', error);
+        
+        // Return fallback data structure
+        return {
+            events: [],
+            birthdays: [],
+            deaths: []
+        };
+    }
+}
+
+// Get cached data or fetch from API
+async function getDataForDate(month, day) {
     const key = formatDateKey(month, day);
-    return sampleHistoryData[key] || {
-        events: [],
-        birthdays: [],
-        deaths: []
-    };
+    
+    // Check cache first
+    const cachedData = dataCache.get(key);
+    if (cachedData && Date.now() - cachedData.timestamp < CACHE_DURATION) {
+        return cachedData.data;
+    }
+    
+    // Fetch from API
+    try {
+        const data = await makeApiRequest(`/history/${key}`);
+        
+        // Cache the result
+        dataCache.set(key, {
+            data: data,
+            timestamp: Date.now()
+        });
+        
+        return data;
+        
+    } catch (error) {
+        console.error('Failed to fetch data for date:', key, error);
+        
+        // Return cached data if available, even if expired
+        if (cachedData) {
+            return cachedData.data;
+        }
+        
+        // Fallback: return empty structure
+        return {
+            events: [],
+            birthdays: [],
+            deaths: []
+        };
+    }
+}
+
+// Preload data for adjacent dates to improve user experience
+function preloadAdjacentDates(month, day) {
+    const currentDate = new Date(2024, month - 1, day); // Year doesn't matter for this calculation
+    
+    // Previous day
+    const prevDate = new Date(currentDate);
+    prevDate.setDate(prevDate.getDate() - 1);
+    
+    // Next day
+    const nextDate = new Date(currentDate);
+    nextDate.setDate(nextDate.getDate() + 1);
+    
+    // Preload asynchronously
+    setTimeout(() => {
+        getDataForDate(prevDate.getMonth() + 1, prevDate.getDate());
+        getDataForDate(nextDate.getMonth() + 1, nextDate.getDate());
+    }, 1000); // Wait 1 second before preloading
 }
 
 function formatDateDisplay(month, day, language = 'zh-CN') {
@@ -512,43 +230,110 @@ function formatDateDisplay(month, day, language = 'zh-CN') {
 
 // Generate sample data for other dates (placeholder function)
 function generateSampleData(month, day) {
+    const dateStr = `${month}月${day}日`;
+    const dateStrEn = `${monthNames['en-US'][month - 1]} ${day}`;
+    
     return {
         events: [
             {
                 year: "1969",
                 description: {
-                    "zh-CN": `${month}月${day}日的历史事件示例`,
-                    "en-US": `Sample historical event for ${month}/${day}`
+                    "zh-CN": `${dateStr}：阿波罗11号宇航员阿姆斯特朗成为第一个踏上月球表面的人类`,
+                    "en-US": `${dateStrEn}: Apollo 11 astronaut Neil Armstrong becomes the first human to step on the lunar surface`
                 },
                 image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=200&h=150&fit=crop"
+            },
+            {
+                year: "1989",
+                description: {
+                    "zh-CN": `${dateStr}：柏林墙倒塌，标志着德国分裂时代的结束`,
+                    "en-US": `${dateStrEn}: The Berlin Wall falls, marking the end of Germany's division era`
+                },
+                image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=200&h=150&fit=crop"
+            },
+            {
+                year: "2001",
+                description: {
+                    "zh-CN": `${dateStr}：维基百科正式上线，成为世界上最大的在线百科全书`,
+                    "en-US": `${dateStrEn}: Wikipedia officially launches, becoming the world's largest online encyclopedia`
+                },
+                image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=150&fit=crop"
             }
         ],
         birthdays: [
             {
                 name: {
-                    "zh-CN": "示例名人",
-                    "en-US": "Example Celebrity"
+                    "zh-CN": "阿尔伯特·爱因斯坦",
+                    "en-US": "Albert Einstein"
                 },
-                years: "1950-",
+                years: "1879-1955",
                 description: {
-                    "zh-CN": "示例描述",
-                    "en-US": "Sample description"
+                    "zh-CN": "德国裔理论物理学家，相对论创立者，1921年诺贝尔物理学奖获得者",
+                    "en-US": "German-born theoretical physicist, creator of relativity theory, Nobel Prize winner in Physics 1921"
+                },
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+            },
+            {
+                name: {
+                    "zh-CN": "莱昂纳多·达·芬奇",
+                    "en-US": "Leonardo da Vinci"
+                },
+                years: "1452-1519",
+                description: {
+                    "zh-CN": "意大利文艺复兴时期的博学者，画家、发明家、科学家",
+                    "en-US": "Italian Renaissance polymath, painter, inventor, and scientist"
                 },
                 image: "https://images.unsplash.com/photo-1559268950-2d7ceb2efa3a?w=100&h=100&fit=crop&crop=face"
+            },
+            {
+                name: {
+                    "zh-CN": "玛丽·居里",
+                    "en-US": "Marie Curie"
+                },
+                years: "1867-1934",
+                description: {
+                    "zh-CN": "波兰裔法国物理学家和化学家，两次获得诺贝尔奖",
+                    "en-US": "Polish-born French physicist and chemist, two-time Nobel Prize winner"
+                },
+                image: "https://images.unsplash.com/photo-1494790108755-2616c9a4b1f4?w=100&h=100&fit=crop&crop=face"
             }
         ],
         deaths: [
             {
                 name: {
-                    "zh-CN": "示例历史人物",
-                    "en-US": "Example Historical Figure"
+                    "zh-CN": "威廉·莎士比亚",
+                    "en-US": "William Shakespeare"
                 },
-                years: "1900-1980",
+                years: "1564-1616",
                 description: {
-                    "zh-CN": "示例描述",
-                    "en-US": "Sample description"
+                    "zh-CN": "英国文艺复兴时期剧作家、诗人，被誉为英国文学史上最杰出的戏剧家",
+                    "en-US": "English Renaissance playwright and poet, widely regarded as the greatest writer in English literature"
                 },
                 image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+            },
+            {
+                name: {
+                    "zh-CN": "查尔斯·达尔文",
+                    "en-US": "Charles Darwin"
+                },
+                years: "1809-1882",
+                description: {
+                    "zh-CN": "英国自然学家，进化论的奠基人，《物种起源》作者",
+                    "en-US": "British naturalist, founder of evolutionary theory, author of 'On the Origin of Species'"
+                },
+                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+            },
+            {
+                name: {
+                    "zh-CN": "史蒂夫·乔布斯",
+                    "en-US": "Steve Jobs"
+                },
+                years: "1955-2011",
+                description: {
+                    "zh-CN": "苹果公司联合创始人，现代个人计算机革命的先驱者",
+                    "en-US": "Co-founder of Apple Inc., pioneer of the modern personal computer revolution"
+                },
+                image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face"
             }
         ]
     };
