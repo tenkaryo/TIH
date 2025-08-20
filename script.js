@@ -410,6 +410,7 @@ class OnThisDay {
             this.loadContent();
             this.updateDateDisplay();
             this.hideModal('dateModal');
+            this.scrollToTop();
         }
     }
 
@@ -531,6 +532,7 @@ class OnThisDay {
         this.currentDate.setDate(this.currentDate.getDate() + direction);
         this.loadContent();
         this.updateDateDisplay();
+        this.scrollToTop();
     }
 
 
@@ -547,8 +549,8 @@ class OnThisDay {
             this.loadContent();
             this.updateDateDisplay();
             
-            // Smooth scroll to events section
-            this.scrollToSection('events');
+            // Scroll to top when date changes
+            this.scrollToTop();
         } else {
             alert(this.currentLanguage === 'zh-CN' ? '请选择完整的日期' : 'Please select a complete date');
         }

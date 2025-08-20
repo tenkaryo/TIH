@@ -517,8 +517,8 @@ body {
 
 .person-image {
     flex-shrink: 0;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(--border-medium);
@@ -881,12 +881,13 @@ body {
         flex-direction: column;
         text-align: center;
         padding: var(--space-md);
+        gap: var(--space-sm);
     }
     
     .person-image {
         align-self: center;
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
         margin-bottom: var(--space-sm);
     }
     
