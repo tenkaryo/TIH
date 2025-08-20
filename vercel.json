@@ -29,8 +29,6 @@
     }
   ],
   "env": {
-    "NODE_ENV": "production",
-    "API_TOKEN": "@api-token",
-    "SECRET_KEY": "@secret-key"
+    "NODE_ENV": "production"
   }
 }

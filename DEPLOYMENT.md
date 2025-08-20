@@ -6,11 +6,27 @@
 
 在 Vercel 项目设置中配置以下环境变量：
 
+**方法1: 通过 Vercel Dashboard**
+1. 进入项目设置 → Environment Variables
+2. 添加以下变量：
+
+| Name | Value | Environment |
+|------|--------|-------------|
+| `API_TOKEN` | `onthisday-secure-token-2024` | Production, Preview, Development |
+| `SECRET_KEY` | `your-secret-key-here` | Production, Preview, Development |
+| `NODE_ENV` | `production` | Production |
+| `FRONTEND_URL` | `https://tih-sigma.vercel.app` | Production, Preview |
+
+**方法2: 通过 Vercel CLI**
 ```bash
-API_TOKEN=onthisday-secure-token-2024
-SECRET_KEY=your-secret-key-here
-NODE_ENV=production
-FRONTEND_URL=https://tih-sigma.vercel.app
+vercel env add API_TOKEN production
+# 输入: onthisday-secure-token-2024
+
+vercel env add SECRET_KEY production  
+# 输入: your-secret-key-here
+
+vercel env add FRONTEND_URL production
+# 输入: https://tih-sigma.vercel.app
 ```
 
 ### 2. 部署域名

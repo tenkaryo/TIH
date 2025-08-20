@@ -43,7 +43,7 @@ async function checkEndpoint(path, description) {
 
         req.setTimeout(10000, () => {
             console.log(`❌ ${description}: TIMEOUT`);
-            req.abort();
+            req.destroy();
             resolve(false);
         });
 
