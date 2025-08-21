@@ -5,32 +5,46 @@ const API_CONFIG = {
     baseUrl: (typeof window !== 'undefined' && (window.location.hostname === 'tih-sigma.vercel.app' || window.location.hostname.includes('vercel.app'))) 
         ? '/api'  // 使用相对路径，Vercel会自动路由
         : 'http://localhost:3001/api',
-    apiKey: 'TGnKAY@9$Q$5ryex4D5523',
     timeout: 10000 // 10 seconds timeout for production
 };
 
-// Generate dynamic token based on timestamp and API key
-function generateToken() {
-    const timestamp = Math.floor(Date.now() / 1000); // Unix timestamp
-    const apiKey = API_CONFIG.apiKey;
-    
-    // Simple hash function (you can use crypto.subtle.digest for better security in production)
-    function simpleHash(str) {
-        let hash = 0;
-        for (let i = 0; i < str.length; i++) {
-            const char = str.charCodeAt(i);
-            hash = ((hash << 5) - hash) + char;
-            hash = hash & hash; // Convert to 32-bit integer
-        }
-        return Math.abs(hash).toString(36);
+// Token cache to avoid frequent token requests
+let tokenCache = {
+    token: null,
+    expiresAt: 0
+};
+
+// Get token from server
+async function getToken() {
+    // Check if cached token is still valid (with 30 second buffer)
+    const now = Math.floor(Date.now() / 1000);
+    if (tokenCache.token && tokenCache.expiresAt > now + 30) {
+        return tokenCache.token;
     }
     
-    // Create token: timestamp + hash(timestamp + apiKey)
-    const tokenPayload = timestamp + apiKey;
-    const tokenHash = simpleHash(tokenPayload);
-    const token = `${timestamp}.${tokenHash}`;
-    
-    return token;
+    try {
+        const response = await fetch(`${API_CONFIG.baseUrl}/token`);
+        if (!response.ok) {
+            throw new Error(`Token request failed: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        if (!data.success || !data.token) {
+            throw new Error('Invalid token response');
+        }
+        
+        // Cache the token
+        tokenCache = {
+            token: data.token,
+            expiresAt: data.timestamp + data.expiresIn
+        };
+        
+        return data.token;
+        
+    } catch (error) {
+        console.error('Failed to get token:', error);
+        throw error;
+    }
 }
 
 // Cache for storing API responses to reduce requests
@@ -173,8 +187,8 @@ async function makeApiRequest(endpoint) {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), API_CONFIG.timeout);
         
-        // Generate dynamic token
-        const token = generateToken();
+        // Get token from server
+        const token = await getToken();
         
         const response = await fetch(url, {
             method: 'GET',

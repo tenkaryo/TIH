@@ -19,6 +19,9 @@
     },
     "api/robots.js": {
       "maxDuration": 5
+    },
+    "api/token.js": {
+      "maxDuration": 5
     }
   },
   "rewrites": [
