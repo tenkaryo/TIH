@@ -8,6 +8,9 @@
     "api/history/[date].js": {
       "maxDuration": 10
     },
+    "api/public-history/[date].js": {
+      "maxDuration": 5
+    },
     "api/today.js": {
       "maxDuration": 5
     },

@@ -175,11 +175,12 @@ async function getDataForDate(month, day) {
         return cachedData.data;
     }
     
-    // 如果是今天的数据，且在主页上，优先使用today API（无需身份验证）
+    // 优先使用公开API（无需身份验证）
     const today = new Date();
     const todayKey = formatDateKey(today.getMonth() + 1, today.getDate());
     const isHomePage = window.location.pathname === '/' || window.location.pathname === '';
     
+    // 如果是今天的数据且在主页，使用today API
     if (key === todayKey && isHomePage) {
         try {
             const response = await fetch('/api/today');
@@ -195,11 +196,30 @@ async function getDataForDate(month, day) {
                 }
             }
         } catch (error) {
-            console.warn('Today API failed, falling back to regular API:', error);
+            console.warn('Today API failed, falling back to public API:', error);
         }
     }
     
-    // Fetch from regular API (needs authentication)
+    // 对于所有日期（包括非今天的），优先使用公开API
+    try {
+        const response = await fetch(`/api/public-history/${key}`);
+        if (response.ok) {
+            const result = await response.json();
+            if (result.success && result.data) {
+                // Cache the result
+                dataCache.set(key, {
+                    data: result.data,
+                    timestamp: Date.now()
+                });
+                return result.data;
+            }
+        }
+        console.warn('Public API failed for', key, ', falling back to authenticated API');
+    } catch (error) {
+        console.warn('Public API error for', key, ':', error, ', falling back to authenticated API');
+    }
+    
+    // 最后回退到需要认证的API
     try {
         const data = await makeApiRequest(`/history/${key}`);
         
@@ -212,7 +232,7 @@ async function getDataForDate(month, day) {
         return data;
         
     } catch (error) {
-        console.error('Failed to fetch data for date:', key, error);
+        console.error('All APIs failed for date:', key, error);
         
         // Return cached data if available, even if expired
         if (cachedData) {
