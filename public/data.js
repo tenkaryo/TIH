@@ -5,9 +5,33 @@ const API_CONFIG = {
     baseUrl: (typeof window !== 'undefined' && (window.location.hostname === 'tih-sigma.vercel.app' || window.location.hostname.includes('vercel.app'))) 
         ? '/api'  // 使用相对路径，Vercel会自动路由
         : 'http://localhost:3001/api',
-    token: 'onthisday-secure-token-2024',
+    apiKey: 'TGnKAY@9$Q$5ryex4D5523',
     timeout: 10000 // 10 seconds timeout for production
 };
+
+// Generate dynamic token based on timestamp and API key
+function generateToken() {
+    const timestamp = Math.floor(Date.now() / 1000); // Unix timestamp
+    const apiKey = API_CONFIG.apiKey;
+    
+    // Simple hash function (you can use crypto.subtle.digest for better security in production)
+    function simpleHash(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            const char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convert to 32-bit integer
+        }
+        return Math.abs(hash).toString(36);
+    }
+    
+    // Create token: timestamp + hash(timestamp + apiKey)
+    const tokenPayload = timestamp + apiKey;
+    const tokenHash = simpleHash(tokenPayload);
+    const token = `${timestamp}.${tokenHash}`;
+    
+    return token;
+}
 
 // Cache for storing API responses to reduce requests
 const dataCache = new Map();
@@ -149,10 +173,13 @@ async function makeApiRequest(endpoint) {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), API_CONFIG.timeout);
         
+        // Generate dynamic token
+        const token = generateToken();
+        
         const response = await fetch(url, {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${API_CONFIG.token}`,
+                'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json',
                 'User-Agent': 'OnThisDay-Frontend/1.0'
             },

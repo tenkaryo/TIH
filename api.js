@@ -37,16 +37,58 @@ const rateLimiter = rateLimit({
     legacyHeaders: false,
 });
 
-// Token-based authentication to prevent unauthorized access
-const API_TOKENS = [
-    process.env.API_TOKEN || 'onthisday-secure-token-2024',
-    // Add more tokens if needed
-];
+// API Key-based dynamic token authentication
+const API_KEY = process.env.API_KEY || 'TGnKAY@9$Q$5ryex4D5523';
+const TOKEN_EXPIRE_SECONDS = 300; // 5 minutes
 
-// Request signature verification (optional, more advanced)
-const SECRET_KEY = process.env.SECRET_KEY || 'your-secret-key-here';
+// Generate token hash (same algorithm as frontend)
+function generateTokenHash(timestamp, apiKey) {
+    function simpleHash(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            const char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convert to 32-bit integer
+        }
+        return Math.abs(hash).toString(36);
+    }
+    
+    const tokenPayload = timestamp + apiKey;
+    return simpleHash(tokenPayload);
+}
 
-// Middleware for token authentication
+// Verify dynamic token
+function verifyToken(token) {
+    try {
+        const [timestampStr, providedHash] = token.split('.');
+        
+        if (!timestampStr || !providedHash) {
+            return { valid: false, error: 'Invalid token format' };
+        }
+        
+        const timestamp = parseInt(timestampStr, 10);
+        const currentTimestamp = Math.floor(Date.now() / 1000);
+        
+        // Check if token is expired
+        if (currentTimestamp - timestamp > TOKEN_EXPIRE_SECONDS) {
+            return { valid: false, error: 'Token expired' };
+        }
+        
+        // Generate expected hash
+        const expectedHash = generateTokenHash(timestamp, API_KEY);
+        
+        // Verify hash
+        if (providedHash !== expectedHash) {
+            return { valid: false, error: 'Invalid token signature' };
+        }
+        
+        return { valid: true };
+    } catch (error) {
+        return { valid: false, error: 'Token verification failed' };
+    }
+}
+
+// Middleware for dynamic token authentication
 const authenticateToken = (req, res, next) => {
     const token = req.headers.authorization?.replace('Bearer ', '') || req.query.token;
     
@@ -54,8 +96,12 @@ const authenticateToken = (req, res, next) => {
         return res.status(401).json({ error: 'Authentication token required' });
     }
     
-    if (!API_TOKENS.includes(token)) {
-        return res.status(403).json({ error: 'Invalid authentication token' });
+    const verification = verifyToken(token);
+    if (!verification.valid) {
+        return res.status(403).json({ 
+            error: 'Invalid authentication token',
+            details: verification.error
+        });
     }
     
     next();
