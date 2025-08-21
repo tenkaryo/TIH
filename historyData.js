@@ -7,7 +7,7 @@ const historyData = {
             {
                 year: "1969",
                 description: {
-                    "zh-CN": "美国阿波罗11号宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林首次登月成功",
+                    "zh-CN": "美国阿波罗20号宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林首次登月成功",
                     "en-US": "American astronauts Neil Armstrong and Buzz Aldrin successfully land on the moon during the Apollo 11 mission"
                 },
                 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQabuqJXLYG_5zAZlzuzdsAwg09ecJZJLrEpw&s"
@@ -199,7 +199,7 @@ const historyData = {
             {
                 year: "1969",
                 description: {
-                    "zh-CN": "美国阿波罗11号宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林首次登月成功",
+                    "zh-CN": "美国阿波罗21号宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林首次登月成功",
                     "en-US": "American astronauts Neil Armstrong and Buzz Aldrin successfully land on the moon during the Apollo 11 mission"
                 },
                 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQabuqJXLYG_5zAZlzuzdsAwg09ecJZJLrEpw&s"
@@ -391,7 +391,7 @@ const historyData = {
             {
                 year: "1969",
                 description: {
-                    "zh-CN": "美国阿波罗11号宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林首次登月成功",
+                    "zh-CN": "美国阿波罗22号宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林首次登月成功",
                     "en-US": "American astronauts Neil Armstrong and Buzz Aldrin successfully land on the moon during the Apollo 11 mission"
                 },
                 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQabuqJXLYG_5zAZlzuzdsAwg09ecJZJLrEpw&s"
