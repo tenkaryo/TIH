@@ -139,11 +139,12 @@ function generateDatePage(date, language = 'zh-CN') {
     const famousBirthdaysSSR = renderPeople(data.birthdays, language);
     const famousDeathsSSR = renderPeople(data.deaths, language);
     
-    // 页面URL
+    // 页面URL - 使用URL格式
+    const urlDate = formatUrlDate(month, day);
     const baseUrl = 'https://tih-sigma.vercel.app';
-    const pageUrl = `${baseUrl}/history/${date}/`;
-    const pageUrlEn = `${baseUrl}/history/${date}/?lang=en-US`;
-    const ogImageUrl = `${baseUrl}/api/og-image/${date}?lang=${language}`;
+    const pageUrl = `${baseUrl}/history/${urlDate}/`;
+    const pageUrlEn = `${baseUrl}/history/${urlDate}/?lang=en-US`;
+    const ogImageUrl = `${baseUrl}/api/og-image/${urlDate}?lang=${language}`;
     
     // 替换模板占位符
     const html = template
@@ -156,7 +157,7 @@ function generateDatePage(date, language = 'zh-CN') {
         .replace(/\{\{DATE_ISO\}\}/g, dateISO)
         .replace(/\{\{DATE_DISPLAY\}\}/g, metadata.dateDisplay)
         .replace(/\{\{DATE_SUBTITLE\}\}/g, subtitle)
-        .replace(/\{\{CURRENT_DATE\}\}/g, date)
+        .replace(/\{\{CURRENT_DATE\}\}/g, formatUrlDate(month, day))
         .replace(/\{\{CURRENT_LANG\}\}/g, language)
         .replace(/\{\{HISTORY_EVENTS_SSR\}\}/g, historyEventsSSR)
         .replace(/\{\{FAMOUS_BIRTHDAYS_SSR\}\}/g, famousBirthdaysSSR)
