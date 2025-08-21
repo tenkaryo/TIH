@@ -53,18 +53,39 @@ npm run dev:full
 
 ### Build and Deploy
 ```bash
-# Generate static SEO-optimized pages
+# 构建项目（准备静态文件 + 生成SEO页面）
 npm run build
-# or
-npm run build:static
+# 这会执行：
+# 1. npm run build:prepare - 复制静态文件到 public/
+# 2. node scripts/generate-static-pages.js - 生成SEO优化页面
 
-# Check deployment configuration before deploying
+# 单独构建步骤
+npm run build:prepare  # 只复制静态文件
+npm run build:static   # 只生成静态页面
+
+# 检查部署配置
 npm run deploy:check
 
-# Deploy to Vercel
+# 部署到Vercel
 npm run deploy
-# or
+# 或
 vercel --prod
+```
+
+**构建输出结构**：
+```
+public/
+├── index.html          # 主页
+├── styles.css          # 样式文件
+├── script.js           # 前端逻辑
+├── data.js             # 数据和API客户端
+└── history/            # SEO优化的静态页面
+    ├── 08-20/
+    │   ├── index.html      # 中文版
+    │   └── index.en.html   # 英文版
+    └── 08-21/
+        ├── index.html
+        └── index.en.html
 ```
 
 ### SEO Testing and Validation

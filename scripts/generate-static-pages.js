@@ -162,7 +162,7 @@ function generateDatePage(date, language = 'zh-CN') {
 
 // 主生成函数
 function generateAllPages() {
-    const outputDir = path.join(__dirname, '..', 'static');
+    const outputDir = path.join(__dirname, '..', 'public');
     
     // 创建输出目录
     if (!fs.existsSync(outputDir)) {

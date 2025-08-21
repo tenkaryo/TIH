@@ -29,7 +29,6 @@ if (fs.existsSync(vercelConfigPath)) {
         // 检查API文件是否存在
         console.log('\n📁 检查API文件结构:');
         const apiFiles = [
-            'api/index.js',
             'api/sitemap.js', 
             'api/robots.js',
             'api/history/[date].js'
@@ -43,6 +42,32 @@ if (fs.existsSync(vercelConfigPath)) {
                 console.log(`❌ ${file} 不存在`);
             }
         });
+        
+        // 检查构建输出目录
+        console.log('\n📦 检查构建输出:');
+        const publicDir = path.join(__dirname, '..', 'public');
+        if (fs.existsSync(publicDir)) {
+            console.log('✅ public/ 目录存在');
+            
+            const requiredFiles = ['index.html', 'styles.css', 'script.js', 'data.js'];
+            requiredFiles.forEach(file => {
+                const filePath = path.join(publicDir, file);
+                if (fs.existsSync(filePath)) {
+                    console.log(`✅ public/${file} 存在`);
+                } else {
+                    console.log(`❌ public/${file} 不存在`);
+                }
+            });
+            
+            const historyDir = path.join(publicDir, 'history');
+            if (fs.existsSync(historyDir)) {
+                console.log('✅ public/history/ 目录存在（预生成页面）');
+            } else {
+                console.log('⚠️  public/history/ 目录不存在，运行 npm run build 生成');
+            }
+        } else {
+            console.log('❌ public/ 目录不存在，运行 npm run build 创建');
+        }
         
     } catch (error) {
         console.log('❌ vercel.json 格式错误:', error.message);
