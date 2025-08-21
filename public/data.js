@@ -2,8 +2,8 @@
 
 // API Configuration
 const API_CONFIG = {
-    baseUrl: (typeof window !== 'undefined' && window.location.hostname === 'tih-sigma.vercel.app') 
-        ? 'https://tih-sigma.vercel.app/api' 
+    baseUrl: (typeof window !== 'undefined' && (window.location.hostname === 'tih-sigma.vercel.app' || window.location.hostname.includes('vercel.app'))) 
+        ? '/api'  // 使用相对路径，Vercel会自动路由
         : 'http://localhost:3001/api',
     token: 'onthisday-secure-token-2024',
     timeout: 10000 // 10 seconds timeout for production
@@ -175,7 +175,31 @@ async function getDataForDate(month, day) {
         return cachedData.data;
     }
     
-    // Fetch from API
+    // 如果是今天的数据，且在主页上，优先使用today API（无需身份验证）
+    const today = new Date();
+    const todayKey = formatDateKey(today.getMonth() + 1, today.getDate());
+    const isHomePage = window.location.pathname === '/' || window.location.pathname === '';
+    
+    if (key === todayKey && isHomePage) {
+        try {
+            const response = await fetch('/api/today');
+            if (response.ok) {
+                const result = await response.json();
+                if (result.success && result.data) {
+                    // Cache the result
+                    dataCache.set(key, {
+                        data: result.data,
+                        timestamp: Date.now()
+                    });
+                    return result.data;
+                }
+            }
+        } catch (error) {
+            console.warn('Today API failed, falling back to regular API:', error);
+        }
+    }
+    
+    // Fetch from regular API (needs authentication)
     try {
         const data = await makeApiRequest(`/history/${key}`);
         

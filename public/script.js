@@ -60,6 +60,15 @@ class OnThisDay {
                 if (result.success && result.date) {
                     const [month, day] = result.date.split('-').map(Number);
                     this.currentDate = new Date(2024, month - 1, day);
+                    
+                    // 缓存今天的数据，避免重复API调用
+                    if (typeof dataCache !== 'undefined' && typeof formatDateKey === 'function') {
+                        dataCache.set(formatDateKey(month, day), {
+                            data: result.data,
+                            timestamp: Date.now()
+                        });
+                    }
+                    
                     console.log('已从服务器获取今天的日期:', result.date);
                 }
             }
