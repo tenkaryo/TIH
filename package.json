@@ -10,10 +10,11 @@
     "dev:full": "concurrently \"npm run dev\" \"npm run dev:frontend\"",
     "build": "node scripts/generate-static-pages.js",
     "build:static": "node scripts/generate-static-pages.js",
-    "deploy": "npm run build && vercel --prod",
+    "deploy": "vercel --prod",
     "local": "concurrently \"npm start\" \"npm run dev:frontend\"",
     "seo:test": "node scripts/test-seo.js",
     "seo:validate": "node scripts/validate-seo.js",
+    "deploy:check": "node scripts/test-deployment.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

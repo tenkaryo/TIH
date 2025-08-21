@@ -1,56 +1,33 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api.js",
-      "use": "@vercel/node"
+  "functions": {
+    "api/history/[date].js": {
+      "maxDuration": 10
     },
-    {
-      "src": "api/history/[date].js",
-      "use": "@vercel/node"
+    "api/index.js": {
+      "maxDuration": 10
     },
-    {
-      "src": "*.html",
-      "use": "@vercel/static"
+    "api/sitemap.js": {
+      "maxDuration": 5
     },
-    {
-      "src": "*.css",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "*.js",
-      "use": "@vercel/static"
+    "api/robots.js": {
+      "maxDuration": 5
     }
-  ],
-  "routes": [
-    {
-      "src": "/history/([0-9]{2}-[0-9]{2})/?",
-      "dest": "/api/history/[date]?date=$1"
-    },
-    {
-      "src": "/api/history/([0-9]{2}-[0-9]{2})",
-      "dest": "/api.js"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/api.js"
-    },
-    {
-      "src": "/sitemap.xml",
-      "dest": "/api/sitemap"
-    },
-    {
-      "src": "/robots.txt",
-      "dest": "/api/robots"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production"
   },
+  "rewrites": [
+    {
+      "source": "/history/([0-9]{2}-[0-9]{2})/?",
+      "destination": "/api/history/[date]?date=$1"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap"
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/api/robots"
+    }
+  ],
   "headers": [
     {
       "source": "/history/(.*)",
@@ -64,6 +41,44 @@
           "value": "public, max-age=3600, s-maxage=7200"
         }
       ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=86400"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
 }

@@ -58,7 +58,10 @@ npm run build
 # or
 npm run build:static
 
-# Deploy to Vercel (includes build step)
+# Check deployment configuration before deploying
+npm run deploy:check
+
+# Deploy to Vercel
 npm run deploy
 # or
 vercel --prod
