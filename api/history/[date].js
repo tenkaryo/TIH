@@ -200,8 +200,12 @@ export default async function handler(req, res) {
         
         // Set headers for SEO
         res.setHeader('Content-Type', 'text/html; charset=utf-8');
-        res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=7200'); // Cache for 1 hour, CDN for 2 hours
+        res.setHeader('Cache-Control', 'public, max-age=60, s-maxage=120'); // Short cache during development: 1 min, CDN 2 min
         res.setHeader('X-Robots-Tag', 'index, follow');
+        
+        // Add cache busting headers for development
+        res.setHeader('ETag', `"${Date.now()}-${date}"`);
+        res.setHeader('Vary', 'Accept-Encoding, User-Agent');
         
         // Add language header
         res.setHeader('Content-Language', language);
