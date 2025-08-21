@@ -281,15 +281,15 @@
     <!-- 初始化应用 -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 如果有预渲染内容，显示它
+            // 首先初始化应用（这会设置正确的日期和加载数据）
+            window.app = new OnThisDay(window.CURRENT_DATE);
+            
+            // 如果有预渲染内容，确保页面正确显示
             const ssrContent = document.getElementById('ssr-content');
             if (ssrContent && ssrContent.innerHTML.trim()) {
-                // 将SSR内容复制到相应位置
                 document.body.classList.add('ssr-rendered');
+                // 预渲染内容主要用于SEO，JavaScript初始化后会重新加载数据
             }
-            
-            // 初始化应用
-            window.app = new OnThisDay(window.CURRENT_DATE);
         });
     </script>
 </body>

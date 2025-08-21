@@ -191,7 +191,7 @@ export default async function handler(req, res) {
             .replace(/\{\{DATE_ISO\}\}/g, dateISO)
             .replace(/\{\{DATE_DISPLAY\}\}/g, metadata.dateDisplay)
             .replace(/\{\{DATE_SUBTITLE\}\}/g, subtitle)
-            .replace(/\{\{CURRENT_DATE\}\}/g, dateKey)
+            .replace(/\{\{CURRENT_DATE\}\}/g, date)
             .replace(/\{\{CURRENT_LANG\}\}/g, language)
             .replace(/\{\{HISTORY_EVENTS_SSR\}\}/g, historyEventsSSR)
             .replace(/\{\{FAMOUS_BIRTHDAYS_SSR\}\}/g, famousBirthdaysSSR)
