@@ -113,13 +113,17 @@ function renderPeople(people, language = 'zh-CN') {
 // Main handler
 export default async function handler(req, res) {
     try {
+        // Get date from URL path parameter (from [date] in filename)
         const { date } = req.query;
         const language = req.query.lang || 'zh-CN';
         
-        // Validate date format
+        // Validate date format (MM-DD)
         const dateRegex = /^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
-        if (!dateRegex.test(date)) {
-            return res.status(404).json({ error: 'Invalid date format' });
+        if (!date || !dateRegex.test(date)) {
+            return res.status(404).json({ 
+                error: 'Invalid date format. Use MM-DD format (e.g., 08-21)',
+                received: date 
+            });
         }
         
         // Get data for the date
