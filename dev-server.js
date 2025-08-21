@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const historyData = require('./historyData.js');
 
 const app = express();
 const PORT = process.env.DEV_PORT || 3000;
@@ -11,6 +12,32 @@ app.use('/styles.css', express.static(path.join(__dirname, 'styles.css')));
 app.use('/script.js', express.static(path.join(__dirname, 'script.js')));
 app.use('/data.js', express.static(path.join(__dirname, 'data.js')));
 app.use('/historyData.js', express.static(path.join(__dirname, 'historyData.js')));
+
+// 今天的数据API
+app.get('/api/today', (req, res) => {
+    try {
+        const now = new Date();
+        const month = (now.getMonth() + 1).toString().padStart(2, '0');
+        const day = now.getDate().toString().padStart(2, '0');
+        const todayKey = `${month}-${day}`;
+        
+        const data = historyData[todayKey] || { events: [], birthdays: [], deaths: [] };
+        
+        res.json({
+            success: true,
+            date: todayKey,
+            serverDate: now.toISOString(),
+            data: data,
+            total: {
+                events: data.events?.length || 0,
+                birthdays: data.birthdays?.length || 0,
+                deaths: data.deaths?.length || 0
+            }
+        });
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to get today\'s data' });
+    }
+});
 
 // 主页路由
 app.get('/', (req, res) => {

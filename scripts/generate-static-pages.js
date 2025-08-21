@@ -204,12 +204,12 @@ function generateAllPages() {
     console.log(`\n🎉 完成! 总共生成了 ${generatedCount} 个静态页面`);
     console.log(`📁 输出目录: ${outputDir}`);
     
-    // 生成索引页面列表
-    generateIndexPage(dates, outputDir);
+    // 生成日期索引页面（不覆盖主页）
+    generateDateIndexPage(dates, outputDir);
 }
 
-// 生成索引页面
-function generateIndexPage(dates, outputDir) {
+// 生成日期索引页面（不覆盖主页）
+function generateDateIndexPage(dates, outputDir) {
     const indexHtml = `<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -252,9 +252,9 @@ function generateIndexPage(dates, outputDir) {
 </body>
 </html>`;
     
-    const indexPath = path.join(outputDir, 'index.html');
+    const indexPath = path.join(outputDir, 'dates-index.html');
     fs.writeFileSync(indexPath, indexHtml, 'utf8');
-    console.log(`📋 生成索引页面: ${indexPath}`);
+    console.log(`📋 生成日期索引页面: ${indexPath}`);
 }
 
 // 如果直接运行脚本

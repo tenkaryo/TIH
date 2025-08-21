@@ -1,45 +1,240 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnThisDay - 历史上的今天 | 所有日期页面</title>
-    <meta name="description" content="OnThisDay历史上的今天网站的所有日期页面索引，包含2个日期的历史事件、名人生日和逝世信息">
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .header { text-align: center; margin-bottom: 40px; }
-        .date-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
-        .date-card { border: 1px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; }
-        .date-card h3 { margin: 0 0 10px 0; color: #333; }
-        .date-card a { color: #667eea; text-decoration: none; margin: 0 5px; }
-        .date-card a:hover { text-decoration: underline; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>OnThisDay - Today in History</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="header">
-        <h1>OnThisDay - 历史上的今天</h1>
-        <p>所有日期页面索引 (2 个日期)</p>
-        <p><a href="/">返回主页</a></p>
-    </div>
-    
-    <div class="date-grid">
-        
-                <div class="date-card">
-                    <h3>8月20日</h3>
-                    <p>
-                        <a href="/history/08-20/">中文</a>
-                        <a href="/history/08-20/?lang=en-US">English</a>
-                    </p>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <i class="fas fa-calendar-day"></i>
                 </div>
-            
-                <div class="date-card">
-                    <h3>8月21日</h3>
-                    <p>
-                        <a href="/history/08-21/">中文</a>
-                        <a href="/history/08-21/?lang=en-US">English</a>
-                    </p>
+                <div class="brand-text">
+                    <h1 class="brand-title">OnThisDay</h1>
+                    <span class="brand-subtitle">Today in History</span>
                 </div>
+            </div>
             
+            <div class="nav-controls">
+                <button class="nav-btn" id="dateSelector">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Select Date</span>
+                </button>
+                <button class="nav-btn" id="languageSelector">
+                    <span class="flag">🇺🇸</span>
+                    <span>English</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="date-header">
+                    <h2 class="current-date" id="currentDate">AUGUST 19</h2>
+                    <p class="date-subtitle">Today is Monday, August 19, 2024</p>
+                </div>
+                
+                <!-- Date Navigation Compact -->
+                <div class="date-nav-compact">
+                    <button class="nav-compact-btn" id="prevDate">
+                        <i class="fas fa-chevron-left"></i>
+                        <span id="prevDateText">18</span>
+                    </button>
+                    <button class="nav-compact-btn" id="nextDate">
+                        <span id="nextDateText">20</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <div class="content-wrapper">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Birthday Checker -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Birthday Query</h3>
+                    <p class="sidebar-desc">What happened on your birthday?</p>
+                    <div class="birthday-form">
+                        <select id="birthMonth" class="select-minimal">
+                            <option value="">Month</option>
+                        </select>
+                        <select id="birthDay" class="select-minimal">
+                            <option value="">Day</option>
+                        </select>
+                        <button class="btn-primary" id="checkBirthday">Check Birthday</button>
+                    </div>
+                </div>
+
+                <!-- On This Day Navigation -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Navigation</h3>
+                    <nav class="today-nav">
+                        <a href="#events" class="nav-link active">Historical Events</a>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            <!-- Events will be loaded here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        <!-- Birthdays will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        <!-- Deaths will be loaded here -->
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">18</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">20</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>OnThisDay</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Website Info</h4>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#api">Data Source</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Legal Terms</h4>
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-weibo"></i></a>
+                            <a href="#"><i class="fab fa-wechat"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 OnThisDay. All rights reserved</p>
+                <p>Data Source: Wikipedia, Historical Database</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Date Picker Modal -->
+    <div class="modal" id="dateModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Date</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="date-picker">
+                    <select id="modalMonth" class="date-select">
+                        <option value="">Select Month</option>
+                    </select>
+                    <select id="modalDay" class="date-select">
+                        <option value="">Select Day</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="modalCancel">Cancel</button>
+                <button class="btn-primary" id="modalConfirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Modal -->
+    <div class="modal" id="languageModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Language</h3>
+                <button class="modal-close" id="langModalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="language-options">
+                    <button class="lang-option active" data-lang="en-US">
+                        <span class="flag">🇺🇸</span>
+                        <span>English</span>
+                    </button>
+                    <button class="lang-option" data-lang="zh-CN">
+                        <span class="flag">🇨🇳</span>
+                        <span>中文</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

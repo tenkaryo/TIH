@@ -29,6 +29,7 @@ if (fs.existsSync(vercelConfigPath)) {
         // 检查API文件是否存在
         console.log('\n📁 检查API文件结构:');
         const apiFiles = [
+            'api/today.js',
             'api/sitemap.js', 
             'api/robots.js',
             'api/history/[date].js'
@@ -88,10 +89,11 @@ console.log('\n🚀 部署建议:');
 console.log('1. 确保所有API文件都在 api/ 目录下');
 console.log('2. 使用 npm run deploy 进行部署');
 console.log('3. 部署后测试以下URL:');
-console.log('   - https://tih-sigma.vercel.app/');
-console.log('   - https://tih-sigma.vercel.app/history/08-21/');
+console.log('   - https://tih-sigma.vercel.app/ (主页-显示服务器今天的日期)');
+console.log('   - https://tih-sigma.vercel.app/history/08-21/ (特定日期页面)');
+console.log('   - https://tih-sigma.vercel.app/api/today (今天的数据API)');
 console.log('   - https://tih-sigma.vercel.app/sitemap.xml');
 console.log('   - https://tih-sigma.vercel.app/robots.txt');
-console.log('   - https://tih-sigma.vercel.app/api/health');
+console.log('   - https://tih-sigma.vercel.app/dates-index.html (日期索引页)');
 
 console.log('\n✨ 配置检查完成！');

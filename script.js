@@ -6,8 +6,11 @@ class OnThisDay {
         if (initialDate) {
             const [month, day] = initialDate.split('-').map(Number);
             this.currentDate = new Date(2024, month - 1, day);
+            this.isHomePage = false;
         } else {
+            // 主页 - 将由loadTodayFromServer设置正确的日期
             this.currentDate = new Date();
+            this.isHomePage = true;
         }
         
         this.currentLanguage = this.detectLanguage();
@@ -30,9 +33,15 @@ class OnThisDay {
         return browserLang.startsWith('zh') ? 'zh-CN' : 'en-US';
     }
 
-    init() {
+    async init() {
         this.setupEventListeners();
         this.initializeSelectors();
+        
+        // 如果是主页，先获取服务器今天的日期
+        if (this.isHomePage) {
+            await this.loadTodayFromServer();
+        }
+        
         this.loadContent();
         this.updateDateDisplay();
         this.setupNavigation();
@@ -40,6 +49,24 @@ class OnThisDay {
         this.saveOriginalSubtitle();
         this.updatePageTitle();
         this.setupPopstateListener();
+    }
+    
+    // 从服务器获取今天的日期和数据
+    async loadTodayFromServer() {
+        try {
+            const response = await fetch('/api/today');
+            if (response.ok) {
+                const result = await response.json();
+                if (result.success && result.date) {
+                    const [month, day] = result.date.split('-').map(Number);
+                    this.currentDate = new Date(2024, month - 1, day);
+                    console.log('已从服务器获取今天的日期:', result.date);
+                }
+            }
+        } catch (error) {
+            console.warn('无法从服务器获取今天的日期，使用本地日期:', error);
+            // 继续使用本地日期作为fallback
+        }
     }
     
     setupPopstateListener() {

@@ -30,8 +30,8 @@ npm install
 # 推荐方式：同时启动API和前端服务器（支持SEO友好URL）
 npm run local
 # 这会启动：
-# - API服务器 (port 3001)
-# - 前端开发服务器 (port 3000) - 支持 /history/{MM-DD}/ 路由
+# - API服务器 (port 3001) - 提供数据API
+# - 前端开发服务器 (port 3000) - 支持 /history/{MM-DD}/ 路由和主页动态日期
 
 # 或者分别启动：
 
@@ -46,6 +46,11 @@ npm run dev:frontend
 # 完整开发环境（API + 前端都支持热重载）
 npm run dev:full
 ```
+
+### 主页逻辑说明
+- **主页** (`/`): 自动显示服务器当前日期的历史内容，通过 `/api/today` 获取
+- **特定日期页面** (`/history/{MM-DD}/`): 显示指定日期的历史内容
+- **日期索引** (`/dates-index.html`): 所有可用日期页面的索引
 
 **重要提示**：
 - 使用 `npm run local` 或 `npm run dev:frontend` 来避免 file:// 协议的SEO URL问题
