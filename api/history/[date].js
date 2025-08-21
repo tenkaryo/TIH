@@ -17,6 +17,20 @@ const monthNames = {
     ]
 };
 
+// Parse URL date string (Month-DD) back to month/day numbers  
+function parseUrlDate(urlDateStr) {
+    const [monthName, dayStr] = urlDateStr.split('-');
+    const monthIndex = monthNames['en-US'].findIndex(name => name.toLowerCase() === monthName.toLowerCase());
+    const month = monthIndex !== -1 ? monthIndex + 1 : null;
+    const day = parseInt(dayStr, 10);
+    return month && day ? { month, day } : null;
+}
+
+// Format internal date key (MM-DD)
+function formatDateKey(month, day) {
+    return `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+}
+
 // Get template content
 function getTemplate() {
     try {
@@ -117,17 +131,20 @@ export default async function handler(req, res) {
         const { date } = req.query;
         const language = req.query.lang || 'zh-CN';
         
-        // Validate date format (MM-DD)
-        const dateRegex = /^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
-        if (!date || !dateRegex.test(date)) {
+        // Parse URL date format (Month-DD) to get month and day
+        const parsedDate = parseUrlDate(date);
+        if (!parsedDate) {
             return res.status(404).json({ 
-                error: 'Invalid date format. Use MM-DD format (e.g., 08-21)',
+                error: 'Invalid date format. Use Month-DD format (e.g., August-21)',
                 received: date 
             });
         }
         
+        const { month, day } = parsedDate;
+        const dateKey = formatDateKey(month, day);
+        
         // Get data for the date
-        const data = historyData[date] || { events: [], birthdays: [], deaths: [] };
+        const data = historyData[dateKey] || { events: [], birthdays: [], deaths: [] };
         
         // Get HTML template
         const template = getTemplate();
@@ -135,9 +152,8 @@ export default async function handler(req, res) {
             return res.status(500).json({ error: 'Template not found' });
         }
         
-        // Generate page metadata
-        const metadata = generatePageMetadata(date, data, language);
-        const [month, day] = date.split('-').map(Number);
+        // Generate page metadata using dateKey
+        const metadata = generatePageMetadata(dateKey, data, language);
         
         // Create current date object
         const currentDate = new Date(2024, month - 1, day);
@@ -175,7 +191,7 @@ export default async function handler(req, res) {
             .replace(/\{\{DATE_ISO\}\}/g, dateISO)
             .replace(/\{\{DATE_DISPLAY\}\}/g, metadata.dateDisplay)
             .replace(/\{\{DATE_SUBTITLE\}\}/g, subtitle)
-            .replace(/\{\{CURRENT_DATE\}\}/g, date)
+            .replace(/\{\{CURRENT_DATE\}\}/g, dateKey)
             .replace(/\{\{CURRENT_LANG\}\}/g, language)
             .replace(/\{\{HISTORY_EVENTS_SSR\}\}/g, historyEventsSSR)
             .replace(/\{\{FAMOUS_BIRTHDAYS_SSR\}\}/g, famousBirthdaysSSR)

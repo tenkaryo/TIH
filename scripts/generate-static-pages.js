@@ -12,6 +12,12 @@ const monthNames = {
     'en-US': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 };
 
+// Format URL-friendly date string (Month-DD)
+function formatUrlDate(month, day) {
+    const monthName = monthNames['en-US'][month - 1];
+    return `${monthName}-${day}`;
+}
+
 // 格式化日期显示
 function formatDateDisplay(month, day, language = 'zh-CN') {
     const monthName = monthNames[language][month - 1];
@@ -181,8 +187,10 @@ function generateAllPages() {
             try {
                 const html = generateDatePage(date, language);
                 
-                // 创建目录结构
-                const dateDir = path.join(outputDir, 'history', date);
+                // 创建目录结构 - 使用新的URL格式
+                const [month, day] = date.split('-').map(Number);
+                const urlDate = formatUrlDate(month, day);
+                const dateDir = path.join(outputDir, 'history', urlDate);
                 if (!fs.existsSync(dateDir)) {
                     fs.mkdirSync(dateDir, { recursive: true });
                 }
@@ -193,7 +201,7 @@ function generateAllPages() {
                 fs.writeFileSync(filePath, html, 'utf8');
                 
                 generatedCount++;
-                console.log(`✅ 生成: /history/${date}/${filename}`);
+                console.log(`✅ 生成: /history/${urlDate}/${filename}`);
                 
             } catch (error) {
                 console.error(`❌ 生成失败: ${date} (${language})`, error.message);
@@ -237,13 +245,14 @@ function generateDateIndexPage(dates, outputDir) {
     <div class="date-grid">
         ${dates.map(date => {
             const [month, day] = date.split('-').map(Number);
+            const urlDate = formatUrlDate(month, day);
             const dateDisplay = `${month}月${day}日`;
             return `
                 <div class="date-card">
                     <h3>${dateDisplay}</h3>
                     <p>
-                        <a href="/history/${date}/">中文</a>
-                        <a href="/history/${date}/?lang=en-US">English</a>
+                        <a href="/history/${urlDate}/">中文</a>
+                        <a href="/history/${urlDate}/?lang=en-US">English</a>
                     </p>
                 </div>
             `;

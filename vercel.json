@@ -23,7 +23,7 @@
   },
   "rewrites": [
     {
-      "source": "/history/(.*)",
+      "source": "/history/([A-Za-z]+-[0-9]+)/?$",
       "destination": "/api/history/$1"
     },
     {
@@ -37,7 +37,7 @@
   ],
   "headers": [
     {
-      "source": "/history/(.*)",
+      "source": "/history/([A-Za-z]+-[0-9]+)/?$",
       "headers": [
         {
           "key": "X-Robots-Tag",

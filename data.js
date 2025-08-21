@@ -121,6 +121,26 @@ function formatDateKey(month, day) {
     return `${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
 }
 
+// Convert month name back to number for internal use
+function parseMonthName(monthName) {
+    const index = monthNames['en-US'].findIndex(name => name.toLowerCase() === monthName.toLowerCase());
+    return index !== -1 ? index + 1 : null;
+}
+
+// Format URL-friendly date string (Month-DD)
+function formatUrlDate(month, day) {
+    const monthName = monthNames['en-US'][month - 1];
+    return `${monthName}-${day}`;
+}
+
+// Parse URL date string back to month/day numbers
+function parseUrlDate(urlDateStr) {
+    const [monthName, dayStr] = urlDateStr.split('-');
+    const month = parseMonthName(monthName);
+    const day = parseInt(dayStr, 10);
+    return month && day ? { month, day } : null;
+}
+
 // API request with authentication and error handling
 async function makeApiRequest(endpoint) {
     const url = `${API_CONFIG.baseUrl}${endpoint}`;
@@ -202,7 +222,9 @@ async function getDataForDate(month, day) {
     
     // 对于所有日期（包括非今天的），优先使用公开API
     try {
-        const response = await fetch(`/api/public-history/${key}`);
+        // Convert to URL format for API call
+        const urlDate = formatUrlDate(month, day);
+        const response = await fetch(`/api/public-history/${urlDate}`);
         if (response.ok) {
             const result = await response.json();
             if (result.success && result.data) {
@@ -221,6 +243,7 @@ async function getDataForDate(month, day) {
     
     // 最后回退到需要认证的API
     try {
+        // Use old MM-DD format for authenticated API for backward compatibility
         const data = await makeApiRequest(`/history/${key}`);
         
         // Cache the result

@@ -4,7 +4,24 @@ class OnThisDay {
     constructor(initialDate = null) {
         // Initialize from URL or passed date
         if (initialDate) {
-            const [month, day] = initialDate.split('-').map(Number);
+            // Parse URL date format if it contains month name
+            let month, day;
+            if (initialDate.includes('-') && isNaN(initialDate.split('-')[0])) {
+                // New format: Month-DD
+                const parsedDate = parseUrlDate(initialDate);
+                if (parsedDate) {
+                    month = parsedDate.month;
+                    day = parsedDate.day;
+                } else {
+                    // Fallback to current date
+                    const today = new Date();
+                    month = today.getMonth() + 1;
+                    day = today.getDate();
+                }
+            } else {
+                // Old format: MM-DD (for backward compatibility)
+                [month, day] = initialDate.split('-').map(Number);
+            }
             this.currentDate = new Date(2024, month - 1, day);
             this.isHomePage = false;
         } else {
@@ -736,9 +753,10 @@ class OnThisDay {
     
     // Update URL to SEO-friendly format
     updateURL() {
-        const month = (this.currentDate.getMonth() + 1).toString().padStart(2, '0');
-        const day = this.currentDate.getDate().toString().padStart(2, '0');
-        const dateStr = `${month}-${day}`;
+        const month = this.currentDate.getMonth() + 1;
+        const day = this.currentDate.getDate();
+        const monthName = monthNames['en-US'][month - 1]; // Use English month name for URL
+        const dateStr = `${monthName}-${day}`;
         
         // Only update URL if we're running on a server (not file://)
         if (window.location.protocol !== 'file:' && window.history && window.history.pushState) {
