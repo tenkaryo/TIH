@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 动态SEO元数据 - 将由服务器端填充 -->
+    <title>{{PAGE_TITLE}}</title>
+    <meta name="description" content="{{PAGE_DESCRIPTION}}">
+    <meta name="keywords" content="{{PAGE_KEYWORDS}}">
+    
+    <!-- Open Graph 元数据 -->
+    <meta property="og:title" content="{{PAGE_TITLE}}">
+    <meta property="og:description" content="{{PAGE_DESCRIPTION}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{PAGE_URL}}">
+    <meta property="og:image" content="{{PAGE_IMAGE}}">
+    <meta property="og:site_name" content="OnThisDay - 历史上的今天">
+    
+    <!-- Twitter Card 元数据 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{PAGE_TITLE}}">
+    <meta name="twitter:description" content="{{PAGE_DESCRIPTION}}">
+    <meta name="twitter:image" content="{{PAGE_IMAGE}}">
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "{{PAGE_TITLE}}",
+        "description": "{{PAGE_DESCRIPTION}}",
+        "url": "{{PAGE_URL}}",
+        "datePublished": "{{DATE_ISO}}",
+        "mainEntity": {
+            "@type": "Event",
+            "name": "{{DATE_DISPLAY}} - 历史上的今天",
+            "startDate": "{{DATE_ISO}}",
+            "description": "{{PAGE_DESCRIPTION}}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "OnThisDay",
+            "url": "https://tih-sigma.vercel.app"
+        }
+    }
+    </script>
+    
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="/data.js" as="script">
+    <link rel="preload" href="/script.js" as="script">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{PAGE_URL}}">
+    
+    <!-- 语言版本 -->
+    <link rel="alternate" hreflang="zh-CN" href="{{PAGE_URL}}">
+    <link rel="alternate" hreflang="en-US" href="{{PAGE_URL_EN}}">
+</head>
+<body>
+    <!-- 预渲染的关键内容用于SEO -->
+    <div id="ssr-content" style="display: none;">
+        {{SSR_CONTENT}}
+    </div>
+    
+    <!-- 主要内容结构 -->
+    <div class="app">
+        <!-- 导航栏 -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1 class="brand-title">OnThisDay</h1>
+                    <p class="brand-subtitle">历史上的今天</p>
+                </div>
+                
+                <div class="nav-controls">
+                    <button id="dateSelector" class="nav-btn">
+                        <span>选择日期</span>
+                    </button>
+                    
+                    <button id="languageSelector" class="nav-btn">
+                        <span class="flag">🇨🇳</span>
+                        <span>中文</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <!-- 英雄区域 -->
+            <section class="hero-section">
+                <div class="container">
+                    <h1 id="currentDate" class="hero-title">{{DATE_DISPLAY}}</h1>
+                    <p class="date-subtitle">{{DATE_SUBTITLE}}</p>
+                </div>
+            </section>
+
+            <!-- 内容区域 -->
+            <div class="content-wrapper">
+                <div class="container">
+                    <div class="content-grid">
+                        <!-- 主内容 -->
+                        <div class="main-column">
+                            <!-- 历史事件 -->
+                            <section id="events" class="content-section">
+                                <div class="section-header">
+                                    <h2 class="section-title">历史上的今天</h2>
+                                    <p class="section-subtitle">Today in History</p>
+                                </div>
+                                <div id="historyEvents" class="timeline">
+                                    {{HISTORY_EVENTS_SSR}}
+                                </div>
+                            </section>
+
+                            <!-- 名人生日 -->
+                            <section id="births" class="content-section">
+                                <div class="section-header">
+                                    <h2 class="section-title">名人生日</h2>
+                                    <p class="section-subtitle">Famous Birthdays</p>
+                                </div>
+                                <div id="famousBirthdays" class="people-grid">
+                                    {{FAMOUS_BIRTHDAYS_SSR}}
+                                </div>
+                            </section>
+
+                            <!-- 名人逝世 -->
+                            <section id="deaths" class="content-section">
+                                <div class="section-header">
+                                    <h2 class="section-title">名人逝世</h2>
+                                    <p class="section-subtitle">Famous Deaths</p>
+                                </div>
+                                <div id="famousDeaths" class="people-grid">
+                                    {{FAMOUS_DEATHS_SSR}}
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- 侧边栏 -->
+                        <aside class="sidebar">
+                            <!-- 导航 -->
+                            <div class="sidebar-section">
+                                <h3 class="sidebar-title">今日导航</h3>
+                                <nav class="sidebar-nav">
+                                    <a href="#events" class="nav-link active">历史事件</a>
+                                    <a href="#births" class="nav-link">名人生日</a>
+                                    <a href="#deaths" class="nav-link">名人逝世</a>
+                                </nav>
+                            </div>
+
+                            <!-- 生日查询 -->
+                            <div class="sidebar-section">
+                                <h3 class="sidebar-title">生日查询</h3>
+                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
+                                <div class="birthday-form">
+                                    <select id="birthMonth" class="form-select">
+                                        <option value="">选择月份</option>
+                                    </select>
+                                    <select id="birthDay" class="form-select">
+                                        <option value="">选择日期</option>
+                                    </select>
+                                    <button id="checkBirthday" class="btn btn-primary">查看生日</button>
+                                </div>
+                            </div>
+
+                            <!-- 日期导航 -->
+                            <div class="date-navigation">
+                                <button id="prevDate" class="nav-date-btn">
+                                    <span class="nav-arrow">←</span>
+                                    <span id="prevDateText">前一天</span>
+                                </button>
+                                <button id="nextDate" class="nav-date-btn">
+                                    <span id="nextDateText">后一天</span>
+                                    <span class="nav-arrow">→</span>
+                                </button>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <h3>OnThisDay</h3>
+                        <p>探索历史，发现精彩</p>
+                    </div>
+                    
+                    <div class="footer-columns">
+                        <div class="footer-column">
+                            <h4>网站信息</h4>
+                            <a href="/about">关于我们</a>
+                            <a href="/contact">联系方式</a>
+                            <a href="/data-source">数据源</a>
+                        </div>
+                        
+                        <div class="footer-column">
+                            <h4>法律条款</h4>
+                            <a href="/privacy">隐私政策</a>
+                            <a href="/terms">使用条款</a>
+                            <a href="/cookies">Cookie政策</a>
+                        </div>
+                        
+                        <div class="footer-column">
+                            <h4>关注我们</h4>
+                            <a href="#">微博</a>
+                            <a href="#">微信</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>© 2024 OnThisDay. 保留所有权利</p>
+                    <p>数据来源：维基百科、历史数据库</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 模态框 -->
+    <div id="dateModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>选择日期</h3>
+                <button id="modalClose" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="date-selectors">
+                    <select id="modalMonth" class="form-select">
+                        <option value="">选择月份</option>
+                    </select>
+                    <select id="modalDay" class="form-select">
+                        <option value="">选择日期</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="modalCancel" class="btn btn-secondary">取消</button>
+                <button id="modalConfirm" class="btn btn-primary">确认</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="languageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>选择语言</h3>
+                <button id="langModalClose" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="language-options">
+                    <div class="lang-option active" data-lang="zh-CN">
+                        <span class="flag">🇨🇳</span>
+                        <span>中文</span>
+                    </div>
+                    <div class="lang-option" data-lang="en-US">
+                        <span class="flag">🇺🇸</span>
+                        <span>English</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 文件 -->
+    <script>
+        // 设置当前日期参数用于JavaScript
+        window.CURRENT_DATE = '{{CURRENT_DATE}}';
+        window.CURRENT_LANG = '{{CURRENT_LANG}}';
+    </script>
+    <script src="/data.js"></script>
+    <script src="/script.js"></script>
+    
+    <!-- 初始化应用 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 如果有预渲染内容，显示它
+            const ssrContent = document.getElementById('ssr-content');
+            if (ssrContent && ssrContent.innerHTML.trim()) {
+                // 将SSR内容复制到相应位置
+                document.body.classList.add('ssr-rendered');
+            }
+            
+            // 初始化应用
+            window.app = new OnThisDay(window.CURRENT_DATE);
+        });
+    </script>
+</body>
+</html>

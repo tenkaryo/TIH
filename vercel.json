@@ -6,6 +6,10 @@
       "use": "@vercel/node"
     },
     {
+      "src": "api/history/[date].js",
+      "use": "@vercel/node"
+    },
+    {
       "src": "*.html",
       "use": "@vercel/static"
     },
@@ -20,8 +24,24 @@
   ],
   "routes": [
     {
+      "src": "/history/([0-9]{2}-[0-9]{2})/?",
+      "dest": "/api/history/[date]?date=$1"
+    },
+    {
+      "src": "/api/history/([0-9]{2}-[0-9]{2})",
+      "dest": "/api.js"
+    },
+    {
       "src": "/api/(.*)",
       "dest": "/api.js"
+    },
+    {
+      "src": "/sitemap.xml",
+      "dest": "/api/sitemap"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/api/robots"
     },
     {
       "src": "/(.*)",
@@ -30,5 +50,20 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  }
+  },
+  "headers": [
+    {
+      "source": "/history/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=7200"
+        }
+      ]
+    }
+  ]
 }

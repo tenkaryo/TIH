@@ -6,9 +6,14 @@
   "scripts": {
     "start": "node api.js",
     "dev": "nodemon api.js",
-    "build": "echo \"Static files ready for deployment\"",
-    "deploy": "vercel --prod",
-    "local": "concurrently \"npm start\" \"python3 -m http.server 3000\"",
+    "dev:frontend": "node dev-server.js",
+    "dev:full": "concurrently \"npm run dev\" \"npm run dev:frontend\"",
+    "build": "node scripts/generate-static-pages.js",
+    "build:static": "node scripts/generate-static-pages.js",
+    "deploy": "npm run build && vercel --prod",
+    "local": "concurrently \"npm start\" \"npm run dev:frontend\"",
+    "seo:test": "node scripts/test-seo.js",
+    "seo:validate": "node scripts/validate-seo.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

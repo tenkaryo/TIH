@@ -1,13 +1,33 @@
 // OnThisDay Website - Professional News Style
 
 class OnThisDay {
-    constructor() {
-        this.currentDate = new Date();
-        this.currentLanguage = 'en-US';
+    constructor(initialDate = null) {
+        // Initialize from URL or passed date
+        if (initialDate) {
+            const [month, day] = initialDate.split('-').map(Number);
+            this.currentDate = new Date(2024, month - 1, day);
+        } else {
+            this.currentDate = new Date();
+        }
+        
+        this.currentLanguage = this.detectLanguage();
         this.activeSection = 'events';
         this.lastClickTime = 0;
         this.originalSubtitle = '';
         this.init();
+    }
+    
+    detectLanguage() {
+        // Check URL parameter first
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        if (langParam && ['zh-CN', 'en-US'].includes(langParam)) {
+            return langParam;
+        }
+        
+        // Check browser language
+        const browserLang = navigator.language || navigator.userLanguage;
+        return browserLang.startsWith('zh') ? 'zh-CN' : 'en-US';
     }
 
     init() {
@@ -19,6 +39,28 @@ class OnThisDay {
         this.setupScrollListener();
         this.saveOriginalSubtitle();
         this.updatePageTitle();
+        this.setupPopstateListener();
+    }
+    
+    setupPopstateListener() {
+        // 监听浏览器的后退/前进按钮
+        window.addEventListener('popstate', (event) => {
+            if (event.state && event.state.date) {
+                const [month, day] = event.state.date.split('-').map(Number);
+                this.currentDate.setMonth(month - 1);
+                this.currentDate.setDate(day);
+                
+                if (event.state.lang) {
+                    this.currentLanguage = event.state.lang;
+                }
+                
+                // 重新加载内容但不更新URL（避免循环）
+                this.loadContent();
+                this.updateDateDisplay();
+                this.updateLanguageContent();
+                this.updateBrandSubtitle();
+            }
+        });
     }
 
     setupEventListeners() {
@@ -515,6 +557,10 @@ class OnThisDay {
         if (month && day) {
             this.currentDate.setMonth(month - 1);
             this.currentDate.setDate(day);
+            
+            // Update URL for SEO
+            this.updateURL();
+            
             this.loadContent();
             this.updateDateDisplay();
             this.hideModal('dateModal');
@@ -642,10 +688,93 @@ class OnThisDay {
 
     navigateDate(direction) {
         this.currentDate.setDate(this.currentDate.getDate() + direction);
+        
+        // Update URL for SEO
+        this.updateURL();
+        
         this.loadContent();
         this.updateDateDisplay();
         this.updateBrandSubtitle(); // Update subtitle with new date
         this.scrollToTop();
+    }
+    
+    // Update URL to SEO-friendly format
+    updateURL() {
+        const month = (this.currentDate.getMonth() + 1).toString().padStart(2, '0');
+        const day = this.currentDate.getDate().toString().padStart(2, '0');
+        const dateStr = `${month}-${day}`;
+        
+        // Only update URL if we're running on a server (not file://)
+        if (window.location.protocol !== 'file:' && window.history && window.history.pushState) {
+            try {
+                const newUrl = `/history/${dateStr}/`;
+                const urlParams = new URLSearchParams();
+                
+                // Add language parameter if not default
+                if (this.currentLanguage !== 'zh-CN') {
+                    urlParams.set('lang', this.currentLanguage);
+                }
+                
+                const fullUrl = newUrl + (urlParams.toString() ? '?' + urlParams.toString() : '');
+                
+                // Update browser history without reload
+                if (window.location.pathname !== newUrl || window.location.search !== ('?' + urlParams.toString())) {
+                    window.history.pushState({ date: dateStr, lang: this.currentLanguage }, '', fullUrl);
+                }
+            } catch (error) {
+                console.warn('Unable to update URL (running in restricted environment):', error.message);
+            }
+        }
+        
+        // Always update page metadata for SEO
+        this.updatePageMetadata(dateStr);
+    }
+    
+    // Update page metadata dynamically
+    updatePageMetadata(dateStr) {
+        const [month, day] = dateStr.split('-').map(Number);
+        const dateDisplay = formatDateDisplay(month, day, this.currentLanguage);
+        
+        const title = this.currentLanguage === 'zh-CN' 
+            ? `${dateDisplay} - 历史上的今天 | OnThisDay`
+            : `${dateDisplay} - Today in History | OnThisDay`;
+        
+        const description = this.currentLanguage === 'zh-CN'
+            ? `${dateDisplay}历史上发生的重要事件，包含历史事件、名人生日、名人逝世信息。探索历史，发现精彩。`
+            : `Important historical events that happened on ${dateDisplay}. Explore history, discover the extraordinary.`;
+        
+        // Update document title
+        document.title = title;
+        
+        // Update meta description
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+            metaDesc.setAttribute('content', description);
+        }
+        
+        // Update Open Graph meta tags
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) {
+            ogTitle.setAttribute('content', title);
+        }
+        
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) {
+            ogDesc.setAttribute('content', description);
+        }
+        
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) {
+            const baseUrl = 'https://tih-sigma.vercel.app';
+            ogUrl.setAttribute('content', `${baseUrl}/history/${dateStr}/`);
+        }
+        
+        // Update canonical URL
+        const canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) {
+            const baseUrl = 'https://tih-sigma.vercel.app';
+            canonical.setAttribute('href', `${baseUrl}/history/${dateStr}/`);
+        }
     }
 
 
@@ -659,6 +788,10 @@ class OnThisDay {
         if (month && day) {
             this.currentDate.setMonth(month - 1);
             this.currentDate.setDate(day);
+            
+            // Update URL for SEO
+            this.updateURL();
+            
             this.loadContent();
             this.updateDateDisplay();
             
