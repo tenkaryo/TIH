@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>About Us - OnThisDay</title>
-    <meta name="description" content="Learn about OnThisDay - your ultimate source for historical events, famous birthdays, and significant moments from the past.">
+    <title>关于我们 - OnThisDay</title>
+    <meta name="description" content="了解OnThisDay - 您的历史探索伙伴">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,18 +21,18 @@
                 </div>
                 <div class="brand-text">
                     <h1 class="brand-title">OnThisDay</h1>
-                    <span class="brand-subtitle">Today in History</span>
+                    <span class="brand-subtitle" data-i18n="siteSubtitle">历史上的今天</span>
                 </div>
             </div>
             
             <div class="nav-controls">
                 <a href="/" class="nav-btn">
                     <i class="fas fa-home"></i>
-                    <span>Home</span>
+                    <span data-i18n="home">首页</span>
                 </a>
                 <button class="nav-btn" id="languageSelector">
-                    <span class="flag">🇺🇸</span>
-                    <span>English</span>
+                    <span class="flag">🇨🇳</span>
+                    <span data-i18n="languageSelector">中文</span>
                 </button>
             </div>
         </div>
@@ -44,48 +44,50 @@
         <section class="hero-section">
             <div class="hero-content">
                 <div class="date-header">
-                    <h1 class="current-date">About Us</h1>
+                    <h1 class="current-date" data-i18n="pageTitle">关于我们</h1>
                 </div>
             </div>
         </section>
 
         <!-- Main Content Area -->
         <div class="content-wrapper">
-            <!-- Main Content -->
             <main class="main-content static-page-content">
                 <div class="content-section">
                     <div class="about-content">
-                        <h2>Welcome to OnThisDay</h2>
-                        <p>OnThisDay is your comprehensive source for exploring historical events, famous birthdays, and significant moments from the past. We believe that understanding history enriches our present and guides our future.</p>
+                        <h2 data-i18n="welcomeTitle">欢迎来到OnThisDay</h2>
+                        <p data-i18n="welcomeDesc">OnThisDay是您探索历史事件、名人生日和重要历史时刻的全面信息源。我们相信了解历史能够丰富我们的现在并指导我们的未来。</p>
                         
-                        <h3>Our Mission</h3>
-                        <p>Our mission is to make history accessible, engaging, and relevant to everyone. Through our carefully curated daily historical content, we aim to:</p>
+                        <h3 data-i18n="missionTitle">我们的使命</h3>
+                        <p data-i18n="missionDesc">我们的使命是让历史变得易于理解、引人入胜并与每个人相关。通过我们精心策划的每日历史内容，我们致力于：</p>
                         <ul>
-                            <li>Connect people with the rich tapestry of human history</li>
-                            <li>Provide accurate and well-researched historical information</li>
-                            <li>Inspire curiosity about the past and its influence on today</li>
-                            <li>Make historical learning enjoyable and accessible</li>
+                            <li data-i18n="mission1">将人们与丰富的人类历史联系起来</li>
+                            <li data-i18n="mission2">提供准确且经过充分研究的历史信息</li>
+                            <li data-i18n="mission3">激发对过去及其对今天影响的好奇心</li>
+                            <li data-i18n="mission4">让历史学习变得愉快且易于接触</li>
                         </ul>
                         
-                        <h3>What We Offer</h3>
-                        <p>Every day, we present you with:</p>
+                        <h3 data-i18n="offerTitle">我们提供什么</h3>
+                        <p data-i18n="offerDesc">每天，我们为您呈现：</p>
                         <ul>
-                            <li><strong>Historical Events:</strong> Significant moments that shaped our world</li>
-                            <li><strong>Famous Birthdays:</strong> Celebrate the birth of notable figures throughout history</li>
-                            <li><strong>Notable Deaths:</strong> Remember those who left their mark on history</li>
-                            <li><strong>Multilingual Support:</strong> Content available in both Chinese and English</li>
+                            <li><strong data-i18n="offerEvents">历史事件：</strong><span data-i18n="offerEventsDesc">塑造我们世界的重要时刻</span></li>
+                            <li><strong data-i18n="offerBirthdays">名人生日：</strong><span data-i18n="offerBirthdaysDesc">庆祝历史上著名人物的诞生</span></li>
+                            <li><strong data-i18n="offerDeaths">著名逝世：</strong><span data-i18n="offerDeathsDesc">缅怀那些在历史上留下印记的人</span></li>
+                            <li><strong data-i18n="offerMultilingual">多语言支持：</strong><span data-i18n="offerMultilingualDesc">内容提供中英文版本</span></li>
                         </ul>
                         
-                        <h3>Our Commitment to Quality</h3>
-                        <p>We are committed to providing accurate, reliable, and well-sourced historical information. Our content is carefully researched and cross-referenced with established historical sources including Wikipedia and other reputable historical databases.</p>
+                        <h3 data-i18n="qualityTitle">我们对质量的承诺</h3>
+                        <p data-i18n="qualityDesc">我们致力于提供准确、可靠和来源充分的历史信息。我们的内容经过仔细研究，并与包括维基百科在内的权威历史资源进行交叉对比。</p>
                         
-                        <h3>Join Our Journey</h3>
-                        <p>Whether you're a history enthusiast, a student, or simply curious about what happened on any given day, OnThisDay is here to enrich your understanding of the past. Explore history with us and discover the extraordinary stories that have shaped our world.</p>
+                        <h3 data-i18n="joinTitle">加入我们的旅程</h3>
+                        <p data-i18n="joinDesc">无论您是历史爱好者、学生，还是只是对任何特定日子发生的事情感到好奇，OnThisDay都在这里丰富您对过去的理解。与我们一起探索历史，发现塑造我们世界的非凡故事。</p>
                         
                         <div class="contact-info">
-                            <h3>Contact Us</h3>
-                            <p>Have questions, suggestions, or feedback? We'd love to hear from you!</p>
-                            <p>Visit our main website: <a href="/">OnThisDay</a></p>
+                            <h3 data-i18n="contactTitle">联系我们</h3>
+                            <p data-i18n="contactDesc">有问题、建议或反馈？我们很乐意听到您的声音！</p>
+                            <p>
+                                <span data-i18n="visitSite">访问我们的主网站：</span>
+                                <a href="/">OnThisDay</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -99,21 +101,19 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>OnThisDay</h3>
-                    <p>Explore history, discover the extraordinary</p>
+                    <p data-i18n="footerDesc">探索历史，发现精彩</p>
                 </div>
-                
                 <div class="footer-links">
                     <div class="footer-column">
-                        <a href="/about">About Us</a>
-                        <a href="/privacy">Privacy Policy</a>
-                        <a href="/terms">Terms of Service</a>
+                        <a href="/about" data-i18n="about">关于我们</a>
+                        <a href="/privacy" data-i18n="privacy">隐私政策</a>
+                        <a href="/terms" data-i18n="terms">使用条款</a>
                     </div>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2024 OnThisDay. All rights reserved</p>
-                <p>Data Source: Wikipedia, Historical Database</p>
+                <p data-i18n="copyright">© 2024 OnThisDay. 保留所有权利</p>
+                <p data-i18n="dataSource">数据来源：维基百科、历史数据库</p>
             </div>
         </div>
     </footer>
@@ -122,18 +122,18 @@
     <div class="modal" id="languageModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Select Language</h3>
+                <h3 data-i18n="selectLanguage">选择语言</h3>
                 <button class="modal-close" id="langModalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
-                        <span class="flag">🇺🇸</span>
-                        <span>English</span>
-                    </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇨🇳</span>
                         <span>中文</span>
+                    </button>
+                    <button class="lang-option" data-lang="en-US">
+                        <span class="flag">🇺🇸</span>
+                        <span>English</span>
                     </button>
                 </div>
             </div>
@@ -141,47 +141,133 @@
     </div>
 
     <script>
-        // Language detection and page initialization
-        function detectLanguage() {
-            // Check URL parameter first
-            const urlParams = new URLSearchParams(window.location.search);
-            const langParam = urlParams.get('lang');
-            if (langParam && ['zh-CN', 'en-US'].includes(langParam)) {
-                return langParam;
+        // 简化的多语言方案
+        const translations = {
+            'zh-CN': {
+                siteSubtitle: '历史上的今天',
+                home: '首页',
+                languageSelector: '中文',
+                pageTitle: '关于我们',
+                selectLanguage: '选择语言',
+                welcomeTitle: '欢迎来到OnThisDay',
+                welcomeDesc: 'OnThisDay是您探索历史事件、名人生日和重要历史时刻的全面信息源。我们相信了解历史能够丰富我们的现在并指导我们的未来。',
+                missionTitle: '我们的使命',
+                missionDesc: '我们的使命是让历史变得易于理解、引人入胜并与每个人相关。通过我们精心策划的每日历史内容，我们致力于：',
+                mission1: '将人们与丰富的人类历史联系起来',
+                mission2: '提供准确且经过充分研究的历史信息',
+                mission3: '激发对过去及其对今天影响的好奇心',
+                mission4: '让历史学习变得愉快且易于接触',
+                offerTitle: '我们提供什么',
+                offerDesc: '每天，我们为您呈现：',
+                offerEvents: '历史事件：',
+                offerEventsDesc: '塑造我们世界的重要时刻',
+                offerBirthdays: '名人生日：',
+                offerBirthdaysDesc: '庆祝历史上著名人物的诞生',
+                offerDeaths: '著名逝世：',
+                offerDeathsDesc: '缅怀那些在历史上留下印记的人',
+                offerMultilingual: '多语言支持：',
+                offerMultilingualDesc: '内容提供中英文版本',
+                qualityTitle: '我们对质量的承诺',
+                qualityDesc: '我们致力于提供准确、可靠和来源充分的历史信息。我们的内容经过仔细研究，并与包括维基百科在内的权威历史资源进行交叉对比。',
+                joinTitle: '加入我们的旅程',
+                joinDesc: '无论您是历史爱好者、学生，还是只是对任何特定日子发生的事情感到好奇，OnThisDay都在这里丰富您对过去的理解。与我们一起探索历史，发现塑造我们世界的非凡故事。',
+                contactTitle: '联系我们',
+                contactDesc: '有问题、建议或反馈？我们很乐意听到您的声音！',
+                visitSite: '访问我们的主网站：',
+                footerDesc: '探索历史，发现精彩',
+                about: '关于我们',
+                privacy: '隐私政策',
+                terms: '使用条款',
+                copyright: '© 2024 OnThisDay. 保留所有权利',
+                dataSource: '数据来源：维基百科、历史数据库'
+            },
+            'en-US': {
+                siteSubtitle: 'Today in History',
+                home: 'Home',
+                languageSelector: 'English',
+                pageTitle: 'About Us',
+                selectLanguage: 'Select Language',
+                welcomeTitle: 'Welcome to OnThisDay',
+                welcomeDesc: 'OnThisDay is your comprehensive source for exploring historical events, famous birthdays, and significant moments from the past. We believe that understanding history enriches our present and guides our future.',
+                missionTitle: 'Our Mission',
+                missionDesc: 'Our mission is to make history accessible, engaging, and relevant to everyone. Through our carefully curated daily historical content, we aim to:',
+                mission1: 'Connect people with the rich tapestry of human history',
+                mission2: 'Provide accurate and well-researched historical information',
+                mission3: 'Inspire curiosity about the past and its influence on today',
+                mission4: 'Make historical learning enjoyable and accessible',
+                offerTitle: 'What We Offer',
+                offerDesc: 'Every day, we present you with:',
+                offerEvents: 'Historical Events:',
+                offerEventsDesc: 'Significant moments that shaped our world',
+                offerBirthdays: 'Famous Birthdays:',
+                offerBirthdaysDesc: 'Celebrate the birth of notable figures throughout history',
+                offerDeaths: 'Notable Deaths:',
+                offerDeathsDesc: 'Remember those who left their mark on history',
+                offerMultilingual: 'Multilingual Support:',
+                offerMultilingualDesc: 'Content available in both Chinese and English',
+                qualityTitle: 'Our Commitment to Quality',
+                qualityDesc: 'We are committed to providing accurate, reliable, and well-sourced historical information. Our content is carefully researched and cross-referenced with established historical sources including Wikipedia and other reputable historical databases.',
+                joinTitle: 'Join Our Journey',
+                joinDesc: 'Whether you\'re a history enthusiast, a student, or simply curious about what happened on any given day, OnThisDay is here to enrich your understanding of the past. Explore history with us and discover the extraordinary stories that have shaped our world.',
+                contactTitle: 'Contact Us',
+                contactDesc: 'Have questions, suggestions, or feedback? We\'d love to hear from you!',
+                visitSite: 'Visit our main website: ',
+                footerDesc: 'Explore history, discover the extraordinary',
+                about: 'About Us',
+                privacy: 'Privacy Policy',
+                terms: 'Terms of Service',
+                copyright: '© 2024 OnThisDay. All rights reserved',
+                dataSource: 'Data Source: Wikipedia, Historical Database'
+            }
+        };
+
+        let currentLang = 'zh-CN'; // 默认中文
+
+        // 应用翻译
+        function applyTranslations(lang) {
+            const t = translations[lang];
+            currentLang = lang;
+            
+            // 更新页面语言属性
+            document.documentElement.lang = lang;
+            
+            // 更新title
+            document.title = lang === 'zh-CN' ? '关于我们 - OnThisDay' : 'About Us - OnThisDay';
+            
+            // 更新所有带data-i18n属性的元素
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) {
+                    el.textContent = t[key];
+                }
+            });
+            
+            // 更新语言选择器
+            const flag = document.querySelector('#languageSelector .flag');
+            const langText = document.querySelector('#languageSelector span:not(.flag)');
+            if (flag && langText) {
+                flag.textContent = lang === 'zh-CN' ? '🇨🇳' : '🇺🇸';
+                langText.textContent = t.languageSelector;
             }
             
-            // Check browser language, default to English
-            const browserLang = navigator.language || navigator.userLanguage;
-            return browserLang.startsWith('zh') ? 'zh-CN' : 'en-US';
-        }
-        
-        // Auto-redirect based on detected language if no specific page is loaded
-        function autoRedirectLanguage() {
-            const currentLang = detectLanguage();
-            const currentPath = window.location.pathname;
-            
-            // If we're on English page but detected Chinese, redirect to Chinese version
-            if (currentLang === 'zh-CN' && currentPath === '/about') {
-                window.location.href = '/about-zh';
-                return;
-            }
-            
-            // If we're on Chinese page but detected English, redirect to English version
-            if (currentLang === 'en-US' && currentPath === '/about-zh') {
-                window.location.href = '/about';
-                return;
-            }
+            // 更新语言选项的active状态
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.classList.toggle('active', option.dataset.lang === lang);
+            });
         }
 
-        // Simple language switcher for static pages
+        // 切换语言
+        function switchLanguage(newLang) {
+            applyTranslations(newLang);
+            document.getElementById('languageModal').classList.remove('active');
+        }
+
+        // 初始化
         document.addEventListener('DOMContentLoaded', () => {
-            // Auto-redirect if needed
-            autoRedirectLanguage();
-            
+            // 语言选择器事件
             const languageSelector = document.getElementById('languageSelector');
             const languageModal = document.getElementById('languageModal');
             const langModalClose = document.getElementById('langModalClose');
-            const langOptions = document.querySelectorAll('.lang-option');
 
             languageSelector.addEventListener('click', () => {
                 languageModal.classList.add('active');
@@ -197,21 +283,17 @@
                 }
             });
 
-            langOptions.forEach(option => {
+            // 语言选项点击
+            document.querySelectorAll('.lang-option').forEach(option => {
                 option.addEventListener('click', () => {
-                    const lang = option.dataset.lang;
-                    if (lang === 'zh-CN') {
-                        window.location.href = '/about-zh';
-                    } else {
-                        window.location.href = '/about';
-                    }
+                    switchLanguage(option.dataset.lang);
                 });
             });
         });
     </script>
 
     <style>
-        /* Static page layout */
+        /* 统一的静态页面样式 */
         .static-page-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -219,15 +301,14 @@
         }
         
         .about-content {
-            max-width: 1200px;  /* 与static-page-content保持一致 */
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem 0;
             line-height: 1.8;
         }
         
-        /* Hero section统一宽度 */
         .hero-content {
-            max-width: 1200px;  /* 与内容区域保持一致 */
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
         }
@@ -286,8 +367,8 @@
             text-decoration: underline;
             color: #5a6fd8;
         }
-        
-        /* Desktop/PC optimization */
+
+        /* 响应式设计 */
         @media (min-width: 1200px) {
             .static-page-content {
                 max-width: 1400px;
@@ -295,13 +376,13 @@
             }
             
             .about-content {
-                max-width: 1400px;  /* 与static-page-content保持一致 */
-                padding: 3rem 2rem;  /* 左右padding与static-page-content一致 */
+                max-width: 1400px;
+                padding: 3rem 2rem;
             }
             
             .hero-content {
-                max-width: 1400px;  /* 与内容区域保持一致 */
-                padding: 0 2rem;    /* 左右padding保持一致 */
+                max-width: 1400px;
+                padding: 0 2rem;
             }
             
             .about-content h2 {
@@ -325,7 +406,6 @@
             }
         }
         
-        /* Tablet/Medium screens */
         @media (min-width: 769px) and (max-width: 1199px) {
             .static-page-content {
                 max-width: 1000px;
@@ -333,13 +413,13 @@
             }
             
             .about-content {
-                max-width: 1000px;  /* 与static-page-content保持一致 */
-                padding: 2.5rem 1.5rem;  /* 左右padding与static-page-content一致 */
+                max-width: 1000px;
+                padding: 2.5rem 1.5rem;
             }
             
             .hero-content {
-                max-width: 1000px;  /* 与内容区域保持一致 */
-                padding: 0 1.5rem;  /* 左右padding保持一致 */
+                max-width: 1000px;
+                padding: 0 1.5rem;
             }
             
             .about-content h2 {
@@ -351,7 +431,6 @@
             }
         }
         
-        /* Mobile optimization */
         @media (max-width: 768px) {
             .static-page-content {
                 padding: 0 0.75rem;
@@ -385,7 +464,6 @@
                 margin-top: 2rem;
             }
             
-            /* Hero section mobile adjustment */
             .hero-section {
                 padding: 1.5rem 0;
             }

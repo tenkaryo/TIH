@@ -9,7 +9,7 @@
     "dev:frontend": "node dev-server.js",
     "dev:full": "concurrently \"npm run dev\" \"npm run dev:frontend\"",
     "build": "npm run build:prepare && node scripts/generate-static-pages.js",
-    "build:prepare": "mkdir -p public && cp index.html styles.css script.js data.js about.html about-zh.html privacy.html privacy-zh.html terms.html terms-zh.html public/",
+    "build:prepare": "mkdir -p public && cp index.html styles.css script.js data.js about.html privacy.html terms.html public/",
     "build:static": "node scripts/generate-static-pages.js",
     "deploy": "vercel --prod",
     "local": "concurrently \"npm start\" \"npm run dev:frontend\"",
