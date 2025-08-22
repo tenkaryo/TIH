@@ -52,7 +52,7 @@
         <!-- Main Content Area -->
         <div class="content-wrapper">
             <!-- Main Content -->
-            <main class="main-content" style="max-width: 800px; margin: 0 auto;">
+            <main class="main-content static-page-content">
                 <div class="content-section">
                     <div class="about-content">
                         <h2>Welcome to OnThisDay</h2>
@@ -141,8 +141,43 @@
     </div>
 
     <script>
+        // Language detection and page initialization
+        function detectLanguage() {
+            // Check URL parameter first
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+            if (langParam && ['zh-CN', 'en-US'].includes(langParam)) {
+                return langParam;
+            }
+            
+            // Check browser language, default to English
+            const browserLang = navigator.language || navigator.userLanguage;
+            return browserLang.startsWith('zh') ? 'zh-CN' : 'en-US';
+        }
+        
+        // Auto-redirect based on detected language if no specific page is loaded
+        function autoRedirectLanguage() {
+            const currentLang = detectLanguage();
+            const currentPath = window.location.pathname;
+            
+            // If we're on English page but detected Chinese, redirect to Chinese version
+            if (currentLang === 'zh-CN' && currentPath === '/about') {
+                window.location.href = '/about-zh';
+                return;
+            }
+            
+            // If we're on Chinese page but detected English, redirect to English version
+            if (currentLang === 'en-US' && currentPath === '/about-zh') {
+                window.location.href = '/about';
+                return;
+            }
+        }
+
         // Simple language switcher for static pages
         document.addEventListener('DOMContentLoaded', () => {
+            // Auto-redirect if needed
+            autoRedirectLanguage();
+            
             const languageSelector = document.getElementById('languageSelector');
             const languageModal = document.getElementById('languageModal');
             const langModalClose = document.getElementById('langModalClose');
@@ -166,9 +201,9 @@
                 option.addEventListener('click', () => {
                     const lang = option.dataset.lang;
                     if (lang === 'zh-CN') {
-                        window.location.href = '/about-zh.html';
+                        window.location.href = '/about-zh';
                     } else {
-                        window.location.href = '/about.html';
+                        window.location.href = '/about';
                     }
                 });
             });
@@ -176,56 +211,139 @@
     </script>
 
     <style>
+        /* Static page layout */
+        .static-page-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
         .about-content {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 2rem 0;
             line-height: 1.8;
         }
         
         .about-content h2 {
             color: #333;
-            margin-bottom: 1rem;
-            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            font-weight: 600;
         }
         
         .about-content h3 {
             color: #555;
-            margin: 2rem 0 1rem 0;
-            font-size: 1.5rem;
+            margin: 2.5rem 0 1.2rem 0;
+            font-size: 1.6rem;
+            font-weight: 500;
         }
         
         .about-content p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             color: #666;
+            font-size: 1.1rem;
         }
         
         .about-content ul {
-            margin: 1rem 0;
+            margin: 1.5rem 0;
             padding-left: 2rem;
         }
         
         .about-content li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             color: #666;
+            font-size: 1.05rem;
         }
         
         .contact-info {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-top: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            border: 1px solid #dee2e6;
         }
         
         .contact-info h3 {
             margin-top: 0;
+            color: #495057;
         }
         
         .contact-info a {
             color: #667eea;
             text-decoration: none;
+            font-weight: 500;
         }
         
         .contact-info a:hover {
             text-decoration: underline;
+            color: #5a6fd8;
+        }
+        
+        /* Mobile optimization */
+        @media (max-width: 768px) {
+            .static-page-content {
+                padding: 0 0.75rem;
+            }
+            
+            .about-content {
+                padding: 1.5rem 0;
+            }
+            
+            .about-content h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1.2rem;
+            }
+            
+            .about-content h3 {
+                font-size: 1.4rem;
+                margin: 2rem 0 1rem 0;
+            }
+            
+            .about-content p,
+            .about-content li {
+                font-size: 1rem;
+            }
+            
+            .about-content ul {
+                padding-left: 1.5rem;
+            }
+            
+            .contact-info {
+                padding: 1.5rem;
+                margin-top: 2rem;
+            }
+            
+            /* Hero section mobile adjustment */
+            .hero-section {
+                padding: 1.5rem 0;
+            }
+            
+            .current-date {
+                font-size: 1.8rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .static-page-content {
+                padding: 0 0.5rem;
+            }
+            
+            .about-content {
+                padding: 1rem 0;
+            }
+            
+            .about-content h2 {
+                font-size: 1.6rem;
+            }
+            
+            .about-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .contact-info {
+                padding: 1.2rem;
+            }
         }
     </style>
 </body>
