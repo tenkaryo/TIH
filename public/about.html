@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>About Us - OnThisDay</title>
+    <meta name="description" content="Learn about OnThisDay - your ultimate source for historical events, famous birthdays, and significant moments from the past.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <i class="fas fa-calendar-day"></i>
+                </div>
+                <div class="brand-text">
+                    <h1 class="brand-title">OnThisDay</h1>
+                    <span class="brand-subtitle">Today in History</span>
+                </div>
+            </div>
+            
+            <div class="nav-controls">
+                <a href="/" class="nav-btn">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <button class="nav-btn" id="languageSelector">
+                    <span class="flag">🇺🇸</span>
+                    <span>English</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="date-header">
+                    <h1 class="current-date">About Us</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <div class="content-wrapper">
+            <!-- Main Content -->
+            <main class="main-content" style="max-width: 800px; margin: 0 auto;">
+                <div class="content-section">
+                    <div class="about-content">
+                        <h2>Welcome to OnThisDay</h2>
+                        <p>OnThisDay is your comprehensive source for exploring historical events, famous birthdays, and significant moments from the past. We believe that understanding history enriches our present and guides our future.</p>
+                        
+                        <h3>Our Mission</h3>
+                        <p>Our mission is to make history accessible, engaging, and relevant to everyone. Through our carefully curated daily historical content, we aim to:</p>
+                        <ul>
+                            <li>Connect people with the rich tapestry of human history</li>
+                            <li>Provide accurate and well-researched historical information</li>
+                            <li>Inspire curiosity about the past and its influence on today</li>
+                            <li>Make historical learning enjoyable and accessible</li>
+                        </ul>
+                        
+                        <h3>What We Offer</h3>
+                        <p>Every day, we present you with:</p>
+                        <ul>
+                            <li><strong>Historical Events:</strong> Significant moments that shaped our world</li>
+                            <li><strong>Famous Birthdays:</strong> Celebrate the birth of notable figures throughout history</li>
+                            <li><strong>Notable Deaths:</strong> Remember those who left their mark on history</li>
+                            <li><strong>Multilingual Support:</strong> Content available in both Chinese and English</li>
+                        </ul>
+                        
+                        <h3>Our Commitment to Quality</h3>
+                        <p>We are committed to providing accurate, reliable, and well-sourced historical information. Our content is carefully researched and cross-referenced with established historical sources including Wikipedia and other reputable historical databases.</p>
+                        
+                        <h3>Join Our Journey</h3>
+                        <p>Whether you're a history enthusiast, a student, or simply curious about what happened on any given day, OnThisDay is here to enrich your understanding of the past. Explore history with us and discover the extraordinary stories that have shaped our world.</p>
+                        
+                        <div class="contact-info">
+                            <h3>Contact Us</h3>
+                            <p>Have questions, suggestions, or feedback? We'd love to hear from you!</p>
+                            <p>Visit our main website: <a href="/">OnThisDay</a></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>OnThisDay</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about">About Us</a>
+                        <a href="/privacy">Privacy Policy</a>
+                        <a href="/terms">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 OnThisDay. All rights reserved</p>
+                <p>Data Source: Wikipedia, Historical Database</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Language Modal -->
+    <div class="modal" id="languageModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Language</h3>
+                <button class="modal-close" id="langModalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="language-options">
+                    <button class="lang-option active" data-lang="en-US">
+                        <span class="flag">🇺🇸</span>
+                        <span>English</span>
+                    </button>
+                    <button class="lang-option" data-lang="zh-CN">
+                        <span class="flag">🇨🇳</span>
+                        <span>中文</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple language switcher for static pages
+        document.addEventListener('DOMContentLoaded', () => {
+            const languageSelector = document.getElementById('languageSelector');
+            const languageModal = document.getElementById('languageModal');
+            const langModalClose = document.getElementById('langModalClose');
+            const langOptions = document.querySelectorAll('.lang-option');
+
+            languageSelector.addEventListener('click', () => {
+                languageModal.classList.add('active');
+            });
+
+            langModalClose.addEventListener('click', () => {
+                languageModal.classList.remove('active');
+            });
+
+            languageModal.addEventListener('click', (e) => {
+                if (e.target === languageModal) {
+                    languageModal.classList.remove('active');
+                }
+            });
+
+            langOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    const lang = option.dataset.lang;
+                    if (lang === 'zh-CN') {
+                        window.location.href = '/about-zh.html';
+                    } else {
+                        window.location.href = '/about.html';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .about-content {
+            padding: 2rem 0;
+            line-height: 1.8;
+        }
+        
+        .about-content h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        .about-content h3 {
+            color: #555;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .about-content p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .about-content ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .about-content li {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+        
+        .contact-info {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .contact-info h3 {
+            margin-top: 0;
+        }
+        
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</body>
+</html>

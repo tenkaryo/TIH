@@ -26,6 +26,30 @@
   },
   "rewrites": [
     {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/about-zh",
+      "destination": "/about-zh.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/privacy-zh",
+      "destination": "/privacy-zh.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/terms-zh",
+      "destination": "/terms-zh.html"
+    },
+    {
       "source": "/history/(.*)",
       "destination": "/api/history/$1"
     },
@@ -39,6 +63,19 @@
     }
   ],
   "headers": [
+    {
+      "source": "/(about|privacy|terms)(-zh)?",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=86400"
+        }
+      ]
+    },
     {
       "source": "/history/(.*)",
       "headers": [

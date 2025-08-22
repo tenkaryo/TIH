@@ -384,22 +384,29 @@ class OnThisDay {
         );
         currentDateElement.textContent = dateText;
 
-        // Update subtitle
-        const weekdays = this.currentLanguage === 'zh-CN' 
-            ? ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
-            : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        
-        const year = this.currentDate.getFullYear();
-        const month = this.currentDate.getMonth() + 1;
-        const day = this.currentDate.getDate();
-        const weekday = weekdays[this.currentDate.getDay()];
-        
-        const subtitleText = this.currentLanguage === 'zh-CN'
-            ? `今天是${year}年${month}月${day}日，${weekday}`
-            : `Today is ${weekday}, ${monthNames[this.currentLanguage][month-1]} ${day}, ${year}`;
-        
+        // For specific date pages (not homepage), hide the date-subtitle
         if (dateSubtitle) {
-            dateSubtitle.textContent = subtitleText;
+            if (this.isHomePage) {
+                // Show subtitle only on homepage
+                const weekdays = this.currentLanguage === 'zh-CN' 
+                    ? ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+                    : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                
+                const year = this.currentDate.getFullYear();
+                const month = this.currentDate.getMonth() + 1;
+                const day = this.currentDate.getDate();
+                const weekday = weekdays[this.currentDate.getDay()];
+                
+                const subtitleText = this.currentLanguage === 'zh-CN'
+                    ? `今天是${year}年${month}月${day}日，${weekday}`
+                    : `Today is ${weekday}, ${monthNames[this.currentLanguage][month-1]} ${day}, ${year}`;
+                
+                dateSubtitle.textContent = subtitleText;
+                dateSubtitle.style.display = '';
+            } else {
+                // Hide subtitle on specific date pages
+                dateSubtitle.style.display = 'none';
+            }
         }
 
         // Update navigation buttons
@@ -707,18 +714,9 @@ class OnThisDay {
         if (footerBrand) footerBrand.textContent = t.siteTitle;
         if (footerDesc) footerDesc.textContent = t.footerDesc;
         
-        // Update footer columns
-        const footerH4s = document.querySelectorAll('.footer-column h4');
-        if (footerH4s[0]) footerH4s[0].textContent = t.websiteInfo;
-        if (footerH4s[1]) footerH4s[1].textContent = t.legalTerms;
-        if (footerH4s[2]) footerH4s[2].textContent = t.followUs;
-        
-        // Update footer links
+        // Update footer links - simplified structure
         const footerLinks = document.querySelectorAll('.footer-column a');
-        const linkTexts = [
-            t.about, t.contact, t.dataSourceNav,
-            t.privacy, t.terms, t.cookies
-        ];
+        const linkTexts = [t.about, t.privacy, t.terms];
         footerLinks.forEach((link, index) => {
             if (linkTexts[index]) link.textContent = linkTexts[index];
         });
