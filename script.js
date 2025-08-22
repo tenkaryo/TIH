@@ -54,6 +54,9 @@ class OnThisDay {
         this.setupEventListeners();
         this.initializeSelectors();
         
+        // 初始化语言显示
+        this.updateLanguageDisplay(this.currentLanguage);
+        
         // 如果是主页，先获取服务器今天的日期
         if (this.isHomePage) {
             await this.loadTodayFromServer();

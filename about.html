@@ -262,8 +262,30 @@
             document.getElementById('languageModal').classList.remove('active');
         }
 
+        // 检测并初始化语言
+        function detectAndInitLanguage() {
+            // 检查URL参数
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+            let currentLang = 'zh-CN'; // 默认中文
+            
+            if (langParam && ['zh-CN', 'en-US'].includes(langParam)) {
+                currentLang = langParam;
+            } else {
+                // 检查浏览器语言
+                const browserLang = navigator.language || navigator.userLanguage;
+                currentLang = browserLang.startsWith('zh') ? 'zh-CN' : 'en-US';
+            }
+            
+            // 应用检测到的语言
+            applyTranslations(currentLang);
+        }
+
         // 初始化
         document.addEventListener('DOMContentLoaded', () => {
+            // 首先检测并初始化语言
+            detectAndInitLanguage();
+            
             // 语言选择器事件
             const languageSelector = document.getElementById('languageSelector');
             const languageModal = document.getElementById('languageModal');
