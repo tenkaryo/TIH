@@ -4,7 +4,7 @@
 const API_CONFIG = {
     baseUrl: (typeof window !== 'undefined' && (window.location.hostname === 'tih-sigma.vercel.app' || window.location.hostname.includes('vercel.app'))) 
         ? '/api'  // 使用相对路径，Vercel会自动路由
-        : 'http://localhost:3001/api',
+        : '/api',  // 本地也使用相对路径，直接连接3090端口的dev-server
     timeout: 10000 // 10 seconds timeout for production
 };
 

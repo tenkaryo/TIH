@@ -13,8 +13,13 @@ const PORT = process.env.PORT || 3001;
 // Enable CORS for frontend
 app.use(cors({
     origin: [
-        process.env.FRONTEND_URL || 'http://localhost:3000',
+        process.env.FRONTEND_URL || 'http://localhost:3090',
         'null', // Allow file:// protocol
+        'http://127.0.0.1:3090',
+        'http://localhost:3090',
+        'https://localhost:3090',
+        // Keep old 3000 port for backward compatibility
+        'http://localhost:3000',
         'http://127.0.0.1:3000',
         'https://localhost:3000',
         'https://tih-sigma.vercel.app' // Production domain
@@ -144,6 +149,36 @@ app.use('/api/', rateLimiter);
 // Health check endpoint
 app.get('/api/health', (req, res) => {
     res.json({ status: 'OK', timestamp: new Date().toISOString() });
+});
+
+// Token generation endpoint
+app.get('/api/token', (req, res) => {
+    try {
+        // Generate token
+        const timestamp = Math.floor(Date.now() / 1000);
+        const tokenHash = generateTokenHash(timestamp, API_KEY);
+        const token = `${timestamp}.${tokenHash}`;
+        
+        // Set headers for security
+        res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+        res.setHeader('Pragma', 'no-cache');
+        res.setHeader('Expires', '0');
+        
+        // Return token
+        res.json({
+            success: true,
+            token: token,
+            timestamp: timestamp,
+            expiresIn: TOKEN_EXPIRE_SECONDS
+        });
+        
+    } catch (error) {
+        console.error('Token generation error:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to generate token'
+        });
+    }
 });
 
 // Main API endpoint for historical data

@@ -31,7 +31,7 @@ npm install
 npm run local
 # 这会启动：
 # - API服务器 (port 3001) - 提供数据API
-# - 前端开发服务器 (port 3000) - 支持 /history/{MM-DD}/ 路由和主页动态日期
+# - 前端开发服务器 (port 3090) - 支持 /history/{MM-DD}/ 路由和主页动态日期
 
 # 或者分别启动：
 
@@ -40,7 +40,7 @@ npm start
 # 开发模式（自动重启）
 npm run dev
 
-# 启动前端开发服务器 (port 3000) - 单独运行
+# 启动前端开发服务器 (port 3090) - 单独运行
 npm run dev:frontend
 
 # 完整开发环境（API + 前端都支持热重载）
@@ -141,7 +141,7 @@ NODE_ENV=production
 
 ### Local Development
 - API runs on `http://localhost:3001`
-- Frontend runs on `http://localhost:3000`
+- Frontend runs on `http://localhost:3090`
 - CORS configured to allow localhost origins
 
 ## API Endpoints

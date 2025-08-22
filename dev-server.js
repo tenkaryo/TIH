@@ -5,13 +5,27 @@ const fs = require('fs');
 const historyData = require('./historyData.js');
 
 const app = express();
-const PORT = process.env.DEV_PORT || 3000;
+const PORT = process.env.DEV_PORT || 3090;
 
 // 静态文件服务
 app.use('/styles.css', express.static(path.join(__dirname, 'styles.css')));
 app.use('/script.js', express.static(path.join(__dirname, 'script.js')));
 app.use('/data.js', express.static(path.join(__dirname, 'data.js')));
 app.use('/historyData.js', express.static(path.join(__dirname, 'historyData.js')));
+
+// Token API (简化版，用于本地开发)
+app.get('/api/token', (req, res) => {
+    // 本地开发使用简单的假token
+    const timestamp = Math.floor(Date.now() / 1000);
+    const fakeToken = `dev-${timestamp}.local`;
+    
+    res.json({
+        success: true,
+        token: fakeToken,
+        timestamp: timestamp,
+        expiresIn: 300 // 5 minutes
+    });
+});
 
 // 今天的数据API
 app.get('/api/today', (req, res) => {
