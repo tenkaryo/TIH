@@ -695,15 +695,15 @@ class OnThisDay {
         
         if (aboutLink) {
             aboutLink.textContent = t.about;
-            aboutLink.href = this.currentLanguage === 'zh-CN' ? '/about-zh' : '/about';
+            aboutLink.href = `/about?lang=${this.currentLanguage}`;
         }
         if (privacyLink) {
             privacyLink.textContent = t.privacy;
-            privacyLink.href = this.currentLanguage === 'zh-CN' ? '/privacy-zh' : '/privacy';
+            privacyLink.href = `/privacy?lang=${this.currentLanguage}`;
         }
         if (termsLink) {
             termsLink.textContent = t.terms;
-            termsLink.href = this.currentLanguage === 'zh-CN' ? '/terms-zh' : '/terms';
+            termsLink.href = `/terms?lang=${this.currentLanguage}`;
         }
         
         // Update footer bottom

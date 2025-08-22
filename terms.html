@@ -292,6 +292,7 @@
     </script>
 
     <style>
+        /* 统一的静态页面样式 - 确保content-section和hero-section宽度一致 */
         .static-page-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -301,11 +302,18 @@
         .policy-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 0;
-            line-height: 1.8;
+            padding: 2rem 1rem; /* 增加左右padding确保与hero-content一致 */
+            line-height: 1.7;
         }
         
         .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* 确保content-section的宽度与hero-section保持一致 */
+        .content-section {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
@@ -359,6 +367,11 @@
                 padding: 0 2rem;
             }
             
+            .content-section {
+                max-width: 1400px;
+                padding: 0 2rem;
+            }
+            
             .policy-content h2 {
                 font-size: 2.2rem;
                 margin: 3rem 0 1.5rem 0;
@@ -386,6 +399,11 @@
                 padding: 0 1.5rem;
             }
             
+            .content-section {
+                max-width: 1000px;
+                padding: 0 1.5rem;
+            }
+            
             .policy-content h2 {
                 font-size: 2.1rem;
             }
@@ -397,7 +415,11 @@
             }
             
             .policy-content {
-                padding: 1.5rem 0;
+                padding: 1.5rem 0.75rem;
+            }
+            
+            .content-section {
+                padding: 0 0.75rem;
             }
             
             .policy-content h2 {
@@ -429,7 +451,11 @@
             }
             
             .policy-content {
-                padding: 1rem 0;
+                padding: 1rem 0.5rem;
+            }
+            
+            .content-section {
+                padding: 0 0.5rem;
             }
             
             .policy-content h2 {
