@@ -375,7 +375,6 @@ class OnThisDay {
 
     updateDateDisplay() {
         const currentDateElement = document.getElementById('currentDate');
-        const dateSubtitle = document.querySelector('.date-subtitle');
         
         const dateText = formatDateDisplay(
             this.currentDate.getMonth() + 1,
@@ -383,31 +382,6 @@ class OnThisDay {
             this.currentLanguage
         );
         currentDateElement.textContent = dateText;
-
-        // For specific date pages (not homepage), hide the date-subtitle
-        if (dateSubtitle) {
-            if (this.isHomePage) {
-                // Show subtitle only on homepage
-                const weekdays = this.currentLanguage === 'zh-CN' 
-                    ? ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
-                    : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-                
-                const year = this.currentDate.getFullYear();
-                const month = this.currentDate.getMonth() + 1;
-                const day = this.currentDate.getDate();
-                const weekday = weekdays[this.currentDate.getDay()];
-                
-                const subtitleText = this.currentLanguage === 'zh-CN'
-                    ? `今天是${year}年${month}月${day}日，${weekday}`
-                    : `Today is ${weekday}, ${monthNames[this.currentLanguage][month-1]} ${day}, ${year}`;
-                
-                dateSubtitle.textContent = subtitleText;
-                dateSubtitle.style.display = '';
-            } else {
-                // Hide subtitle on specific date pages
-                dateSubtitle.style.display = 'none';
-            }
-        }
 
         // Update navigation buttons
         this.updateNavigationButtons();
@@ -795,7 +769,12 @@ class OnThisDay {
     
     // Update page metadata dynamically
     updatePageMetadata(dateStr) {
-        const [month, day] = dateStr.split('-').map(Number);
+        const parsedDate = parseUrlDate(dateStr);
+        if (!parsedDate) {
+            console.error('Failed to parse date string:', dateStr);
+            return;
+        }
+        const { month, day } = parsedDate;
         const dateDisplay = formatDateDisplay(month, day, this.currentLanguage);
         
         const title = this.currentLanguage === 'zh-CN' 

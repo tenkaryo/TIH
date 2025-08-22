@@ -317,6 +317,54 @@
             font-weight: 600;
         }
         
+        /* 桌面/PC端优化 */
+        @media (min-width: 1200px) {
+            .static-page-content {
+                max-width: 1400px;
+                padding: 0 2rem;
+            }
+            
+            .policy-content {
+                max-width: 900px;
+                padding: 3rem 0;
+            }
+            
+            .policy-content h2 {
+                font-size: 2.2rem;
+                margin: 3rem 0 1.5rem 0;
+            }
+            
+            .policy-content h3 {
+                font-size: 1.6rem;
+                margin: 2.5rem 0 1.2rem 0;
+            }
+            
+            .policy-content p,
+            .policy-content li {
+                font-size: 1.15rem;
+            }
+        }
+        
+        /* 平板/中等屏幕 */
+        @media (min-width: 769px) and (max-width: 1199px) {
+            .static-page-content {
+                max-width: 1000px;
+                padding: 0 1.5rem;
+            }
+            
+            .policy-content {
+                padding: 2.5rem 0;
+            }
+            
+            .policy-content h2 {
+                font-size: 2.1rem;
+            }
+            
+            .policy-content h3 {
+                font-size: 1.5rem;
+            }
+        }
+        
         /* Mobile optimization */
         @media (max-width: 768px) {
             .static-page-content {
