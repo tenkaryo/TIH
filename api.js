@@ -181,6 +181,52 @@ app.get('/api/token', (req, res) => {
     }
 });
 
+// Today's data endpoint (convenience endpoint)
+app.get('/api/today', authenticateToken, verifySignature, (req, res) => {
+    try {
+        // Get today's date in MM-DD format
+        const now = new Date();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const todayDate = `${month}-${day}`;
+        
+        // Get data for today's date
+        const data = historyData[todayDate];
+        
+        if (!data) {
+            return res.status(404).json({
+                error: 'No data available for today',
+                date: todayDate
+            });
+        }
+        
+        // Add request metadata
+        const response = {
+            success: true,
+            date: todayDate,
+            timestamp: new Date().toISOString(),
+            data: data,
+            total: {
+                events: data.events?.length || 0,
+                birthdays: data.birthdays?.length || 0,
+                deaths: data.deaths?.length || 0
+            }
+        };
+        
+        // Set cache headers (shorter cache for today's data)
+        res.set('Cache-Control', 'public, max-age=1800'); // Cache for 30 minutes
+        
+        res.json(response);
+        
+    } catch (error) {
+        console.error('Today API Error:', error);
+        res.status(500).json({
+            error: 'Internal server error',
+            message: 'Please try again later'
+        });
+    }
+});
+
 // Main API endpoint for historical data
 app.get('/api/history/:date', authenticateToken, verifySignature, (req, res) => {
     try {
