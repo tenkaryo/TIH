@@ -13,6 +13,7 @@ This is a bilingual (Chinese/English) "Today in History" web application that di
 - **Styling**: `styles.css` - Modern design with gradient backgrounds and animations
 - **Logic**: `script.js` - Main application class `OnThisDay` handling UI interactions and data loading
 - **Data Management**: `data.js` - API client with caching, translations, and utility functions
+- **Static Pages**: `about.html`, `privacy.html`, `terms.html` - Single-page multilingual static pages
 - **Language Support**: Built-in Chinese/English switching with complete translations
 
 ### Backend API
@@ -143,6 +144,7 @@ NODE_ENV=production
 - API runs on `http://localhost:3001`
 - Frontend runs on `http://localhost:3090`
 - CORS configured to allow localhost origins
+- **Important**: All local development should use port 3090, not 3001 for frontend
 
 ## API Endpoints
 
@@ -218,3 +220,53 @@ TIH/
 - Translations are centralized in `data.js`
 - All UI interactions are handled by the `OnThisDay` class
 - Rate limiting and authentication prevent abuse
+
+## Multilingual Static Pages Architecture
+
+### Single-Page Multilingual System
+The static pages (`about.html`, `privacy.html`, `terms.html`) use a single-page multilingual approach:
+
+**Language Detection**:
+- URL parameters take priority: `?lang=en-US` or `?lang=zh-CN`
+- Falls back to browser language detection
+- Default language is Chinese (zh-CN)
+
+**Translation System**:
+- Embedded JavaScript translation dictionaries in each page
+- Uses `data-i18n` attributes for marking translatable content
+- Real-time DOM content replacement without page refresh
+- Example: `<h1 data-i18n="pageTitle">关于我们</h1>`
+
+**Footer Links Navigation**:
+- Main app footer links automatically pass current language as URL parameter
+- Links format: `/about?lang=zh-CN` instead of separate files like `/about-zh`
+
+**Key Functions in Each Static Page**:
+- `detectAndInitLanguage()` - Detects language from URL params or browser
+- `applyTranslations(lang)` - Updates all elements with data-i18n attributes
+- `switchLanguage(newLang)` - Handles language switching from modal
+
+### Responsive Design Consistency
+All static pages maintain consistent width alignment:
+- `content-section` and `hero-section` have identical max-widths and padding
+- Responsive breakpoints: 1400px (PC), 1000px (tablet), mobile-first below 768px
+- Ensures uniform layout across all screen sizes
+
+## Important Development Guidelines
+
+### Language System Initialization
+- Main app (`script.js`): Call `updateLanguageDisplay(this.currentLanguage)` in `init()` method
+- Static pages: Call `detectAndInitLanguage()` in `DOMContentLoaded` event listener
+- Always ensure language selector shows correct flag and text on page load
+
+### Port Configuration
+- API server always runs on port 3001
+- Frontend development server runs on port 3090 (configured in dev-server.js)
+- Never hardcode localhost URLs - use relative paths in data.js for API calls
+- Local token endpoint available at `/api/token` for development
+
+### Static Page Maintenance
+- When adding new static pages, include complete multilingual setup
+- Ensure `content-section` width matches `hero-section` across all responsive breakpoints
+- Add language detection and initialization in JavaScript section
+- Include `data-i18n` attributes for all translatable content

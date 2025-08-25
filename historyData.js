@@ -2,12 +2,12 @@
 // This file will be used on the server-side
 
 const historyData = {
-    "08-20": {
+    "08-24": {
         events: [
             {
                 year: "1969",
                 description: {
-                    "zh-CN": "美国阿波罗20号宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林首次登月成功",
+                    "zh-CN": "美国阿波罗24号宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林首次登月成功",
                     "en-US": "American astronauts Neil Armstrong and Buzz Aldrin successfully land on the moon during the Apollo 11 mission"
                 },
                 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQabuqJXLYG_5zAZlzuzdsAwg09ecJZJLrEpw&s"
@@ -194,12 +194,12 @@ const historyData = {
             }
         ]
     },
-    "08-21": {
+    "08-25": {
         events: [
             {
                 year: "1969",
                 description: {
-                    "zh-CN": "美国阿波罗21号宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林首次登月成功",
+                    "zh-CN": "美国阿波罗25号宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林首次登月成功",
                     "en-US": "American astronauts Neil Armstrong and Buzz Aldrin successfully land on the moon during the Apollo 11 mission"
                 },
                 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQabuqJXLYG_5zAZlzuzdsAwg09ecJZJLrEpw&s"
@@ -386,12 +386,12 @@ const historyData = {
             }
         ]
     },
-    "08-22": {
+    "08-26": {
         events: [
             {
                 year: "1969",
                 description: {
-                    "zh-CN": "美国阿波罗22号宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林首次登月成功",
+                    "zh-CN": "美国阿波罗26号宇航员尼尔·阿姆斯特朗和巴兹·奥尔德林首次登月成功",
                     "en-US": "American astronauts Neil Armstrong and Buzz Aldrin successfully land on the moon during the Apollo 11 mission"
                 },
                 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQabuqJXLYG_5zAZlzuzdsAwg09ecJZJLrEpw&s"
