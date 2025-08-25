@@ -85,6 +85,12 @@ class OnThisDay {
             
             console.log('已设置今天的日期:', `${month}-${day}`);
             
+            // 预加载今天的数据以确保API正常工作
+            if (typeof getDataForDate === 'function') {
+                const testData = await getDataForDate(month, day);
+                console.log('今日数据预加载结果:', testData?.events?.length || 0, '个事件');
+            }
+            
         } catch (error) {
             console.warn('无法获取今天的数据，使用本地日期:', error);
             // 继续使用本地日期作为fallback
