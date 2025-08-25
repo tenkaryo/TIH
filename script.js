@@ -62,8 +62,9 @@ class OnThisDay {
             await this.loadTodayFromServer();
         }
         
-        this.loadContent();
+        // 确保日期显示在数据加载之前就更新
         this.updateDateDisplay();
+        this.loadContent();
         this.setupNavigation();
         this.setupScrollListener();
         this.saveOriginalSubtitle();
@@ -74,26 +75,18 @@ class OnThisDay {
     // 从服务器获取今天的日期和数据
     async loadTodayFromServer() {
         try {
-            const response = await fetch('/api/today');
-            if (response.ok) {
-                const result = await response.json();
-                if (result.success && result.date) {
-                    const [month, day] = result.date.split('-').map(Number);
-                    this.currentDate = new Date(2024, month - 1, day);
-                    
-                    // 缓存今天的数据，避免重复API调用
-                    if (typeof dataCache !== 'undefined' && typeof formatDateKey === 'function') {
-                        dataCache.set(formatDateKey(month, day), {
-                            data: result.data,
-                            timestamp: Date.now()
-                        });
-                    }
-                    
-                    console.log('已从服务器获取今天的日期:', result.date);
-                }
-            }
+            // 使用本地当前日期作为基准
+            const today = new Date();
+            const month = today.getMonth() + 1;
+            const day = today.getDate();
+            
+            // 确保使用当前日期（今天的真实日期）
+            this.currentDate = new Date(2024, month - 1, day);
+            
+            console.log('已设置今天的日期:', `${month}-${day}`);
+            
         } catch (error) {
-            console.warn('无法从服务器获取今天的日期，使用本地日期:', error);
+            console.warn('无法获取今天的数据，使用本地日期:', error);
             // 继续使用本地日期作为fallback
         }
     }

@@ -244,18 +244,15 @@ async function getDataForDate(month, day) {
     // 如果是今天的数据且在主页，使用today API
     if (key === todayKey && isHomePage) {
         try {
-            const response = await fetch('/api/today');
-            if (response.ok) {
-                const result = await response.json();
-                if (result.success && result.data) {
-                    // Cache the result
-                    dataCache.set(key, {
-                        data: result.data,
-                        timestamp: Date.now()
-                    });
-                    return result.data;
-                }
-            }
+            // Use authenticated today API
+            const data = await makeApiRequest('/today');
+            
+            // Cache the result
+            dataCache.set(key, {
+                data: data,
+                timestamp: Date.now()
+            });
+            return data;
         } catch (error) {
             console.warn('Today API failed, falling back to public API:', error);
         }
