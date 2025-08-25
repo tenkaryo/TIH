@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Today API</title>
+</head>
+<body>
+    <h1>Debug Today API</h1>
+    <div id="output"></div>
+    
+    <script src="data.js"></script>
+    <script>
+        async function testTodayAPI() {
+            const output = document.getElementById('output');
+            output.innerHTML = '<p>Testing...</p>';
+            
+            try {
+                console.log('Testing today API...');
+                const today = new Date();
+                const month = today.getMonth() + 1;
+                const day = today.getDate();
+                
+                console.log('Today:', month, day);
+                output.innerHTML += `<p>Today: ${month}-${day}</p>`;
+                
+                const data = await getDataForDate(month, day);
+                console.log('Data received:', data);
+                
+                output.innerHTML += `<p>Events: ${data.events?.length || 0}</p>`;
+                output.innerHTML += `<p>Birthdays: ${data.birthdays?.length || 0}</p>`;
+                output.innerHTML += `<p>Deaths: ${data.deaths?.length || 0}</p>`;
+                
+                if (data.events && data.events.length > 0) {
+                    output.innerHTML += '<h3>First Event:</h3>';
+                    output.innerHTML += `<p>${data.events[0].description['zh-CN'] || data.events[0].description['en-US']}</p>`;
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                output.innerHTML += `<p style="color:red">Error: ${error.message}</p>`;
+            }
+        }
+        
+        // Test when page loads
+        window.addEventListener('DOMContentLoaded', testTodayAPI);
+    </script>
+</body>
+</html>
