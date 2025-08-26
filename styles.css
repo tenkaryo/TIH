@@ -193,10 +193,6 @@ body {
     margin: 0 auto;
 }
 
-.date-header {
-    margin-bottom: var(--space-xl);
-}
-
 .current-date {
     font-family: var(--font-serif);
     font-size: 3rem;
