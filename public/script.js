@@ -1,4 +1,4 @@
-// OnThisDay Website - Professional News Style
+// TimeRemind.Today Website - Professional News Style
 
 class OnThisDay {
     constructor(initialDate = null) {
@@ -30,15 +30,30 @@ class OnThisDay {
             this.isHomePage = true;
         }
         
-        this.currentLanguage = this.detectLanguage();
+        this.currentLanguage = 'en-US'; // 临时默认值，将在init中异步更新
         this.activeSection = 'events';
         this.lastClickTime = 0;
         this.originalSubtitle = '';
         this.init();
     }
     
-    detectLanguage() {
-        // Check URL parameter first
+    async detectLanguage() {
+        // Get multi-language config first
+        let config = { enabled: false, defaultLanguage: 'en-US' };
+        if (typeof getMultiLangConfig === 'function') {
+            try {
+                config = await getMultiLangConfig();
+            } catch (error) {
+                console.warn('Failed to get multi-language config:', error);
+            }
+        }
+        
+        // If multi-language is disabled, always return default language
+        if (!config.enabled) {
+            return config.defaultLanguage;
+        }
+        
+        // If multi-language is enabled, check URL parameter first
         const urlParams = new URLSearchParams(window.location.search);
         const langParam = urlParams.get('lang');
         if (langParam && ['zh-CN', 'en-US'].includes(langParam)) {
@@ -51,16 +66,26 @@ class OnThisDay {
     }
 
     async init() {
+        // 首先异步检测正确的语言
+        this.currentLanguage = await this.detectLanguage();
+        
         this.setupEventListeners();
         this.initializeSelectors();
+        
+        // 初始化语言显示
+        this.updateLanguageContent();
+        
+        // 检查并处理多语言开关
+        await this.handleMultiLanguageToggle();
         
         // 如果是主页，先获取服务器今天的日期
         if (this.isHomePage) {
             await this.loadTodayFromServer();
         }
         
-        this.loadContent();
+        // 确保日期显示在数据加载之前就更新
         this.updateDateDisplay();
+        this.loadContent();
         this.setupNavigation();
         this.setupScrollListener();
         this.saveOriginalSubtitle();
@@ -71,27 +96,47 @@ class OnThisDay {
     // 从服务器获取今天的日期和数据
     async loadTodayFromServer() {
         try {
-            const response = await fetch('/api/today');
-            if (response.ok) {
-                const result = await response.json();
-                if (result.success && result.date) {
-                    const [month, day] = result.date.split('-').map(Number);
-                    this.currentDate = new Date(2024, month - 1, day);
-                    
-                    // 缓存今天的数据，避免重复API调用
-                    if (typeof dataCache !== 'undefined' && typeof formatDateKey === 'function') {
-                        dataCache.set(formatDateKey(month, day), {
-                            data: result.data,
-                            timestamp: Date.now()
-                        });
-                    }
-                    
-                    console.log('已从服务器获取今天的日期:', result.date);
-                }
+            // 使用本地当前日期作为基准
+            const today = new Date();
+            const month = today.getMonth() + 1;
+            const day = today.getDate();
+            
+            // 确保使用当前日期（今天的真实日期）
+            this.currentDate = new Date(2024, month - 1, day);
+            
+            console.log('已设置今天的日期:', `${month}-${day}`);
+            
+            // 预加载今天的数据以确保API正常工作
+            if (typeof getDataForDate === 'function') {
+                const testData = await getDataForDate(month, day);
+                console.log('今日数据预加载结果:', testData?.events?.length || 0, '个事件');
             }
+            
         } catch (error) {
-            console.warn('无法从服务器获取今天的日期，使用本地日期:', error);
+            console.warn('无法获取今天的数据，使用本地日期:', error);
             // 继续使用本地日期作为fallback
+        }
+    }
+    
+    // 处理多语言开关
+    async handleMultiLanguageToggle() {
+        let config = { enabled: false };
+        if (typeof getMultiLangConfig === 'function') {
+            try {
+                config = await getMultiLangConfig();
+            } catch (error) {
+                console.warn('Failed to get multi-language config:', error);
+            }
+        }
+        
+        // 如果多语言功能关闭，隐藏语言切换按钮
+        if (!config.enabled) {
+            const languageSelector = document.getElementById('languageSelector');
+            if (languageSelector) {
+                languageSelector.style.display = 'none';
+            }
+            
+            console.log('Multi-language feature is disabled, language selector hidden');
         }
     }
     
@@ -150,32 +195,18 @@ class OnThisDay {
         // Modal controls
         this.setupModalControls();
 
-        // Nav brand double-click to scroll to top
+        // Nav brand click to go home
         const navBrand = document.querySelector('.nav-brand');
         if (navBrand) {
-            // Use custom double-click detection to avoid zoom issues
             navBrand.addEventListener('click', (e) => {
                 e.preventDefault();
-                const currentTime = new Date().getTime();
-                const timeDiff = currentTime - this.lastClickTime;
-                
-                if (timeDiff < 500 && timeDiff > 0) {
-                    // This is a double click
-                    e.stopPropagation();
-                    e.stopImmediatePropagation();
-                    this.scrollToTop();
-                }
-                
-                this.lastClickTime = currentTime;
-            });
-            
-            // Also handle the native dblclick event with prevention
-            navBrand.addEventListener('dblclick', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                e.stopImmediatePropagation();
+                // Navigate to homepage
+                window.location.href = '/';
             });
         }
+
+        // Back to top button setup
+        this.setupBackToTopButton();
     }
 
     setupSidebarNavigation() {
@@ -210,6 +241,37 @@ class OnThisDay {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
+        });
+    }
+
+    setupBackToTopButton() {
+        // Create back to top button
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.id = 'backToTop';
+        backToTopBtn.className = 'back-to-top-btn';
+        backToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+        backToTopBtn.setAttribute('aria-label', 'Back to top');
+        backToTopBtn.style.display = 'none';
+        
+        // Add click handler
+        backToTopBtn.addEventListener('click', () => {
+            this.scrollToTop();
+        });
+
+        // Add to page
+        document.body.appendChild(backToTopBtn);
+
+        // Show/hide based on scroll position
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const viewportHeight = window.innerHeight;
+            
+            // Show button when scrolled past the first screen
+            if (scrollTop > viewportHeight) {
+                backToTopBtn.style.display = 'flex';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
         });
     }
 
@@ -375,7 +437,6 @@ class OnThisDay {
 
     updateDateDisplay() {
         const currentDateElement = document.getElementById('currentDate');
-        const dateSubtitle = document.querySelector('.date-subtitle');
         
         const dateText = formatDateDisplay(
             this.currentDate.getMonth() + 1,
@@ -383,31 +444,6 @@ class OnThisDay {
             this.currentLanguage
         );
         currentDateElement.textContent = dateText;
-
-        // For specific date pages (not homepage), hide the date-subtitle
-        if (dateSubtitle) {
-            if (this.isHomePage) {
-                // Show subtitle only on homepage
-                const weekdays = this.currentLanguage === 'zh-CN' 
-                    ? ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
-                    : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-                
-                const year = this.currentDate.getFullYear();
-                const month = this.currentDate.getMonth() + 1;
-                const day = this.currentDate.getDate();
-                const weekday = weekdays[this.currentDate.getDay()];
-                
-                const subtitleText = this.currentLanguage === 'zh-CN'
-                    ? `今天是${year}年${month}月${day}日，${weekday}`
-                    : `Today is ${weekday}, ${monthNames[this.currentLanguage][month-1]} ${day}, ${year}`;
-                
-                dateSubtitle.textContent = subtitleText;
-                dateSubtitle.style.display = '';
-            } else {
-                // Hide subtitle on specific date pages
-                dateSubtitle.style.display = 'none';
-            }
-        }
 
         // Update navigation buttons
         this.updateNavigationButtons();
@@ -668,7 +704,8 @@ class OnThisDay {
         // Update brand
         const brandTitle = document.querySelector('.brand-title');
         const brandSubtitle = document.querySelector('.brand-subtitle');
-        if (brandTitle) brandTitle.textContent = t.siteTitle;
+        // Note: brandTitle contains logo image, so we don't update its textContent
+        // if (brandTitle) brandTitle.textContent = t.siteTitle;
         if (brandSubtitle) brandSubtitle.textContent = t.siteSubtitle;
         
         // Update navigation buttons
@@ -721,15 +758,15 @@ class OnThisDay {
         
         if (aboutLink) {
             aboutLink.textContent = t.about;
-            aboutLink.href = this.currentLanguage === 'zh-CN' ? '/about-zh' : '/about';
+            aboutLink.href = `/about?lang=${this.currentLanguage}`;
         }
         if (privacyLink) {
             privacyLink.textContent = t.privacy;
-            privacyLink.href = this.currentLanguage === 'zh-CN' ? '/privacy-zh' : '/privacy';
+            privacyLink.href = `/privacy?lang=${this.currentLanguage}`;
         }
         if (termsLink) {
             termsLink.textContent = t.terms;
-            termsLink.href = this.currentLanguage === 'zh-CN' ? '/terms-zh' : '/terms';
+            termsLink.href = `/terms?lang=${this.currentLanguage}`;
         }
         
         // Update footer bottom
@@ -795,12 +832,17 @@ class OnThisDay {
     
     // Update page metadata dynamically
     updatePageMetadata(dateStr) {
-        const [month, day] = dateStr.split('-').map(Number);
+        const parsedDate = parseUrlDate(dateStr);
+        if (!parsedDate) {
+            console.error('Failed to parse date string:', dateStr);
+            return;
+        }
+        const { month, day } = parsedDate;
         const dateDisplay = formatDateDisplay(month, day, this.currentLanguage);
         
         const title = this.currentLanguage === 'zh-CN' 
-            ? `${dateDisplay} - 历史上的今天 | OnThisDay`
-            : `${dateDisplay} - Today in History | OnThisDay`;
+            ? `${dateDisplay} - 历史上的今天 | TimeRemind.Today`
+            : `${dateDisplay} - Today in History | TimeRemind.Today`;
         
         const description = this.currentLanguage === 'zh-CN'
             ? `${dateDisplay}历史上发生的重要事件，包含历史事件、名人生日、名人逝世信息。探索历史，发现精彩。`

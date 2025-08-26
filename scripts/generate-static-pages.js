@@ -34,8 +34,8 @@ function generatePageMetadata(date, data, language = 'zh-CN') {
     const deathCount = data.deaths?.length || 0;
     
     const title = language === 'zh-CN' 
-        ? `${dateDisplay} - 历史上的今天 | OnThisDay`
-        : `${dateDisplay} - Today in History | OnThisDay`;
+        ? `${dateDisplay} - 历史上的今天 | TimeRemind.Today`
+        : `${dateDisplay} - Today in History | TimeRemind.Today`;
     
     const description = language === 'zh-CN'
         ? `${dateDisplay}历史上发生的重要事件，包含${eventCount}个历史事件、${birthdayCount}位名人生日、${deathCount}位名人逝世信息。探索历史，发现精彩。`
@@ -224,8 +224,8 @@ function generateDateIndexPage(dates, outputDir) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnThisDay - 历史上的今天 | 所有日期页面</title>
-    <meta name="description" content="OnThisDay历史上的今天网站的所有日期页面索引，包含${dates.length}个日期的历史事件、名人生日和逝世信息">
+    <title>TimeRemind.Today - 历史上的今天 | 所有日期页面</title>
+    <meta name="description" content="TimeRemind.Today历史上的今天网站的所有日期页面索引，包含${dates.length}个日期的历史事件、名人生日和逝世信息">
     <style>
         body { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
         .header { text-align: center; margin-bottom: 40px; }
@@ -238,7 +238,7 @@ function generateDateIndexPage(dates, outputDir) {
 </head>
 <body>
     <div class="header">
-        <h1>OnThisDay - 历史上的今天</h1>
+        <h1>TimeRemind.Today - 历史上的今天</h1>
         <p>所有日期页面索引 (${dates.length} 个日期)</p>
         <p><a href="/">返回主页</a></p>
     </div>

@@ -1,10 +1,10 @@
-// Data utilities and API integration for OnThisDay website
+// Data utilities and API integration for TimeRemind.Today website
 
 // API Configuration
 const API_CONFIG = {
     baseUrl: (typeof window !== 'undefined' && (window.location.hostname === 'tih-sigma.vercel.app' || window.location.hostname.includes('vercel.app'))) 
         ? '/api'  // 使用相对路径，Vercel会自动路由
-        : 'http://localhost:3001/api',
+        : '/api',  // 本地也使用相对路径，直接连接3090端口的dev-server
     timeout: 10000 // 10 seconds timeout for production
 };
 
@@ -13,6 +13,39 @@ let tokenCache = {
     token: null,
     expiresAt: 0
 };
+
+// Multi-language config cache
+let multiLangConfig = {
+    enabled: null,
+    defaultLanguage: null,
+    cached: false
+};
+
+// Get multi-language configuration from server
+async function getMultiLangConfig() {
+    if (multiLangConfig.cached) {
+        return multiLangConfig;
+    }
+    
+    try {
+        const response = await fetch(`${API_CONFIG.baseUrl}/config/multilang`);
+        if (response.ok) {
+            const config = await response.json();
+            multiLangConfig.enabled = config.enabled;
+            multiLangConfig.defaultLanguage = config.defaultLanguage;
+            multiLangConfig.cached = true;
+            return multiLangConfig;
+        }
+    } catch (error) {
+        console.warn('Failed to get multi-language config, using defaults:', error);
+    }
+    
+    // Default config if API fails
+    multiLangConfig.enabled = false;
+    multiLangConfig.defaultLanguage = 'en-US';
+    multiLangConfig.cached = true;
+    return multiLangConfig;
+}
 
 // Get token from server
 async function getToken() {
@@ -77,9 +110,9 @@ const monthNamesShort = {
 // Language translations
 const translations = {
     'zh-CN': {
-        siteTitle: 'OnThisDay',
+        siteTitle: 'TimeRemind.Today',
         siteSubtitle: '历史上的今天',
-        pageTitle: 'OnThisDay - 历史上的今天',
+        pageTitle: 'TimeRemind.Today - 历史上的今天',
         todayInHistory: '历史上的今天',
         todayInHistoryEn: 'Today in History',
         famousBirthdays: '名人生日',
@@ -106,7 +139,7 @@ const translations = {
         followUs: '关注我们',
         websiteInfo: '网站信息',
         legalTerms: '法律条款',
-        copyright: '© 2024 OnThisDay. 保留所有权利',
+        copyright: '© 2025 TimeRemind.Today. 保留所有权利',
         dataSource: '数据来源：维基百科、历史数据库',
         footerDesc: '探索历史，发现精彩',
         cancel: '取消',
@@ -115,9 +148,9 @@ const translations = {
         noData: '暂无数据'
     },
     'en-US': {
-        siteTitle: 'OnThisDay',
+        siteTitle: 'TimeRemind.Today',
         siteSubtitle: 'Today in History',
-        pageTitle: 'OnThisDay - Today in History',
+        pageTitle: 'TimeRemind.Today - Today in History',
         todayInHistory: 'Today in History',
         todayInHistoryEn: 'Historical Events',
         famousBirthdays: 'Famous Birthdays',
@@ -144,7 +177,7 @@ const translations = {
         followUs: 'Follow Us',
         websiteInfo: 'Website Info',
         legalTerms: 'Legal Terms',
-        copyright: '© 2024 OnThisDay. All rights reserved',
+        copyright: '© 2025 TimeRemind.Today. All rights reserved',
         dataSource: 'Data Source: Wikipedia, Historical Database',
         footerDesc: 'Explore history, discover the extraordinary',
         cancel: 'Cancel',
@@ -195,7 +228,7 @@ async function makeApiRequest(endpoint) {
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json',
-                'User-Agent': 'OnThisDay-Frontend/1.0'
+                'User-Agent': 'TimeRemind.Today-Frontend/1.0'
             },
             signal: controller.signal
         });
@@ -244,18 +277,15 @@ async function getDataForDate(month, day) {
     // 如果是今天的数据且在主页，使用today API
     if (key === todayKey && isHomePage) {
         try {
-            const response = await fetch('/api/today');
-            if (response.ok) {
-                const result = await response.json();
-                if (result.success && result.data) {
-                    // Cache the result
-                    dataCache.set(key, {
-                        data: result.data,
-                        timestamp: Date.now()
-                    });
-                    return result.data;
-                }
-            }
+            // Use authenticated today API
+            const data = await makeApiRequest('/today');
+            
+            // Cache the result
+            dataCache.set(key, {
+                data: data,
+                timestamp: Date.now()
+            });
+            return data;
         } catch (error) {
             console.warn('Today API failed, falling back to public API:', error);
         }
