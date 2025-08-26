@@ -86,7 +86,6 @@ body {
 .nav-brand {
     display: flex;
     align-items: center;
-    gap: var(--space-md);
     cursor: pointer;
     transition: opacity 0.2s ease;
     user-select: none;
@@ -128,7 +127,7 @@ body {
 }
 
 .brand-logo-img {
-    height: 1.75rem; /* 与font-size匹配 */
+    height: 40px; /* 匹配nav-brand的高度 */
     width: auto;
     max-width: none;
     object-fit: contain;
@@ -833,7 +832,7 @@ body {
     }
     
     .brand-logo-img {
-        height: 1.5rem; /* 移动端匹配更小的font-size */
+        height: 35px; /* 移动端稍小一些 */
     }
     
     .nav-controls {
