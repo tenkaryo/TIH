@@ -30,24 +30,12 @@
       "destination": "/about.html"
     },
     {
-      "source": "/about-zh",
-      "destination": "/about-zh.html"
-    },
-    {
       "source": "/privacy",
       "destination": "/privacy.html"
     },
     {
-      "source": "/privacy-zh",
-      "destination": "/privacy-zh.html"
-    },
-    {
       "source": "/terms",
       "destination": "/terms.html"
-    },
-    {
-      "source": "/terms-zh",
-      "destination": "/terms-zh.html"
     },
     {
       "source": "/history/(.*)",
