@@ -14,6 +14,39 @@ let tokenCache = {
     expiresAt: 0
 };
 
+// Multi-language config cache
+let multiLangConfig = {
+    enabled: null,
+    defaultLanguage: null,
+    cached: false
+};
+
+// Get multi-language configuration from server
+async function getMultiLangConfig() {
+    if (multiLangConfig.cached) {
+        return multiLangConfig;
+    }
+    
+    try {
+        const response = await fetch(`${API_CONFIG.baseUrl}/config/multilang`);
+        if (response.ok) {
+            const config = await response.json();
+            multiLangConfig.enabled = config.enabled;
+            multiLangConfig.defaultLanguage = config.defaultLanguage;
+            multiLangConfig.cached = true;
+            return multiLangConfig;
+        }
+    } catch (error) {
+        console.warn('Failed to get multi-language config, using defaults:', error);
+    }
+    
+    // Default config if API fails
+    multiLangConfig.enabled = false;
+    multiLangConfig.defaultLanguage = 'en-US';
+    multiLangConfig.cached = true;
+    return multiLangConfig;
+}
+
 // Get token from server
 async function getToken() {
     // Check if cached token is still valid (with 30 second buffer)

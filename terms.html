@@ -265,18 +265,41 @@
         }
         
         // 检测并初始化语言
-        function detectAndInitLanguage() {
-            // 检查URL参数
-            const urlParams = new URLSearchParams(window.location.search);
-            const langParam = urlParams.get('lang');
-            let currentLang = 'zh-CN'; // 默认中文
+        async function detectAndInitLanguage() {
+            // Get multi-language configuration
+            let config = { enabled: false, defaultLanguage: 'en-US' };
+            try {
+                const response = await fetch('/api/config/multilang');
+                if (response.ok) {
+                    config = await response.json();
+                }
+            } catch (error) {
+                console.warn('Failed to get multi-language config, using defaults:', error);
+            }
             
-            if (langParam && ['zh-CN', 'en-US'].includes(langParam)) {
-                currentLang = langParam;
-            } else {
-                // 检查浏览器语言
-                const browserLang = navigator.language || navigator.userLanguage;
-                currentLang = browserLang.startsWith('zh') ? 'zh-CN' : 'en-US';
+            let currentLang = config.defaultLanguage; // Use configured default
+            
+            // If multi-language is enabled, check URL parameter and browser language
+            if (config.enabled) {
+                // 检查URL参数
+                const urlParams = new URLSearchParams(window.location.search);
+                const langParam = urlParams.get('lang');
+                
+                if (langParam && ['zh-CN', 'en-US'].includes(langParam)) {
+                    currentLang = langParam;
+                } else {
+                    // 检查浏览器语言
+                    const browserLang = navigator.language || navigator.userLanguage;
+                    currentLang = browserLang.startsWith('zh') ? 'zh-CN' : 'en-US';
+                }
+            }
+            
+            // Hide language selector if multi-language is disabled
+            if (!config.enabled) {
+                const languageSelector = document.getElementById('languageSelector');
+                if (languageSelector) {
+                    languageSelector.style.display = 'none';
+                }
             }
             
             // 应用检测到的语言

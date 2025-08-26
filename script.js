@@ -30,15 +30,30 @@ class OnThisDay {
             this.isHomePage = true;
         }
         
-        this.currentLanguage = this.detectLanguage();
+        this.currentLanguage = 'en-US'; // 临时默认值，将在init中异步更新
         this.activeSection = 'events';
         this.lastClickTime = 0;
         this.originalSubtitle = '';
         this.init();
     }
     
-    detectLanguage() {
-        // Check URL parameter first
+    async detectLanguage() {
+        // Get multi-language config first
+        let config = { enabled: false, defaultLanguage: 'en-US' };
+        if (typeof getMultiLangConfig === 'function') {
+            try {
+                config = await getMultiLangConfig();
+            } catch (error) {
+                console.warn('Failed to get multi-language config:', error);
+            }
+        }
+        
+        // If multi-language is disabled, always return default language
+        if (!config.enabled) {
+            return config.defaultLanguage;
+        }
+        
+        // If multi-language is enabled, check URL parameter first
         const urlParams = new URLSearchParams(window.location.search);
         const langParam = urlParams.get('lang');
         if (langParam && ['zh-CN', 'en-US'].includes(langParam)) {
@@ -51,11 +66,17 @@ class OnThisDay {
     }
 
     async init() {
+        // 首先异步检测正确的语言
+        this.currentLanguage = await this.detectLanguage();
+        
         this.setupEventListeners();
         this.initializeSelectors();
         
         // 初始化语言显示
         this.updateLanguageContent();
+        
+        // 检查并处理多语言开关
+        await this.handleMultiLanguageToggle();
         
         // 如果是主页，先获取服务器今天的日期
         if (this.isHomePage) {
@@ -94,6 +115,28 @@ class OnThisDay {
         } catch (error) {
             console.warn('无法获取今天的数据，使用本地日期:', error);
             // 继续使用本地日期作为fallback
+        }
+    }
+    
+    // 处理多语言开关
+    async handleMultiLanguageToggle() {
+        let config = { enabled: false };
+        if (typeof getMultiLangConfig === 'function') {
+            try {
+                config = await getMultiLangConfig();
+            } catch (error) {
+                console.warn('Failed to get multi-language config:', error);
+            }
+        }
+        
+        // 如果多语言功能关闭，隐藏语言切换按钮
+        if (!config.enabled) {
+            const languageSelector = document.getElementById('languageSelector');
+            if (languageSelector) {
+                languageSelector.style.display = 'none';
+            }
+            
+            console.log('Multi-language feature is disabled, language selector hidden');
         }
     }
     

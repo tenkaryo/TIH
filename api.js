@@ -46,6 +46,9 @@ const rateLimiter = rateLimit({
 const API_KEY = process.env.API_KEY || 'TGnKAY@9$Q$5ryex4D5523';
 const TOKEN_EXPIRE_SECONDS = 300; // 5 minutes
 
+// Multi-language feature toggle
+const ENABLE_MULTILANG = process.env.ENABLE_MULTILANG === 'true' || false;
+
 // Generate token hash (same algorithm as frontend)
 function generateTokenHash(timestamp, apiKey) {
     function simpleHash(str) {
@@ -149,6 +152,14 @@ app.use('/api/', rateLimiter);
 // Health check endpoint
 app.get('/api/health', (req, res) => {
     res.json({ status: 'OK', timestamp: new Date().toISOString() });
+});
+
+// Multi-language config endpoint
+app.get('/api/config/multilang', (req, res) => {
+    res.json({ 
+        enabled: ENABLE_MULTILANG,
+        defaultLanguage: ENABLE_MULTILANG ? 'auto' : 'en-US'
+    });
 });
 
 // Token generation endpoint
