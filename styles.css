@@ -127,7 +127,7 @@ body {
 }
 
 .brand-logo-img {
-    height: 40px; /* 匹配nav-brand的高度 */
+    height: 55px; /* 匹配nav-brand的高度 */
     width: auto;
     max-width: none;
     object-fit: contain;
@@ -832,7 +832,7 @@ body {
     }
     
     .brand-logo-img {
-        height: 35px; /* 移动端稍小一些 */
+        height: 48px; /* 移动端稍小一些 */
     }
     
     .nav-controls {
