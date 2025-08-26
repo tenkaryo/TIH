@@ -687,7 +687,8 @@ class OnThisDay {
         // Update brand
         const brandTitle = document.querySelector('.brand-title');
         const brandSubtitle = document.querySelector('.brand-subtitle');
-        if (brandTitle) brandTitle.textContent = t.siteTitle;
+        // Note: brandTitle contains logo image, so we don't update its textContent
+        // if (brandTitle) brandTitle.textContent = t.siteTitle;
         if (brandSubtitle) brandSubtitle.textContent = t.siteSubtitle;
         
         // Update navigation buttons
