@@ -1,4 +1,4 @@
-// OnThisDay Website - Professional News Style
+// TimeRemind.Today Website - Professional News Style
 
 class OnThisDay {
     constructor(initialDate = null) {
@@ -195,32 +195,18 @@ class OnThisDay {
         // Modal controls
         this.setupModalControls();
 
-        // Nav brand double-click to scroll to top
+        // Nav brand click to go home
         const navBrand = document.querySelector('.nav-brand');
         if (navBrand) {
-            // Use custom double-click detection to avoid zoom issues
             navBrand.addEventListener('click', (e) => {
                 e.preventDefault();
-                const currentTime = new Date().getTime();
-                const timeDiff = currentTime - this.lastClickTime;
-                
-                if (timeDiff < 500 && timeDiff > 0) {
-                    // This is a double click
-                    e.stopPropagation();
-                    e.stopImmediatePropagation();
-                    this.scrollToTop();
-                }
-                
-                this.lastClickTime = currentTime;
-            });
-            
-            // Also handle the native dblclick event with prevention
-            navBrand.addEventListener('dblclick', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                e.stopImmediatePropagation();
+                // Navigate to homepage
+                window.location.href = '/';
             });
         }
+
+        // Back to top button setup
+        this.setupBackToTopButton();
     }
 
     setupSidebarNavigation() {
@@ -255,6 +241,37 @@ class OnThisDay {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
+        });
+    }
+
+    setupBackToTopButton() {
+        // Create back to top button
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.id = 'backToTop';
+        backToTopBtn.className = 'back-to-top-btn';
+        backToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+        backToTopBtn.setAttribute('aria-label', 'Back to top');
+        backToTopBtn.style.display = 'none';
+        
+        // Add click handler
+        backToTopBtn.addEventListener('click', () => {
+            this.scrollToTop();
+        });
+
+        // Add to page
+        document.body.appendChild(backToTopBtn);
+
+        // Show/hide based on scroll position
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const viewportHeight = window.innerHeight;
+            
+            // Show button when scrolled past the first screen
+            if (scrollTop > viewportHeight) {
+                backToTopBtn.style.display = 'flex';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
         });
     }
 
@@ -824,8 +841,8 @@ class OnThisDay {
         const dateDisplay = formatDateDisplay(month, day, this.currentLanguage);
         
         const title = this.currentLanguage === 'zh-CN' 
-            ? `${dateDisplay} - 历史上的今天 | OnThisDay`
-            : `${dateDisplay} - Today in History | OnThisDay`;
+            ? `${dateDisplay} - 历史上的今天 | TimeRemind.Today`
+            : `${dateDisplay} - Today in History | TimeRemind.Today`;
         
         const description = this.currentLanguage === 'zh-CN'
             ? `${dateDisplay}历史上发生的重要事件，包含历史事件、名人生日、名人逝世信息。探索历史，发现精彩。`

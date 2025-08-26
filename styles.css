@@ -1,4 +1,4 @@
-/* OnThisDay Style - Professional News Website Design */
+/* TimeRemind.Today Style - Professional News Website Design */
 
 /* CSS Reset & Base */
 * {
@@ -974,5 +974,47 @@ body {
     
     .date-picker {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Back to Top Button */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.back-to-top-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -2px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-gold) 100%);
+}
+
+.back-to-top-btn:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+    .back-to-top-btn {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 16px;
     }
 }

@@ -1,4 +1,4 @@
-// Data utilities and API integration for OnThisDay website
+// Data utilities and API integration for TimeRemind.Today website
 
 // API Configuration
 const API_CONFIG = {
@@ -110,9 +110,9 @@ const monthNamesShort = {
 // Language translations
 const translations = {
     'zh-CN': {
-        siteTitle: 'OnThisDay',
+        siteTitle: 'TimeRemind.Today',
         siteSubtitle: '历史上的今天',
-        pageTitle: 'OnThisDay - 历史上的今天',
+        pageTitle: 'TimeRemind.Today - 历史上的今天',
         todayInHistory: '历史上的今天',
         todayInHistoryEn: 'Today in History',
         famousBirthdays: '名人生日',
@@ -139,7 +139,7 @@ const translations = {
         followUs: '关注我们',
         websiteInfo: '网站信息',
         legalTerms: '法律条款',
-        copyright: '© 2024 OnThisDay. 保留所有权利',
+        copyright: '© 2024 TimeRemind.Today. 保留所有权利',
         dataSource: '数据来源：维基百科、历史数据库',
         footerDesc: '探索历史，发现精彩',
         cancel: '取消',
@@ -148,9 +148,9 @@ const translations = {
         noData: '暂无数据'
     },
     'en-US': {
-        siteTitle: 'OnThisDay',
+        siteTitle: 'TimeRemind.Today',
         siteSubtitle: 'Today in History',
-        pageTitle: 'OnThisDay - Today in History',
+        pageTitle: 'TimeRemind.Today - Today in History',
         todayInHistory: 'Today in History',
         todayInHistoryEn: 'Historical Events',
         famousBirthdays: 'Famous Birthdays',
@@ -177,7 +177,7 @@ const translations = {
         followUs: 'Follow Us',
         websiteInfo: 'Website Info',
         legalTerms: 'Legal Terms',
-        copyright: '© 2024 OnThisDay. All rights reserved',
+        copyright: '© 2024 TimeRemind.Today. All rights reserved',
         dataSource: 'Data Source: Wikipedia, Historical Database',
         footerDesc: 'Explore history, discover the extraordinary',
         cancel: 'Cancel',
@@ -228,7 +228,7 @@ async function makeApiRequest(endpoint) {
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json',
-                'User-Agent': 'OnThisDay-Frontend/1.0'
+                'User-Agent': 'TimeRemind.Today-Frontend/1.0'
             },
             signal: controller.signal
         });
