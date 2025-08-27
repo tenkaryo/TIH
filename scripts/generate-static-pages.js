@@ -94,7 +94,7 @@ function renderPeople(people, language = 'zh-CN') {
         return `
             <div class="person-card">
                 <div class="person-image">
-                    <img src="${person.image}" alt="${name}" loading="lazy" onerror="this.style.display='none'">
+                    <img src="${person.image}" alt="${name}" loading="lazy" onerror="this.src='/avatar.png'">
                 </div>
                 <div class="person-info">
                     <h4 class="person-name">${name}</h4>
