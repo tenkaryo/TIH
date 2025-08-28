@@ -94,7 +94,7 @@ function renderPeople(people, language = 'zh-CN') {
         return `
             <div class="person-card">
                 <div class="person-image">
-                    <img src="${person.image}" alt="${name}" loading="lazy" onerror="this.src='/avatar.png'">
+                    <img src="${person.image || '/avatar.png'}" alt="${name}" loading="lazy" onerror="this.src='/avatar.png'">
                 </div>
                 <div class="person-info">
                     <h4 class="person-name">${name}</h4>
@@ -146,8 +146,38 @@ function generateDatePage(date, language = 'zh-CN') {
     const pageUrlEn = `${baseUrl}/history/${urlDate}/?lang=en-US`;
     const ogImageUrl = `${baseUrl}/api/og-image/${urlDate}?lang=${language}`;
     
+    // 根据语言动态替换静态文本
+    let localizedTemplate = template;
+    if (language === 'en-US') {
+        localizedTemplate = localizedTemplate
+            .replace(/选择日期/g, 'Select Date')
+            .replace(/中文/g, 'English')
+            .replace(/🇨🇳/g, '🇺🇸')
+            .replace(/生日查询/g, 'Birthday Query')
+            .replace(/查看你的生日发生了什么/g, 'What happened on your birthday?')
+            .replace(/月份/g, 'Month')
+            .replace(/日期/g, 'Day')
+            .replace(/查看生日/g, 'Check Birthday')
+            .replace(/导航/g, 'Navigation')
+            .replace(/历史事件/g, 'Historical Events')
+            .replace(/名人生日/g, 'Famous Birthdays')
+            .replace(/名人逝世/g, 'Famous Deaths')
+            .replace(/历史上的今天/g, 'Today in History')
+            .replace(/生于这一天/g, 'Born on This Day')
+            .replace(/逝于这一天/g, 'Died on This Day')
+            .replace(/探索历史，发现精彩/g, 'Explore history, discover the extraordinary')
+            .replace(/关于我们/g, 'About Us')
+            .replace(/隐私政策/g, 'Privacy Policy')
+            .replace(/服务条款/g, 'Terms of Service')
+            .replace(/保留所有权利/g, 'All rights reserved')
+            .replace(/数据来源: 维基百科，历史数据库/g, 'Data Source: Wikipedia, Historical Database')
+            .replace(/选择语言/g, 'Select Language')
+            .replace(/取消/g, 'Cancel')
+            .replace(/确认/g, 'Confirm');
+    }
+    
     // 替换模板占位符
-    const html = template
+    const html = localizedTemplate
         .replace(/\{\{PAGE_TITLE\}\}/g, metadata.title)
         .replace(/\{\{PAGE_DESCRIPTION\}\}/g, metadata.description)
         .replace(/\{\{PAGE_KEYWORDS\}\}/g, metadata.keywords)
