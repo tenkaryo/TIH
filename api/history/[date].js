@@ -176,7 +176,7 @@ export default async function handler(req, res) {
         const famousDeathsSSR = renderPeople(data.deaths, language);
         
         // Page URL
-        const baseUrl = 'https://tih-sigma.vercel.app';
+        const baseUrl = 'https://timeremind.today';
         const pageUrl = `${baseUrl}/history/${date}/`;
         const pageUrlEn = `${baseUrl}/history/${date}/?lang=en-US`;
         

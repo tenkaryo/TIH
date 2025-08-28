@@ -870,14 +870,14 @@ class OnThisDay {
         
         const ogUrl = document.querySelector('meta[property="og:url"]');
         if (ogUrl) {
-            const baseUrl = 'https://tih-sigma.vercel.app';
+            const baseUrl = 'https://timeremind.today';
             ogUrl.setAttribute('content', `${baseUrl}/history/${dateStr}/`);
         }
         
         // Update canonical URL
         const canonical = document.querySelector('link[rel="canonical"]');
         if (canonical) {
-            const baseUrl = 'https://tih-sigma.vercel.app';
+            const baseUrl = 'https://timeremind.today';
             canonical.setAttribute('href', `${baseUrl}/history/${dateStr}/`);
         }
     }

@@ -11,6 +11,7 @@ export default function handler(req, res) {
         'null', // Allow file:// protocol
         'http://127.0.0.1:3000',
         'https://localhost:3000',
+        'https://timeremind.today',
         'https://tih-sigma.vercel.app'
     ];
     

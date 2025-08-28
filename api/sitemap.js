@@ -5,7 +5,7 @@ export default function handler(_req, res) {
     try {
         // Get all available dates
         const dates = Object.keys(historyData);
-        const baseUrl = 'https://tih-sigma.vercel.app';
+        const baseUrl = 'https://timeremind.today';
         const currentDate = new Date().toISOString().split('T')[0];
         
         // Generate sitemap XML

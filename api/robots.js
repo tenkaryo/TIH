@@ -1,8 +1,8 @@
 // Generate robots.txt for SEO
 export default function handler(_req, res) {
-    const baseUrl = 'https://tih-sigma.vercel.app';
+    const baseUrl = 'https://timeremind.today';
     
-    const robotsTxt = `# OnThisDay - 历史上的今天
+    const robotsTxt = `# TimeRemind.Today - 历史上的今天
 # Generated robots.txt for SEO optimization
 
 User-agent: *

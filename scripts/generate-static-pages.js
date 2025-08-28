@@ -141,7 +141,7 @@ function generateDatePage(date, language = 'zh-CN') {
     
     // 页面URL - 使用URL格式
     const urlDate = formatUrlDate(month, day);
-    const baseUrl = 'https://tih-sigma.vercel.app';
+    const baseUrl = 'https://timeremind.today';
     const pageUrl = `${baseUrl}/history/${urlDate}/`;
     const pageUrlEn = `${baseUrl}/history/${urlDate}/?lang=en-US`;
     const ogImageUrl = `${baseUrl}/api/og-image/${urlDate}?lang=${language}`;
