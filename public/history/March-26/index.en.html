@@ -49,6 +49,10 @@
     
     <!-- 样式文件 -->
     <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- 预加载关键资源 -->
     <link rel="preload" href="/data.js" as="script">
@@ -217,236 +221,73 @@
         
     </div>
     
-    <!-- 主要内容结构 -->
-    <div class="app">
-        <!-- 导航栏 -->
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-brand">
-                <h1 class="brand-title"><img src="/tih_logo.png" alt="TimeRemind.Today" class="brand-logo-img"></h1>
-                    <p class="brand-subtitle">历史上的今天</p>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="/tih_logo.png" alt="TimeRemind.Today" class="brand-logo-img">
+            </div>
+            
+            <div class="nav-controls">
+                <button class="nav-btn" id="dateSelector">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Select Date</span>
+                </button>
+                <button class="nav-btn" id="languageSelector">
+                    <span class="flag">🇺🇸</span>
+                    <span>English</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="date-header">
+                    <h2 class="current-date" id="currentDate">MARCH 26</h2>
                 </div>
                 
-                <div class="nav-controls">
-                    <button id="dateSelector" class="nav-btn">
-                        <span>选择日期</span>
+                <!-- Date Navigation Compact -->
+                <div class="date-nav-compact">
+                    <button class="nav-compact-btn" id="prevDate">
+                        <i class="fas fa-chevron-left"></i>
+                        <span id="prevDateText">--</span>
                     </button>
-                    
-                    <button id="languageSelector" class="nav-btn">
-                        <span class="flag">🇨🇳</span>
-                        <span>中文</span>
+                    <button class="nav-compact-btn" id="nextDate">
+                        <span id="nextDateText">--</span>
+                        <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
             </div>
-        </nav>
+        </section>
 
-        <!-- 主要内容区域 -->
-        <main class="main-content">
-            <!-- 英雄区域 -->
-            <section class="hero-section">
-                <div class="container">
-                    <h1 id="currentDate" class="hero-title">MARCH 26</h1>
-                    <p class="date-subtitle">Today is Tuesday, March 26, 2024</p>
+        <!-- Main Content Area -->
+        <div class="content-wrapper">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Birthday Checker -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Birthday Query</h3>
+                    <p class="sidebar-desc">What happened on your birthday?</p>
+                    <div class="birthday-form">
+                        <select id="birthMonth" class="select-minimal">
+                            <option value="">Month</option>
+                        </select>
+                        <select id="birthDay" class="select-minimal">
+                            <option value="">Day</option>
+                        </select>
+                        <button class="btn-primary" id="checkBirthday">Check Birthday</button>
+                    </div>
                 </div>
-            </section>
 
-            <!-- 内容区域 -->
-            <div class="content-wrapper">
-                <div class="container">
-                    <div class="content-grid">
-                        <!-- 主内容 -->
-                        <div class="main-column">
-                            <!-- 历史事件 -->
-                            <section id="events" class="content-section">
-                                <div class="section-header">
-                                    <h2 class="section-title">历史上的今天</h2>
-                                    <p class="section-subtitle">Today in History</p>
-                                </div>
-                                <div id="historyEvents" class="timeline">
-                                    
-            <div class="timeline-event">
-                <span class="event-year">2000</span>
-                <div class="event-content">
-                    <p class="event-description">Vladimir Putin is elected President of Russia. The ex-KGB officer has been lauded for leading Russia out of the 1990 economic crisis and criticized for building a regime that many have described as authoritarian and undemocratic.</p>
-                    
-                </div>
-            </div>
-        
-            <div class="timeline-event">
-                <span class="event-year">1995</span>
-                <div class="event-content">
-                    <p class="event-description">The Schengen Agreement enters into force. Within the Schengen Area, which encompasses most of Europe, regular border checks have been abolished.</p>
-                    
-                </div>
-            </div>
-        
-            <div class="timeline-event">
-                <span class="event-year">1991</span>
-                <div class="event-content">
-                    <p class="event-description">4 South American countries establish Mercosur. Argentina, Brazil, Uruguay, and Paraguay were the founding members of the Southern Common Market.</p>
-                    
-                </div>
-            </div>
-        
-            <div class="timeline-event">
-                <span class="event-year">1979</span>
-                <div class="event-content">
-                    <p class="event-description">The Israel-Egypt Peace Treaty is signed. Egypt's President Anwar al-Sadat and Israel's Prime Minister Menachem Begin signed the treaty, which ended 30 years of war between the 2 countries.</p>
-                    
-                </div>
-            </div>
-        
-            <div class="timeline-event">
-                <span class="event-year">1975</span>
-                <div class="event-content">
-                    <p class="event-description">The Biological Weapons Convention comes into effect. The treaty bans the development, production and stockpiling of biological and toxin weapons. It has now been ratified by most countries worldwide.</p>
-                    
-                </div>
-            </div>
-        
-                                </div>
-                            </section>
-
-                            <!-- 名人生日 -->
-                            <section id="births" class="content-section">
-                                <div class="section-header">
-                                    <h2 class="section-title">名人生日</h2>
-                                    <p class="section-subtitle">Famous Birthdays</p>
-                                </div>
-                                <div id="famousBirthdays" class="people-grid">
-                                    
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Diana Ross" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Diana Ross</h4>
-                    <p class="person-years">1944</p>
-                    <p class="person-description">American singer, actress</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Richard Dawkins" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Richard Dawkins</h4>
-                    <p class="person-years">1941</p>
-                    <p class="person-description">Kenyan/English biologist</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Nancy Pelosi" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Nancy Pelosi</h4>
-                    <p class="person-years">1940</p>
-                    <p class="person-description">American politician, 60th Speaker of the United States House of Representatives</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Pierre Boulez" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Pierre Boulez</h4>
-                    <p class="person-years">1925</p>
-                    <p class="person-description">French pianist, composer, conductor</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Robert Frost" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Robert Frost</h4>
-                    <p class="person-years">1874</p>
-                    <p class="person-description">American poet, playwright</p>
-                </div>
-            </div>
-        
-                                </div>
-                            </section>
-
-                            <!-- 名人逝世 -->
-                            <section id="deaths" class="content-section">
-                                <div class="section-header">
-                                    <h2 class="section-title">名人逝世</h2>
-                                    <p class="section-subtitle">Famous Deaths</p>
-                                </div>
-                                <div id="famousDeaths" class="people-grid">
-                                    
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Ahmed Sékou TouréGuinean politician, 1st President of Guinea" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Ahmed Sékou TouréGuinean politician, 1st President of Guinea</h4>
-                    <p class="person-years">1984</p>
-                    <p class="person-description"></p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Noël Coward" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Noël Coward</h4>
-                    <p class="person-years">1973</p>
-                    <p class="person-description">English actor, playwright, composer</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Cecil Rhodes" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Cecil Rhodes</h4>
-                    <p class="person-years">1902</p>
-                    <p class="person-description">English/South African businessman, politician, founded De Beers</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Walt Whitman" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Walt Whitman</h4>
-                    <p class="person-years">1892</p>
-                    <p class="person-description">American poet, author</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Ludwig van Beethoven" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Ludwig van Beethoven</h4>
-                    <p class="person-years">1827</p>
-                    <p class="person-description">German pianist, composer</p>
-                </div>
-            </div>
-        
-                                </div>
-                            </section>
-                        </div>
-
-                        <!-- 侧边栏 -->
-                        <aside class="sidebar">
-                            <!-- 导航 -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">今日导航</h3>
-                                <nav class="sidebar-nav">
-                                    <a href="#events" class="nav-link active">历史事件</a>
+                <!-- On This Day Navigation -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Navigation</h3>
+                    <nav class="today-nav">
+                        <a href="#events" class="nav-link active">Historical Events</a>
                                     <a href="#births" class="nav-link">名人生日</a>
                                     <a href="#deaths" class="nav-link">名人逝世</a>
                                 </nav>
@@ -502,54 +343,54 @@
                     </div>
                 </div>
                 
-                <div class="footer-bottom">
-                    <p>© 2025 TimeRemind.Today. 保留所有权利</p>
-                    <p>数据来源：维基百科、历史数据库</p>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
+                <p>Data Source: Wikipedia, Historical Database</p>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
-    <!-- 模态框 -->
-    <div id="dateModal" class="modal">
+    <!-- Date Picker Modal -->
+    <div class="modal" id="dateModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>选择日期</h3>
-                <button id="modalClose" class="modal-close">&times;</button>
+                <h3>Select Date</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="date-selectors">
-                    <select id="modalMonth" class="form-select">
-                        <option value="">选择月份</option>
+                <div class="date-picker">
+                    <select id="modalMonth" class="date-select">
+                        <option value="">Select Month</option>
                     </select>
-                    <select id="modalDay" class="form-select">
-                        <option value="">选择日期</option>
+                    <select id="modalDay" class="date-select">
+                        <option value="">Select Day</option>
                     </select>
                 </div>
             </div>
             <div class="modal-footer">
-                <button id="modalCancel" class="btn btn-secondary">取消</button>
-                <button id="modalConfirm" class="btn btn-primary">确认</button>
+                <button class="btn-secondary" id="modalCancel">Cancel</button>
+                <button class="btn-primary" id="modalConfirm">Confirm</button>
             </div>
         </div>
     </div>
 
-    <div id="languageModal" class="modal">
+    <!-- Language Modal -->
+    <div class="modal" id="languageModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>选择语言</h3>
-                <button id="langModalClose" class="modal-close">&times;</button>
+                <h3>Select Language</h3>
+                <button class="modal-close" id="langModalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <div class="lang-option active" data-lang="zh-CN">
-                        <span class="flag">🇨🇳</span>
-                        <span>中文</span>
-                    </div>
-                    <div class="lang-option" data-lang="en-US">
+                    <button class="lang-option active" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
-                    </div>
+                    </button>
+                    <button class="lang-option" data-lang="zh-CN">
+                        <span class="flag">🇨🇳</span>
+                        <span>中文</span>
+                    </button>
                 </div>
             </div>
         </div>

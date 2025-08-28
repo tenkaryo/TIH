@@ -49,6 +49,10 @@
     
     <!-- 样式文件 -->
     <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- 预加载关键资源 -->
     <link rel="preload" href="/data.js" as="script">
@@ -217,236 +221,73 @@
         
     </div>
     
-    <!-- 主要内容结构 -->
-    <div class="app">
-        <!-- 导航栏 -->
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-brand">
-                <h1 class="brand-title"><img src="/tih_logo.png" alt="TimeRemind.Today" class="brand-logo-img"></h1>
-                    <p class="brand-subtitle">历史上的今天</p>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="/tih_logo.png" alt="TimeRemind.Today" class="brand-logo-img">
+            </div>
+            
+            <div class="nav-controls">
+                <button class="nav-btn" id="dateSelector">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Select Date</span>
+                </button>
+                <button class="nav-btn" id="languageSelector">
+                    <span class="flag">🇺🇸</span>
+                    <span>English</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="date-header">
+                    <h2 class="current-date" id="currentDate">OCTOBER 30</h2>
                 </div>
                 
-                <div class="nav-controls">
-                    <button id="dateSelector" class="nav-btn">
-                        <span>选择日期</span>
+                <!-- Date Navigation Compact -->
+                <div class="date-nav-compact">
+                    <button class="nav-compact-btn" id="prevDate">
+                        <i class="fas fa-chevron-left"></i>
+                        <span id="prevDateText">--</span>
                     </button>
-                    
-                    <button id="languageSelector" class="nav-btn">
-                        <span class="flag">🇨🇳</span>
-                        <span>中文</span>
+                    <button class="nav-compact-btn" id="nextDate">
+                        <span id="nextDateText">--</span>
+                        <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
             </div>
-        </nav>
+        </section>
 
-        <!-- 主要内容区域 -->
-        <main class="main-content">
-            <!-- 英雄区域 -->
-            <section class="hero-section">
-                <div class="container">
-                    <h1 id="currentDate" class="hero-title">OCTOBER 30</h1>
-                    <p class="date-subtitle">Today is Wednesday, October 30, 2024</p>
+        <!-- Main Content Area -->
+        <div class="content-wrapper">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Birthday Checker -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Birthday Query</h3>
+                    <p class="sidebar-desc">What happened on your birthday?</p>
+                    <div class="birthday-form">
+                        <select id="birthMonth" class="select-minimal">
+                            <option value="">Month</option>
+                        </select>
+                        <select id="birthDay" class="select-minimal">
+                            <option value="">Day</option>
+                        </select>
+                        <button class="btn-primary" id="checkBirthday">Check Birthday</button>
+                    </div>
                 </div>
-            </section>
 
-            <!-- 内容区域 -->
-            <div class="content-wrapper">
-                <div class="container">
-                    <div class="content-grid">
-                        <!-- 主内容 -->
-                        <div class="main-column">
-                            <!-- 历史事件 -->
-                            <section id="events" class="content-section">
-                                <div class="section-header">
-                                    <h2 class="section-title">历史上的今天</h2>
-                                    <p class="section-subtitle">Today in History</p>
-                                </div>
-                                <div id="historyEvents" class="timeline">
-                                    
-            <div class="timeline-event">
-                <span class="event-year">2014</span>
-                <div class="event-content">
-                    <p class="event-description">Sweden Recognizes Palestine. By doing so, it became the first EU country in Western Europe to recognize the State of Palestine. Yasser Arafat declared an independent Palestine on November 15, 1988. The UN General Assembly recognized it a month later.</p>
-                    
-                </div>
-            </div>
-        
-            <div class="timeline-event">
-                <span class="event-year">1973</span>
-                <div class="event-content">
-                    <p class="event-description">Bosphorous Bridge in Istanbul Opens for the First Time. Construction on the suspension bridge over the Bosphorus began in February 1970. The bridge, which connects Asia with Europe, was designed by British engineers  Gilbert Roberts and William Brown.</p>
-                    
-                </div>
-            </div>
-        
-            <div class="timeline-event">
-                <span class="event-year">1961</span>
-                <div class="event-content">
-                    <p class="event-description">Biggest Bomb in History is Detonated. The Soviet Union detonated Tsar Bomba or Big Ivan over the Mityushikha Bay test range on the Novaya Zemlya Island in the Arctic Circle. The 57 Megatons nuclear bomb was one-of-a-kind and the flash of light when it exploded at a height of 13,000 feet was visible over 1000 kilometers away.</p>
-                    
-                </div>
-            </div>
-        
-            <div class="timeline-event">
-                <span class="event-year">1908</span>
-                <div class="event-content">
-                    <p class="event-description">First cross-country flight in Europe. French aviator Henri Farman flew from Bouy to Reims in France. The 14-mile journey took him about 20 minutes. Farman was also the co-founder of the Farman Aviation Works, an airline and engine manufacturing company.</p>
-                    
-                </div>
-            </div>
-        
-            <div class="timeline-event">
-                <span class="event-year">1905</span>
-                <div class="event-content">
-                    <p class="event-description">Russian Tsar Issues the October Manifesto. The manifesto, which was issued by Nicholas II, was a response to the Russian Revolution of 1905 in which there were widespread strikes and protests directed towards the government. The key features of the manifesto included the creation of an elected legislative body called Duma and universal suffrage for men. It also paved the way for a new constitution in 1906.</p>
-                    
-                </div>
-            </div>
-        
-                                </div>
-                            </section>
-
-                            <!-- 名人生日 -->
-                            <section id="births" class="content-section">
-                                <div class="section-header">
-                                    <h2 class="section-title">名人生日</h2>
-                                    <p class="section-subtitle">Famous Birthdays</p>
-                                </div>
-                                <div id="famousBirthdays" class="people-grid">
-                                    
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Edge" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Edge</h4>
-                    <p class="person-years">1973</p>
-                    <p class="person-description">Canadian wrestler, actor</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Diego Maradona" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Diego Maradona</h4>
-                    <p class="person-years">1960</p>
-                    <p class="person-description">Argentine footballer</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Ezra Pound" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Ezra Pound</h4>
-                    <p class="person-years">1885</p>
-                    <p class="person-description">American poet</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="William Halsey, Jr.American Admiral" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">William Halsey, Jr.American Admiral</h4>
-                    <p class="person-years">1882</p>
-                    <p class="person-description"></p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="John Adams" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">John Adams</h4>
-                    <p class="person-years">1735</p>
-                    <p class="person-description">American politician, 2nd President of the United States</p>
-                </div>
-            </div>
-        
-                                </div>
-                            </section>
-
-                            <!-- 名人逝世 -->
-                            <section id="deaths" class="content-section">
-                                <div class="section-header">
-                                    <h2 class="section-title">名人逝世</h2>
-                                    <p class="section-subtitle">Famous Deaths</p>
-                                </div>
-                                <div id="famousDeaths" class="people-grid">
-                                    
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Claude Lévi-Strauss" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Claude Lévi-Strauss</h4>
-                    <p class="person-years">2009</p>
-                    <p class="person-description">French anthropologist</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Clifford Geertz" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Clifford Geertz</h4>
-                    <p class="person-years">2006</p>
-                    <p class="person-description">American anthropologist</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Joseph Campbell" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Joseph Campbell</h4>
-                    <p class="person-years">1987</p>
-                    <p class="person-description">American author</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Bonar Law" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Bonar Law</h4>
-                    <p class="person-years">1923</p>
-                    <p class="person-description">Canadian/Scottish politician, Prime Minister of the United Kingdom</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Dayananda Saraswati" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Dayananda Saraswati</h4>
-                    <p class="person-years">1883</p>
-                    <p class="person-description">Indian philosopher, scholar</p>
-                </div>
-            </div>
-        
-                                </div>
-                            </section>
-                        </div>
-
-                        <!-- 侧边栏 -->
-                        <aside class="sidebar">
-                            <!-- 导航 -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">今日导航</h3>
-                                <nav class="sidebar-nav">
-                                    <a href="#events" class="nav-link active">历史事件</a>
+                <!-- On This Day Navigation -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Navigation</h3>
+                    <nav class="today-nav">
+                        <a href="#events" class="nav-link active">Historical Events</a>
                                     <a href="#births" class="nav-link">名人生日</a>
                                     <a href="#deaths" class="nav-link">名人逝世</a>
                                 </nav>
@@ -502,54 +343,54 @@
                     </div>
                 </div>
                 
-                <div class="footer-bottom">
-                    <p>© 2025 TimeRemind.Today. 保留所有权利</p>
-                    <p>数据来源：维基百科、历史数据库</p>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
+                <p>Data Source: Wikipedia, Historical Database</p>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
-    <!-- 模态框 -->
-    <div id="dateModal" class="modal">
+    <!-- Date Picker Modal -->
+    <div class="modal" id="dateModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>选择日期</h3>
-                <button id="modalClose" class="modal-close">&times;</button>
+                <h3>Select Date</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="date-selectors">
-                    <select id="modalMonth" class="form-select">
-                        <option value="">选择月份</option>
+                <div class="date-picker">
+                    <select id="modalMonth" class="date-select">
+                        <option value="">Select Month</option>
                     </select>
-                    <select id="modalDay" class="form-select">
-                        <option value="">选择日期</option>
+                    <select id="modalDay" class="date-select">
+                        <option value="">Select Day</option>
                     </select>
                 </div>
             </div>
             <div class="modal-footer">
-                <button id="modalCancel" class="btn btn-secondary">取消</button>
-                <button id="modalConfirm" class="btn btn-primary">确认</button>
+                <button class="btn-secondary" id="modalCancel">Cancel</button>
+                <button class="btn-primary" id="modalConfirm">Confirm</button>
             </div>
         </div>
     </div>
 
-    <div id="languageModal" class="modal">
+    <!-- Language Modal -->
+    <div class="modal" id="languageModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>选择语言</h3>
-                <button id="langModalClose" class="modal-close">&times;</button>
+                <h3>Select Language</h3>
+                <button class="modal-close" id="langModalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <div class="lang-option active" data-lang="zh-CN">
-                        <span class="flag">🇨🇳</span>
-                        <span>中文</span>
-                    </div>
-                    <div class="lang-option" data-lang="en-US">
+                    <button class="lang-option active" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
-                    </div>
+                    </button>
+                    <button class="lang-option" data-lang="zh-CN">
+                        <span class="flag">🇨🇳</span>
+                        <span>中文</span>
+                    </button>
                 </div>
             </div>
         </div>

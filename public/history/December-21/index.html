@@ -49,6 +49,10 @@
     
     <!-- 样式文件 -->
     <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- 预加载关键资源 -->
     <link rel="preload" href="/data.js" as="script">
@@ -206,225 +210,73 @@
         
     </div>
     
-    <!-- 主要内容结构 -->
-    <div class="app">
-        <!-- 导航栏 -->
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-brand">
-                <h1 class="brand-title"><img src="/tih_logo.png" alt="TimeRemind.Today" class="brand-logo-img"></h1>
-                    <p class="brand-subtitle">历史上的今天</p>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="/tih_logo.png" alt="TimeRemind.Today" class="brand-logo-img">
+            </div>
+            
+            <div class="nav-controls">
+                <button class="nav-btn" id="dateSelector">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Select Date</span>
+                </button>
+                <button class="nav-btn" id="languageSelector">
+                    <span class="flag">🇺🇸</span>
+                    <span>English</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="date-header">
+                    <h2 class="current-date" id="currentDate">12月21日</h2>
                 </div>
                 
-                <div class="nav-controls">
-                    <button id="dateSelector" class="nav-btn">
-                        <span>选择日期</span>
+                <!-- Date Navigation Compact -->
+                <div class="date-nav-compact">
+                    <button class="nav-compact-btn" id="prevDate">
+                        <i class="fas fa-chevron-left"></i>
+                        <span id="prevDateText">--</span>
                     </button>
-                    
-                    <button id="languageSelector" class="nav-btn">
-                        <span class="flag">🇨🇳</span>
-                        <span>中文</span>
+                    <button class="nav-compact-btn" id="nextDate">
+                        <span id="nextDateText">--</span>
+                        <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
             </div>
-        </nav>
+        </section>
 
-        <!-- 主要内容区域 -->
-        <main class="main-content">
-            <!-- 英雄区域 -->
-            <section class="hero-section">
-                <div class="container">
-                    <h1 id="currentDate" class="hero-title">12月21日</h1>
-                    <p class="date-subtitle">今天是2024年12月21日，星期六</p>
+        <!-- Main Content Area -->
+        <div class="content-wrapper">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Birthday Checker -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Birthday Query</h3>
+                    <p class="sidebar-desc">What happened on your birthday?</p>
+                    <div class="birthday-form">
+                        <select id="birthMonth" class="select-minimal">
+                            <option value="">Month</option>
+                        </select>
+                        <select id="birthDay" class="select-minimal">
+                            <option value="">Day</option>
+                        </select>
+                        <button class="btn-primary" id="checkBirthday">Check Birthday</button>
+                    </div>
                 </div>
-            </section>
 
-            <!-- 内容区域 -->
-            <div class="content-wrapper">
-                <div class="container">
-                    <div class="content-grid">
-                        <!-- 主内容 -->
-                        <div class="main-column">
-                            <!-- 历史事件 -->
-                            <section id="events" class="content-section">
-                                <div class="section-header">
-                                    <h2 class="section-title">历史上的今天</h2>
-                                    <p class="section-subtitle">Today in History</p>
-                                </div>
-                                <div id="historyEvents" class="timeline">
-                                    
-            <div class="timeline-event">
-                <span class="event-year">1995</span>
-                <div class="event-content">
-                    <p class="event-description">Palestinians take control of Bethlehem. Isreali troops withdrew from the city under the Interim Agreement on the West Bank and the Gaza Strip signed in September 1995. The city was under a British mandate from 1920 to 1948, and then it was captured by Jordan during the Arab-Israeli War in 1948. Most recently, it was taken over by Israel during the Six-Day War in 1967.</p>
-                    
-                </div>
-            </div>
-        
-            <div class="timeline-event">
-                <span class="event-year">1988</span>
-                <div class="event-content">
-                    <p class="event-description">Lockerbie Bombing. A bomb exploded on Pan Am Flight number 103 on its way from Frankfurt, Germany, to Detroit, United States, over the Scottish city of Lockerbie. The terrorist attack killed all the passengers and crew on board and 11 people on the ground.</p>
-                    
-                </div>
-            </div>
-        
-            <div class="timeline-event">
-                <span class="event-year">1965</span>
-                <div class="event-content">
-                    <p class="event-description">The adoption of the International Convention on the Elimination of All Forms of Racial Discrimination (ICERD). The human rights convention was adopted by the United Nations' member states and was put into force on January 4, 1969. It attempts to eliminate racial discrimination in the world.</p>
-                    
-                </div>
-            </div>
-        
-            <div class="timeline-event">
-                <span class="event-year">1937</span>
-                <div class="event-content">
-                    <p class="event-description">Snow White and the Seven Dwarfs released. The movie made by Walt Disney Productions was the world's first full-length animated feature film and it was based on a German fairy tale of the same name by the Brothers Grimm.</p>
-                    
-                </div>
-            </div>
-        
-            <div class="timeline-event">
-                <span class="event-year">1872</span>
-                <div class="event-content">
-                    <p class="event-description">Phileas Fogg wins his wager. The fictional character created by French writer Jules Verne for his book, Around the World in Eighty Days, finished circumnavigating the world and reached London to win the wager he had set with his friends. The date also coincides with the publication of the last of the series that ended up becoming the now popular science fiction novel.</p>
-                    
-                </div>
-            </div>
-        
-                                </div>
-                            </section>
-
-                            <!-- 名人生日 -->
-                            <section id="births" class="content-section">
-                                <div class="section-header">
-                                    <h2 class="section-title">名人生日</h2>
-                                    <p class="section-subtitle">Famous Birthdays</p>
-                                </div>
-                                <div id="famousBirthdays" class="people-grid">
-                                    
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Philip Humber" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Philip Humber</h4>
-                    <p class="person-years">1982</p>
-                    <p class="person-description">American baseball player</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Kiefer Sutherland" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Kiefer Sutherland</h4>
-                    <p class="person-years">1966</p>
-                    <p class="person-description">English/Canadian actor, director, producer</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Frank Zappa" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Frank Zappa</h4>
-                    <p class="person-years">1940</p>
-                    <p class="person-description">American singer-songwriter, guitarist, producer</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Benjamin Disraeli" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Benjamin Disraeli</h4>
-                    <p class="person-years">1804</p>
-                    <p class="person-description">English politician, Prime Minister of the United Kingdom</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Thomas Becket" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Thomas Becket</h4>
-                    <p class="person-years">1118</p>
-                    <p class="person-description">English archbishop</p>
-                </div>
-            </div>
-        
-                                </div>
-                            </section>
-
-                            <!-- 名人逝世 -->
-                            <section id="deaths" class="content-section">
-                                <div class="section-header">
-                                    <h2 class="section-title">名人逝世</h2>
-                                    <p class="section-subtitle">Famous Deaths</p>
-                                </div>
-                                <div id="famousDeaths" class="people-grid">
-                                    
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Jack Hobbs" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Jack Hobbs</h4>
-                    <p class="person-years">1963</p>
-                    <p class="person-description">English cricketer</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="George S. Patton" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">George S. Patton</h4>
-                    <p class="person-years">1945</p>
-                    <p class="person-description">American general</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="F. Scott Fitzgerald" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">F. Scott Fitzgerald</h4>
-                    <p class="person-years">1940</p>
-                    <p class="person-description">American author</p>
-                </div>
-            </div>
-        
-            <div class="person-card">
-                <div class="person-image">
-                    <img src="undefined" alt="Kurt Tucholsky" loading="lazy" onerror="this.src='/avatar.png'">
-                </div>
-                <div class="person-info">
-                    <h4 class="person-name">Kurt Tucholsky</h4>
-                    <p class="person-years">1935</p>
-                    <p class="person-description">German journalist</p>
-                </div>
-            </div>
-        
-                                </div>
-                            </section>
-                        </div>
-
-                        <!-- 侧边栏 -->
-                        <aside class="sidebar">
-                            <!-- 导航 -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">今日导航</h3>
-                                <nav class="sidebar-nav">
-                                    <a href="#events" class="nav-link active">历史事件</a>
+                <!-- On This Day Navigation -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Navigation</h3>
+                    <nav class="today-nav">
+                        <a href="#events" class="nav-link active">Historical Events</a>
                                     <a href="#births" class="nav-link">名人生日</a>
                                     <a href="#deaths" class="nav-link">名人逝世</a>
                                 </nav>
@@ -480,54 +332,54 @@
                     </div>
                 </div>
                 
-                <div class="footer-bottom">
-                    <p>© 2025 TimeRemind.Today. 保留所有权利</p>
-                    <p>数据来源：维基百科、历史数据库</p>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
+                <p>Data Source: Wikipedia, Historical Database</p>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
-    <!-- 模态框 -->
-    <div id="dateModal" class="modal">
+    <!-- Date Picker Modal -->
+    <div class="modal" id="dateModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>选择日期</h3>
-                <button id="modalClose" class="modal-close">&times;</button>
+                <h3>Select Date</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="date-selectors">
-                    <select id="modalMonth" class="form-select">
-                        <option value="">选择月份</option>
+                <div class="date-picker">
+                    <select id="modalMonth" class="date-select">
+                        <option value="">Select Month</option>
                     </select>
-                    <select id="modalDay" class="form-select">
-                        <option value="">选择日期</option>
+                    <select id="modalDay" class="date-select">
+                        <option value="">Select Day</option>
                     </select>
                 </div>
             </div>
             <div class="modal-footer">
-                <button id="modalCancel" class="btn btn-secondary">取消</button>
-                <button id="modalConfirm" class="btn btn-primary">确认</button>
+                <button class="btn-secondary" id="modalCancel">Cancel</button>
+                <button class="btn-primary" id="modalConfirm">Confirm</button>
             </div>
         </div>
     </div>
 
-    <div id="languageModal" class="modal">
+    <!-- Language Modal -->
+    <div class="modal" id="languageModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>选择语言</h3>
-                <button id="langModalClose" class="modal-close">&times;</button>
+                <h3>Select Language</h3>
+                <button class="modal-close" id="langModalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <div class="lang-option active" data-lang="zh-CN">
-                        <span class="flag">🇨🇳</span>
-                        <span>中文</span>
-                    </div>
-                    <div class="lang-option" data-lang="en-US">
+                    <button class="lang-option active" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
-                    </div>
+                    </button>
+                    <button class="lang-option" data-lang="zh-CN">
+                        <span class="flag">🇨🇳</span>
+                        <span>中文</span>
+                    </button>
                 </div>
             </div>
         </div>

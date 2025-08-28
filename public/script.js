@@ -702,10 +702,8 @@ class OnThisDay {
         const t = translations[this.currentLanguage];
         
         // Update brand
-        const brandTitle = document.querySelector('.brand-title');
         const brandSubtitle = document.querySelector('.brand-subtitle');
-        // Note: brandTitle contains logo image, so we don't update its textContent
-        // if (brandTitle) brandTitle.textContent = t.siteTitle;
+        // Note: brand contains logo image, so we don't update brand title textContent
         if (brandSubtitle) brandSubtitle.textContent = t.siteSubtitle;
         
         // Update navigation buttons
@@ -940,7 +938,7 @@ function showLoading(containerId) {
 // Image lazy loading
 function lazyLoadImages() {
     const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
+    const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
