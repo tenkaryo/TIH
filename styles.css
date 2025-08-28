@@ -605,10 +605,9 @@ body {
 }
 
 .footer-logo-img {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-md);
-    object-fit: cover;
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 .footer-brand h3 {
