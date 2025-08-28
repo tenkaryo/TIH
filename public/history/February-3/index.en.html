@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>FEBRUARY 3 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">1998</span>
-                <div class="event-content">
-                    <p class="event-description">20 people die in the Cavalese cable car disaster. The wings of a low-flying U.S. military aircraft cut the aerial tramway's cables, causing the cabin to plunge 80 meters.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1998</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">20 people die in the Cavalese cable car disaster. The wings of a low-flying U.S. military aircraft cut the aerial tramway's cables, causing the cabin to plunge 80 meters.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1989</span>
-                <div class="event-content">
-                    <p class="event-description">Paraguay's dictator, Alfredo Stroessner, is overthrown. Stroessner had come to power in 1954 with a military coup.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1989</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Paraguay's dictator, Alfredo Stroessner, is overthrown. Stroessner had come to power in 1954 with a military coup.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1972</span>
-                <div class="event-content">
-                    <p class="event-description">The deadliest snowstorm in history kills 4000. The Iran Blizzard lasted a week and left whole villages without survivors.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1972</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The deadliest snowstorm in history kills 4000. The Iran Blizzard lasted a week and left whole villages without survivors.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1969</span>
-                <div class="event-content">
-                    <p class="event-description">Yasser Arafat becomes leader of the Palestine Liberation Organization (PLO). Even after his death in 2011, Arafat remained a highly controversial figure, many Arabs praising him as a freedom fighter while many Israelis denouncing him as a terrorist.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1969</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Yasser Arafat becomes leader of the Palestine Liberation Organization (PLO). Even after his death in 2011, Arafat remained a highly controversial figure, many Arabs praising him as a freedom fighter while many Israelis denouncing him as a terrorist.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1966</span>
-                <div class="event-content">
-                    <p class="event-description">Luna 9 touches down on the Moon. The unmanned Soviet spacecraft was the first to achieve a soft landing there.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1966</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Luna 9 touches down on the Moon. The unmanned Soviet spacecraft was the first to achieve a soft landing there.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1998</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">20 people die in the Cavalese cable car disaster. The wings of a low-flying U.S. military aircraft cut the aerial tramway's cables, causing the cabin to plunge 80 meters.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1989</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Paraguay's dictator, Alfredo Stroessner, is overthrown. Stroessner had come to power in 1954 with a military coup.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1972</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The deadliest snowstorm in history kills 4000. The Iran Blizzard lasted a week and left whole villages without survivors.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1969</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Yasser Arafat becomes leader of the Palestine Liberation Organization (PLO). Even after his death in 2011, Arafat remained a highly controversial figure, many Arabs praising him as a freedom fighter while many Israelis denouncing him as a terrorist.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1966</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Luna 9 touches down on the Moon. The unmanned Soviet spacecraft was the first to achieve a soft landing there.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Johnny "Guitar" Watson" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Johnny "Guitar" Watson</h4>
+                    <p class="person-years">1935</p>
+                    <p class="person-description">American singer, guitarist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Kenneth Anger" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Kenneth Anger</h4>
+                    <p class="person-years">1927</p>
+                    <p class="person-description">American actor, director, author</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Gertrude Stein" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Gertrude Stein</h4>
+                    <p class="person-years">1874</p>
+                    <p class="person-description">American poet, art collector</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Robert Gascoyne-Cecil, 3rd Marquess of Salisbury" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Robert Gascoyne-Cecil, 3rd Marquess of Salisbury</h4>
+                    <p class="person-years">1830</p>
+                    <p class="person-description">English politician, Prime Minister of the United Kingdom</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Felix Mendelssohn" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Felix Mendelssohn</h4>
+                    <p class="person-years">1809</p>
+                    <p class="person-description">German pianist, composer, conductor</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Frank Oppenheimer" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Frank Oppenheimer</h4>
+                    <p class="person-years">1985</p>
+                    <p class="person-description">American physicist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Anna May Wong" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Anna May Wong</h4>
+                    <p class="person-years">1961</p>
+                    <p class="person-description">American actress</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Woodrow Wilson" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Woodrow Wilson</h4>
+                    <p class="person-years">1924</p>
+                    <p class="person-description">American politician, 28th President of the United States, Nobel Prize laureate</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Gia Long" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Gia Long</h4>
+                    <p class="person-years">1820</p>
+                    <p class="person-description">Vietnamese Emperor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Johannes Gutenberg" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Johannes Gutenberg</h4>
+                    <p class="person-years">1468</p>
+                    <p class="person-description">German publisher, invented the Printing press</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

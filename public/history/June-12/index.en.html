@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>JUNE 12 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2016</span>
-                <div class="event-content">
-                    <p class="event-description">Mass Shooting at Pulse Nightclub in Orlando, Florida Kills 49 People. In what is now thought to be one of the deadliest incidents of violence against LGBTQ people in history, the shooting committed by 29-year old Omar Mateen is also the second deadliest terrorist attack on US soil since the September 11, 2001 attacks.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2016</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mass Shooting at Pulse Nightclub in Orlando, Florida Kills 49 People. In what is now thought to be one of the deadliest incidents of violence against LGBTQ people in history, the shooting committed by 29-year old Omar Mateen is also the second deadliest terrorist attack on US soil since the September 11, 2001 attacks.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1994</span>
-                <div class="event-content">
-                    <p class="event-description">The world's largest twinjet takes off on its maiden flight. The Boeing 777, or Triple Seven, typically transports up to 451 passengers. It is one of Boeing's commercially most successful planes.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1994</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The world's largest twinjet takes off on its maiden flight. The Boeing 777, or Triple Seven, typically transports up to 451 passengers. It is one of Boeing's commercially most successful planes.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1991</span>
-                <div class="event-content">
-                    <p class="event-description">Boris Yeltsin becomes Russia's first President. After the end of the Soviet Union, Yeltsin launched radical economic reforms that aimed at dismantling socialism and restore capitalism.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1991</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Boris Yeltsin becomes Russia's first President. After the end of the Soviet Union, Yeltsin launched radical economic reforms that aimed at dismantling socialism and restore capitalism.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1987</span>
-                <div class="event-content">
-                    <p class="event-description">Ronald Reagan challenges Mikhail Gorbachev to “tear down this wall”. The U.S. President held his famous speech near the Berlin Wall, one of the most important symbols for the division between East and West during the Cold War. The wall was dismantled in 1989, but many observers doubt that Reagan's famous catchphrase had any impact on this decision.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1987</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Ronald Reagan challenges Mikhail Gorbachev to “tear down this wall”. The U.S. President held his famous speech near the Berlin Wall, one of the most important symbols for the division between East and West during the Cold War. The wall was dismantled in 1989, but many observers doubt that Reagan's famous catchphrase had any impact on this decision.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1964</span>
-                <div class="event-content">
-                    <p class="event-description">Nelson Mandela is sentenced to life in prison. The South African anti-apartheid activist spent 27 years in prison. In 1993, he received the Nobel Peace Prize and one year later he became President of South Africa.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1964</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Nelson Mandela is sentenced to life in prison. The South African anti-apartheid activist spent 27 years in prison. In 1993, he received the Nobel Peace Prize and one year later he became President of South Africa.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2016</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mass Shooting at Pulse Nightclub in Orlando, Florida Kills 49 People. In what is now thought to be one of the deadliest incidents of violence against LGBTQ people in history, the shooting committed by 29-year old Omar Mateen is also the second deadliest terrorist attack on US soil since the September 11, 2001 attacks.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1994</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The world's largest twinjet takes off on its maiden flight. The Boeing 777, or Triple Seven, typically transports up to 451 passengers. It is one of Boeing's commercially most successful planes.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1991</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Boris Yeltsin becomes Russia's first President. After the end of the Soviet Union, Yeltsin launched radical economic reforms that aimed at dismantling socialism and restore capitalism.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1987</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Ronald Reagan challenges Mikhail Gorbachev to “tear down this wall”. The U.S. President held his famous speech near the Berlin Wall, one of the most important symbols for the division between East and West during the Cold War. The wall was dismantled in 1989, but many observers doubt that Reagan's famous catchphrase had any impact on this decision.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1964</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Nelson Mandela is sentenced to life in prison. The South African anti-apartheid activist spent 27 years in prison. In 1993, he received the Nobel Peace Prize and one year later he became President of South Africa.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Mark Henry" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Mark Henry</h4>
+                    <p class="person-years">1971</p>
+                    <p class="person-description">American weightlifter, wrestler</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Roy Harper" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Roy Harper</h4>
+                    <p class="person-years">1941</p>
+                    <p class="person-description">English singer-songwriter, guitarist, poet, actor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Anne Frank" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Anne Frank</h4>
+                    <p class="person-years">1929</p>
+                    <p class="person-description">German/Dutch author, Holocaust victim</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="George H. W. Bush" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">George H. W. Bush</h4>
+                    <p class="person-years">1924</p>
+                    <p class="person-description">American politician, 41st President of the United States</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Anthony Eden" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Anthony Eden</h4>
+                    <p class="person-years">1897</p>
+                    <p class="person-description">British politician, Prime Minister of the United Kingdom</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Al Williamson" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Al Williamson</h4>
+                    <p class="person-years">2010</p>
+                    <p class="person-description">American illustrator</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="György Ligeti" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">György Ligeti</h4>
+                    <p class="person-years">2006</p>
+                    <p class="person-description">Romanian/Austrian composer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Menachem Mendel Schneerson" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Menachem Mendel Schneerson</h4>
+                    <p class="person-years">1994</p>
+                    <p class="person-description">Russian/French rabbi</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Billy Butlin" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Billy Butlin</h4>
+                    <p class="person-years">1980</p>
+                    <p class="person-description">South African/English businessman, founded Butlins</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Medgar Evers" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Medgar Evers</h4>
+                    <p class="person-years">1963</p>
+                    <p class="person-description">American civil rights activist</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

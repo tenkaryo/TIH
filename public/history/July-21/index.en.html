@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>JULY 21 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2011</span>
-                <div class="event-content">
-                    <p class="event-description">STS-135 lands. This space shuttle was the 135th and the last space shuttle flight of American Space Shuttle program.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2011</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">STS-135 lands. This space shuttle was the 135th and the last space shuttle flight of American Space Shuttle program.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1983</span>
-                <div class="event-content">
-                    <p class="event-description">Lowest temperature ever measured on Earth. Vostok Station, a Russian station on Antarctica experienced the lowest temperatures ever measured in recorded human history. The temperatures fell to −128.6 °F  (−89.2 °C)</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1983</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Lowest temperature ever measured on Earth. Vostok Station, a Russian station on Antarctica experienced the lowest temperatures ever measured in recorded human history. The temperatures fell to −128.6 °F  (−89.2 °C)</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1980</span>
-                <div class="event-content">
-                    <p class="event-description">Mary Eugenia Charles is elected as PM of Dominica. Her election to office made her the first female and the longest PM of the Commonwealth of Dominica. She is also the first elected female head of state in the Americas.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1980</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mary Eugenia Charles is elected as PM of Dominica. Her election to office made her the first female and the longest PM of the Commonwealth of Dominica. She is also the first elected female head of state in the Americas.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1977</span>
-                <div class="event-content">
-                    <p class="event-description">Libyan–Egyptian War begins. This short war between Libya and Egypt started with Libya striking Egyptian cities. The war lasted for 2 days with a ceasefire on July 24.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1977</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Libyan–Egyptian War begins. This short war between Libya and Egypt started with Libya striking Egyptian cities. The war lasted for 2 days with a ceasefire on July 24.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1969</span>
-                <div class="event-content">
-                    <p class="event-description">First person walks on the Moon. Neil Armstrong became the first person to walk on the Moon. He stepped on the Moon's surface almost 7 hours after Apollo 11, the space craft that carried them, landed on the Sea of Traquility on the Moon. After stepping on the Moon, Armstrong uttered his famous words, "one small step for [a] man, one giant leap for mankind."</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1969</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First person walks on the Moon. Neil Armstrong became the first person to walk on the Moon. He stepped on the Moon's surface almost 7 hours after Apollo 11, the space craft that carried them, landed on the Sea of Traquility on the Moon. After stepping on the Moon, Armstrong uttered his famous words, "one small step for [a] man, one giant leap for mankind."</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2011</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">STS-135 lands. This space shuttle was the 135th and the last space shuttle flight of American Space Shuttle program.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1983</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Lowest temperature ever measured on Earth. Vostok Station, a Russian station on Antarctica experienced the lowest temperatures ever measured in recorded human history. The temperatures fell to −128.6 °F  (−89.2 °C)</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1980</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mary Eugenia Charles is elected as PM of Dominica. Her election to office made her the first female and the longest PM of the Commonwealth of Dominica. She is also the first elected female head of state in the Americas.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1977</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Libyan–Egyptian War begins. This short war between Libya and Egypt started with Libya striking Egyptian cities. The war lasted for 2 days with a ceasefire on July 24.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1969</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First person walks on the Moon. Neil Armstrong became the first person to walk on the Moon. He stepped on the Moon's surface almost 7 hours after Apollo 11, the space craft that carried them, landed on the Sea of Traquility on the Moon. After stepping on the Moon, Armstrong uttered his famous words, "one small step for [a] man, one giant leap for mankind."</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Cat Stevens" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Cat Stevens</h4>
+                    <p class="person-years">1948</p>
+                    <p class="person-description">English singer-songwriter, musician</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Ken Starr" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Ken Starr</h4>
+                    <p class="person-years">1946</p>
+                    <p class="person-description">American lawyer, judge</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Marshall Mc" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Marshall Mc</h4>
+                    <p class="person-years">1911</p>
+                    <p class="person-description">LuhanCanadian author, theorist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Ernest Hemingway" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Ernest Hemingway</h4>
+                    <p class="person-years">1899</p>
+                    <p class="person-description">American writer, Nobel Prize laureate</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Thomas Pelham-Holles, 1st Duke of Newcastle" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Thomas Pelham-Holles, 1st Duke of Newcastle</h4>
+                    <p class="person-years">1693</p>
+                    <p class="person-description">English politician, Prime Minister of the United Kingdom</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Jerry Goldsmith" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Jerry Goldsmith</h4>
+                    <p class="person-years">2004</p>
+                    <p class="person-description">American composer, conductor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Sivaji Ganesan" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Sivaji Ganesan</h4>
+                    <p class="person-years">2001</p>
+                    <p class="person-description">Indian actor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Dave Garroway" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Dave Garroway</h4>
+                    <p class="person-years">1982</p>
+                    <p class="person-description">American journalist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Claus von Stauffenberg" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Claus von Stauffenberg</h4>
+                    <p class="person-years">1944</p>
+                    <p class="person-description">German army officer, member of the 20 July plot</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Robert Burns" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Robert Burns</h4>
+                    <p class="person-years">1796</p>
+                    <p class="person-description">Scottish poet</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

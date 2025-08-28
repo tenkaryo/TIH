@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>7月9日 - 历史上的今天 | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2011</span>
-                <div class="event-content">
-                    <p class="event-description">South Sudan becomes the youngest country in the world. The North East African country, formally known as Republic of South Sudan peacefully seceded from Sudan after an independence referendum was passed. Since independence, however, the country has been wrecked with widespread ethnic violence and human rights violations.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2011</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">South Sudan becomes the youngest country in the world. The North East African country, formally known as Republic of South Sudan peacefully seceded from Sudan after an independence referendum was passed. Since independence, however, the country has been wrecked with widespread ethnic violence and human rights violations.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1981</span>
-                <div class="event-content">
-                    <p class="event-description">Donkey Kong is released by Nintendo. Nintendo's famous character Mario debuted as Jumpman in this popular arcade game.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1981</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Donkey Kong is released by Nintendo. Nintendo's famous character Mario debuted as Jumpman in this popular arcade game.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1962</span>
-                <div class="event-content">
-                    <p class="event-description">Andy Warhol's iconic Campbell's Soup Cans make their debut. The Soup Cans were first displayed at the  Ferus Gallery in Los Angeles, California, and were instrumental in popularizing Pop Art in the United States.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1962</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Andy Warhol's iconic Campbell's Soup Cans make their debut. The Soup Cans were first displayed at the  Ferus Gallery in Los Angeles, California, and were instrumental in popularizing Pop Art in the United States.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1958</span>
-                <div class="event-content">
-                    <p class="event-description">Lituya Bay megatsunami. A megatsunami, a tsunami whose waves are higher than a normal tsunami, hit Lituya Bay in Alaska, United States, resulting in a wave that was recorded to be 1,720 feet or 516 meters high. This is the highest wave recorded in history.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1958</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Lituya Bay megatsunami. A megatsunami, a tsunami whose waves are higher than a normal tsunami, hit Lituya Bay in Alaska, United States, resulting in a wave that was recorded to be 1,720 feet or 516 meters high. This is the highest wave recorded in history.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1877</span>
-                <div class="event-content">
-                    <p class="event-description">First Wimbledon Championship. The All England Lawn Tennis and Croquet Club in London hosted the first Wimbledon championship, which was not only the first tennis championship held in England but was also a precursor to grand slam tournaments. 22 men competed in the championship and Spencer Gore became the first person to win the Wimbledon tournament.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1877</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First Wimbledon Championship. The All England Lawn Tennis and Croquet Club in London hosted the first Wimbledon championship, which was not only the first tennis championship held in England but was also a precursor to grand slam tournaments. 22 men competed in the championship and Spencer Gore became the first person to win the Wimbledon tournament.</p>
                     
                 </div>
             </div>
@@ -231,11 +241,11 @@
             <div class="nav-controls">
                 <button class="nav-btn" id="dateSelector">
                     <i class="fas fa-calendar-alt"></i>
-                    <span>Select Date</span>
+                    <span>选择日期</span>
                 </button>
                 <button class="nav-btn" id="languageSelector">
-                    <span class="flag">🇺🇸</span>
-                    <span>English</span>
+                    <span class="flag">🇨🇳</span>
+                    <span>中文</span>
                 </button>
             </div>
         </div>
@@ -270,82 +280,266 @@
             <aside class="sidebar">
                 <!-- Birthday Checker -->
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title">Birthday Query</h3>
-                    <p class="sidebar-desc">What happened on your birthday?</p>
+                    <h3 class="sidebar-title">生日查询</h3>
+                    <p class="sidebar-desc">查看你的生日发生了什么</p>
                     <div class="birthday-form">
                         <select id="birthMonth" class="select-minimal">
-                            <option value="">Month</option>
+                            <option value="">月份</option>
                         </select>
                         <select id="birthDay" class="select-minimal">
-                            <option value="">Day</option>
+                            <option value="">日期</option>
                         </select>
-                        <button class="btn-primary" id="checkBirthday">Check Birthday</button>
+                        <button class="btn-primary" id="checkBirthday">查看生日</button>
                     </div>
                 </div>
 
                 <!-- On This Day Navigation -->
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title">Navigation</h3>
+                    <h3 class="sidebar-title">导航</h3>
                     <nav class="today-nav">
-                        <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">名人生日</a>
-                                    <a href="#deaths" class="nav-link">名人逝世</a>
-                                </nav>
-                            </div>
+                        <a href="#events" class="nav-link active">历史事件</a>
+                        <a href="#births" class="nav-link">名人生日</a>
+                        <a href="#deaths" class="nav-link">名人逝世</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- 生日查询 -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">生日查询</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择月份</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">选择日期</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">查看生日</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">历史上的今天</h2>
+                        <p class="section-subtitle">历史事件</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2011</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">South Sudan becomes the youngest country in the world. The North East African country, formally known as Republic of South Sudan peacefully seceded from Sudan after an independence referendum was passed. Since independence, however, the country has been wrecked with widespread ethnic violence and human rights violations.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1981</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Donkey Kong is released by Nintendo. Nintendo's famous character Mario debuted as Jumpman in this popular arcade game.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1962</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Andy Warhol's iconic Campbell's Soup Cans make their debut. The Soup Cans were first displayed at the  Ferus Gallery in Los Angeles, California, and were instrumental in popularizing Pop Art in the United States.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1958</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Lituya Bay megatsunami. A megatsunami, a tsunami whose waves are higher than a normal tsunami, hit Lituya Bay in Alaska, United States, resulting in a wave that was recorded to be 1,720 feet or 516 meters high. This is the highest wave recorded in history.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1877</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First Wimbledon Championship. The All England Lawn Tennis and Croquet Club in London hosted the first Wimbledon championship, which was not only the first tennis championship held in England but was also a precursor to grand slam tournaments. 22 men competed in the championship and Spencer Gore became the first person to win the Wimbledon tournament.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- 日期导航 -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">名人生日</h2>
+                        <p class="section-subtitle">生于这一天</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Kevin Nash" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Kevin Nash</h4>
+                    <p class="person-years">1959</p>
+                    <p class="person-description">American wrestler, actor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Viktor Yanukovych" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Viktor Yanukovych</h4>
+                    <p class="person-years">1950</p>
+                    <p class="person-description">Ukrainian politician, 4th President of Ukraine</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="O. J. Simpson" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">O. J. Simpson</h4>
+                    <p class="person-years">1947</p>
+                    <p class="person-description">American football player, actor, author</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Donald Rumsfeld" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Donald Rumsfeld</h4>
+                    <p class="person-years">1932</p>
+                    <p class="person-description">American politician, 13th & 21st United States Secretary of Defense</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Franz Boas" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Franz Boas</h4>
+                    <p class="person-years">1858</p>
+                    <p class="person-description">German anthropologist</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">名人逝世</h2>
+                        <p class="section-subtitle">逝于这一天</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Fatima Jinnah" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Fatima Jinnah</h4>
+                    <p class="person-years">1967</p>
+                    <p class="person-description">Pakistani dentist, stateswoman, Leader of the Opposition</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Báb" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Báb</h4>
+                    <p class="person-years">1850</p>
+                    <p class="person-description">Persian founder of Bábism</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Zachary Taylor" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Zachary Taylor</h4>
+                    <p class="person-years">1850</p>
+                    <p class="person-description">American general, politician, 12th President of the United States</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Edmund Burke" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Edmund Burke</h4>
+                    <p class="person-years">1797</p>
+                    <p class="person-description">Irish politician, philosopher</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Gian Gastone de' Medici, Grand Duke of Tuscany" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Gian Gastone de' Medici, Grand Duke of Tuscany</h4>
+                    <p class="person-years">1737</p>
+                    <p class="person-description"></p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>探索历史，发现精彩</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">关于我们</a>
+                        <a href="/privacy" id="privacy-link">隐私政策</a>
+                        <a href="/terms" id="terms-link">服务条款</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>探索历史，发现精彩</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">关于我们</a>
-                            <a href="/privacy-zh">隐私政策</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
-                <p>Data Source: Wikipedia, Historical Database</p>
+                <p>&copy; 2025 TimeRemind.Today. 保留所有权利</p>
+                <p>数据来源: 维基百科，历史数据库</p>
             </div>
         </div>
     </footer>
@@ -354,22 +548,22 @@
     <div class="modal" id="dateModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Select Date</h3>
+                <h3>选择日期</h3>
                 <button class="modal-close" id="modalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择月份</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">选择日期</option>
                     </select>
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn-secondary" id="modalCancel">Cancel</button>
-                <button class="btn-primary" id="modalConfirm">Confirm</button>
+                <button class="btn-secondary" id="modalCancel">取消</button>
+                <button class="btn-primary" id="modalConfirm">确认</button>
             </div>
         </div>
     </div>
@@ -378,18 +572,18 @@
     <div class="modal" id="languageModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Select Language</h3>
+                <h3>选择语言</h3>
                 <button class="modal-close" id="langModalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
-                        <span class="flag">🇺🇸</span>
-                        <span>English</span>
-                    </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇨🇳</span>
                         <span>中文</span>
+                    </button>
+                    <button class="lang-option" data-lang="en-US">
+                        <span class="flag">🇺🇸</span>
+                        <span>English</span>
                     </button>
                 </div>
             </div>

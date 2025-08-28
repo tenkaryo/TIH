@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>SEPTEMBER 4 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2002</span>
-                <div class="event-content">
-                    <p class="event-description">Kelly Clarkson Becomes the First American Idol. The singer, songwriter, and Grammy Awards winner made her first appearance in the second episode of the reality TV show, which co-hosted by Ryan Seacrest and Brian Dunkleman and was judged by Paula Abdul, Simon Cowell, and Randy Jackson. The popular show was broadcast on Fox television network and has been on television for 14 seasons.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2002</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Kelly Clarkson Becomes the First American Idol. The singer, songwriter, and Grammy Awards winner made her first appearance in the second episode of the reality TV show, which co-hosted by Ryan Seacrest and Brian Dunkleman and was judged by Paula Abdul, Simon Cowell, and Randy Jackson. The popular show was broadcast on Fox television network and has been on television for 14 seasons.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1998</span>
-                <div class="event-content">
-                    <p class="event-description">Google is founded. The internet company, now synonymous with the act of finding information on the world wide web was created by Larry Page and Sergey Brin. It started as a research project when Page and Brin were doctoral students at  Stanford University.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1998</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Google is founded. The internet company, now synonymous with the act of finding information on the world wide web was created by Larry Page and Sergey Brin. It started as a research project when Page and Brin were doctoral students at  Stanford University.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1998</span>
-                <div class="event-content">
-                    <p class="event-description">Who wants to be a Millionaire? Makes its Debut on British Television. The popular quiz game show that gave out cash prizes to contests for answering increasingly difficult questions was developed by David Briggs, Mike Whitehill, and Steven Knight, and was aired for the first time on ITC. Chris Tarrant hosted the British version of the show until 2014. The popularity of the show in the UK prompted TV channels from other countries to adapt it for their audiences.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1998</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Who wants to be a Millionaire? Makes its Debut on British Television. The popular quiz game show that gave out cash prizes to contests for answering increasingly difficult questions was developed by David Briggs, Mike Whitehill, and Steven Knight, and was aired for the first time on ITC. Chris Tarrant hosted the British version of the show until 2014. The popularity of the show in the UK prompted TV channels from other countries to adapt it for their audiences.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1888</span>
-                <div class="event-content">
-                    <p class="event-description">Printing and imaging company Kodak, also known as Eastman Kodak Company, was founded by inventor George Eastman. On the same day, Eastman received the patent for the roll-film camera. The cameras which were preloaded with rolls that were good for up to 100 photographs changed the world of photography by making it easier for amateurs to take it up as a hobby.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1888</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Printing and imaging company Kodak, also known as Eastman Kodak Company, was founded by inventor George Eastman. On the same day, Eastman received the patent for the roll-film camera. The cameras which were preloaded with rolls that were good for up to 100 photographs changed the world of photography by making it easier for amateurs to take it up as a hobby.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1870</span>
-                <div class="event-content">
-                    <p class="event-description">Napoleon III ousted as Emperor of France. The first elected president of France, Napoleon took over the title of Emperor in 1852. The ouster came in response to Napoleon's capitulation during the Franco-Prussian War. After being removed from power, he was exiled to England, where he died on January 9, 1873.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1870</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Napoleon III ousted as Emperor of France. The first elected president of France, Napoleon took over the title of Emperor in 1852. The ouster came in response to Napoleon's capitulation during the Franco-Prussian War. After being removed from power, he was exiled to England, where he died on January 9, 1873.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2002</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Kelly Clarkson Becomes the First American Idol. The singer, songwriter, and Grammy Awards winner made her first appearance in the second episode of the reality TV show, which co-hosted by Ryan Seacrest and Brian Dunkleman and was judged by Paula Abdul, Simon Cowell, and Randy Jackson. The popular show was broadcast on Fox television network and has been on television for 14 seasons.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1998</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Google is founded. The internet company, now synonymous with the act of finding information on the world wide web was created by Larry Page and Sergey Brin. It started as a research project when Page and Brin were doctoral students at  Stanford University.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1998</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Who wants to be a Millionaire? Makes its Debut on British Television. The popular quiz game show that gave out cash prizes to contests for answering increasingly difficult questions was developed by David Briggs, Mike Whitehill, and Steven Knight, and was aired for the first time on ITC. Chris Tarrant hosted the British version of the show until 2014. The popularity of the show in the UK prompted TV channels from other countries to adapt it for their audiences.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1888</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Printing and imaging company Kodak, also known as Eastman Kodak Company, was founded by inventor George Eastman. On the same day, Eastman received the patent for the roll-film camera. The cameras which were preloaded with rolls that were good for up to 100 photographs changed the world of photography by making it easier for amateurs to take it up as a hobby.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1870</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Napoleon III ousted as Emperor of France. The first elected president of France, Napoleon took over the title of Emperor in 1852. The ouster came in response to Napoleon's capitulation during the Franco-Prussian War. After being removed from power, he was exiled to England, where he died on January 9, 1873.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Beyoncé Knowles" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Beyoncé Knowles</h4>
+                    <p class="person-years">1981</p>
+                    <p class="person-description">African/American singer-songwriter, producer, dancer, actress</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Kia Stevens" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Kia Stevens</h4>
+                    <p class="person-years">1977</p>
+                    <p class="person-description">American wrestler</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="John Vanbiesbrouck" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">John Vanbiesbrouck</h4>
+                    <p class="person-years">1963</p>
+                    <p class="person-description">American ice hockey player</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Tom Watson" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Tom Watson</h4>
+                    <p class="person-years">1949</p>
+                    <p class="person-description">American golfer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Anton Bruckner" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Anton Bruckner</h4>
+                    <p class="person-years">1824</p>
+                    <p class="person-description">Austrian composer</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Joan Rivers" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Joan Rivers</h4>
+                    <p class="person-years">2014</p>
+                    <p class="person-description">American comedian, actress, author</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Steve Irwin" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Steve Irwin</h4>
+                    <p class="person-years">2006</p>
+                    <p class="person-description">Australian zoologist, television host</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Hank Greenberg" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Hank Greenberg</h4>
+                    <p class="person-years">1986</p>
+                    <p class="person-description">American baseball player</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Albert Schweitzer" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Albert Schweitzer</h4>
+                    <p class="person-years">1965</p>
+                    <p class="person-description">Alsatian physician, Nobel Prize laureate</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Robert Dudley, 1st Earl of Leicester" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Robert Dudley, 1st Earl of Leicester</h4>
+                    <p class="person-years">1588</p>
+                    <p class="person-description"></p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

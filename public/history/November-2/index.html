@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>11月2日 - 历史上的今天 | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">1982</span>
-                <div class="event-content">
-                    <p class="event-description">Ronald Reagan signs a bill to create Martin Luther King, Jr. Day. The day, observed every year on the third Monday of January, commemorates the life of Martin Luther King, Jr. a leader of the African-American Civil Rights Movement.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1982</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Ronald Reagan signs a bill to create Martin Luther King, Jr. Day. The day, observed every year on the third Monday of January, commemorates the life of Martin Luther King, Jr. a leader of the African-American Civil Rights Movement.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1964</span>
-                <div class="event-content">
-                    <p class="event-description">Coup in Saudi Arabia. Faisal bin Abdulaziz Al Saud takes over the government of Saudi Arabia while his half-brother, King Saud is overseas for medical reasons.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1964</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Coup in Saudi Arabia. Faisal bin Abdulaziz Al Saud takes over the government of Saudi Arabia while his half-brother, King Saud is overseas for medical reasons.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1938</span>
-                <div class="event-content">
-                    <p class="event-description">Canadian Broadcasting Corporation established. Officially known as CBC/Radio-Canada, the network is Canada's public radio and television broadcaster.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1938</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Canadian Broadcasting Corporation established. Officially known as CBC/Radio-Canada, the network is Canada's public radio and television broadcaster.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1930</span>
-                <div class="event-content">
-                    <p class="event-description">Haile Selassie I becomes the emperor of Ethiopia. Considered as a leading figure in the Rastafari movement, Selassie reigned over Ethiopia for 44 years.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1930</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Haile Selassie I becomes the emperor of Ethiopia. Considered as a leading figure in the Rastafari movement, Selassie reigned over Ethiopia for 44 years.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1917</span>
-                <div class="event-content">
-                    <p class="event-description">Balfour Declaration. Originally sent as a letter on this day to Baron Rothschild from British Foreign Secretary Arthur James Balfour, it declared BRitish support for a Jewish state in Palestine. The letter was eventually added to Sevres peace treaty.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1917</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Balfour Declaration. Originally sent as a letter on this day to Baron Rothschild from British Foreign Secretary Arthur James Balfour, it declared BRitish support for a Jewish state in Palestine. The letter was eventually added to Sevres peace treaty.</p>
                     
                 </div>
             </div>
@@ -220,11 +230,11 @@
             <div class="nav-controls">
                 <button class="nav-btn" id="dateSelector">
                     <i class="fas fa-calendar-alt"></i>
-                    <span>Select Date</span>
+                    <span>选择日期</span>
                 </button>
                 <button class="nav-btn" id="languageSelector">
-                    <span class="flag">🇺🇸</span>
-                    <span>English</span>
+                    <span class="flag">🇨🇳</span>
+                    <span>中文</span>
                 </button>
             </div>
         </div>
@@ -259,82 +269,255 @@
             <aside class="sidebar">
                 <!-- Birthday Checker -->
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title">Birthday Query</h3>
-                    <p class="sidebar-desc">What happened on your birthday?</p>
+                    <h3 class="sidebar-title">生日查询</h3>
+                    <p class="sidebar-desc">查看你的生日发生了什么</p>
                     <div class="birthday-form">
                         <select id="birthMonth" class="select-minimal">
-                            <option value="">Month</option>
+                            <option value="">月份</option>
                         </select>
                         <select id="birthDay" class="select-minimal">
-                            <option value="">Day</option>
+                            <option value="">日期</option>
                         </select>
-                        <button class="btn-primary" id="checkBirthday">Check Birthday</button>
+                        <button class="btn-primary" id="checkBirthday">查看生日</button>
                     </div>
                 </div>
 
                 <!-- On This Day Navigation -->
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title">Navigation</h3>
+                    <h3 class="sidebar-title">导航</h3>
                     <nav class="today-nav">
-                        <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">名人生日</a>
-                                    <a href="#deaths" class="nav-link">名人逝世</a>
-                                </nav>
-                            </div>
+                        <a href="#events" class="nav-link active">历史事件</a>
+                        <a href="#births" class="nav-link">名人生日</a>
+                        <a href="#deaths" class="nav-link">名人逝世</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- 生日查询 -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">生日查询</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择月份</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">选择日期</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">查看生日</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">历史上的今天</h2>
+                        <p class="section-subtitle">历史事件</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1982</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Ronald Reagan signs a bill to create Martin Luther King, Jr. Day. The day, observed every year on the third Monday of January, commemorates the life of Martin Luther King, Jr. a leader of the African-American Civil Rights Movement.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1964</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Coup in Saudi Arabia. Faisal bin Abdulaziz Al Saud takes over the government of Saudi Arabia while his half-brother, King Saud is overseas for medical reasons.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1938</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Canadian Broadcasting Corporation established. Officially known as CBC/Radio-Canada, the network is Canada's public radio and television broadcaster.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1930</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Haile Selassie I becomes the emperor of Ethiopia. Considered as a leading figure in the Rastafari movement, Selassie reigned over Ethiopia for 44 years.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1917</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Balfour Declaration. Originally sent as a letter on this day to Baron Rothschild from British Foreign Secretary Arthur James Balfour, it declared BRitish support for a Jewish state in Palestine. The letter was eventually added to Sevres peace treaty.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- 日期导航 -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">名人生日</h2>
+                        <p class="section-subtitle">生于这一天</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Shahrukh Khan" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Shahrukh Khan</h4>
+                    <p class="person-years">1965</p>
+                    <p class="person-description">Indian actor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Ken Rosewall" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Ken Rosewall</h4>
+                    <p class="person-years">1934</p>
+                    <p class="person-description">Australian tennis player</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Warren G. Harding" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Warren G. Harding</h4>
+                    <p class="person-years">1865</p>
+                    <p class="person-description">American politician, 29th President of the United States</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Marie Antoinette" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Marie Antoinette</h4>
+                    <p class="person-years">1755</p>
+                    <p class="person-description">Austrian wife of Louis XVI of France</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">名人逝世</h2>
+                        <p class="section-subtitle">逝于这一天</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="The Fabulous Moolah" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">The Fabulous Moolah</h4>
+                    <p class="person-years">2007</p>
+                    <p class="person-description">American wrestler</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Theo van Gogh" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Theo van Gogh</h4>
+                    <p class="person-years">2004</p>
+                    <p class="person-description">Dutch director</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Peter Debye" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Peter Debye</h4>
+                    <p class="person-years">1966</p>
+                    <p class="person-description">Dutch/American physicist, chemist, Nobel Prize laureate</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Ngo Dinh Diem" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Ngo Dinh Diem</h4>
+                    <p class="person-years">1963</p>
+                    <p class="person-description">South Vietnamese politician, 1st President of the Republic of Vietnam</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="George Bernard Shaw" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">George Bernard Shaw</h4>
+                    <p class="person-years">1950</p>
+                    <p class="person-description">Irish writer, Nobel Prize laureate</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>探索历史，发现精彩</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">关于我们</a>
+                        <a href="/privacy" id="privacy-link">隐私政策</a>
+                        <a href="/terms" id="terms-link">服务条款</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>探索历史，发现精彩</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">关于我们</a>
-                            <a href="/privacy-zh">隐私政策</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
-                <p>Data Source: Wikipedia, Historical Database</p>
+                <p>&copy; 2025 TimeRemind.Today. 保留所有权利</p>
+                <p>数据来源: 维基百科，历史数据库</p>
             </div>
         </div>
     </footer>
@@ -343,22 +526,22 @@
     <div class="modal" id="dateModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Select Date</h3>
+                <h3>选择日期</h3>
                 <button class="modal-close" id="modalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择月份</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">选择日期</option>
                     </select>
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn-secondary" id="modalCancel">Cancel</button>
-                <button class="btn-primary" id="modalConfirm">Confirm</button>
+                <button class="btn-secondary" id="modalCancel">取消</button>
+                <button class="btn-primary" id="modalConfirm">确认</button>
             </div>
         </div>
     </div>
@@ -367,18 +550,18 @@
     <div class="modal" id="languageModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Select Language</h3>
+                <h3>选择语言</h3>
                 <button class="modal-close" id="langModalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
-                        <span class="flag">🇺🇸</span>
-                        <span>English</span>
-                    </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇨🇳</span>
                         <span>中文</span>
+                    </button>
+                    <button class="lang-option" data-lang="en-US">
+                        <span class="flag">🇺🇸</span>
+                        <span>English</span>
                     </button>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>10月8日 - 历史上的今天 | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">1956</span>
-                <div class="event-content">
-                    <p class="event-description">The first perfect game in Major League Baseball World Series. New York Yankees’ Don Larsen pitched the only no-hitter game against the  Brooklyn Dodgers in the history of the World Series.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1956</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The first perfect game in Major League Baseball World Series. New York Yankees’ Don Larsen pitched the only no-hitter game against the  Brooklyn Dodgers in the history of the World Series.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1948</span>
-                <div class="event-content">
-                    <p class="event-description">World’s first internal pacemaker implanted. A 43-year-old man called Arne Larsson was the recipient of the pacemaker which worked only for a few hours. However, Larsson lived long after the pacemaker stopped working. He died in 2001 at the age of 86.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1948</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">World’s first internal pacemaker implanted. A 43-year-old man called Arne Larsson was the recipient of the pacemaker which worked only for a few hours. However, Larsson lived long after the pacemaker stopped working. He died in 2001 at the age of 86.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1919</span>
-                <div class="event-content">
-                    <p class="event-description">World’s first transcontinental air race. 63 airplanes – 15 from San Francisco and 48 from New York – took part in this 5400-mile round-trip race. The winner, Lieutenant Belvin Maynard, took 3 days and 21 hours to return to New York.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1919</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">World’s first transcontinental air race. 63 airplanes – 15 from San Francisco and 48 from New York – took part in this 5400-mile round-trip race. The winner, Lieutenant Belvin Maynard, took 3 days and 21 hours to return to New York.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1912</span>
-                <div class="event-content">
-                    <p class="event-description">First Balkan war begins. Montenegro started the conflict by declaring war on the Ottoman Empire. A few days later  Greece, Bulgaria, and Serbia joined the war and created the Balkan League. The 7-month long war ended with a decisive Balkan League victory. Dissatisfaction over the spoils of the war led to the Second Balkan War a year later.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1912</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First Balkan war begins. Montenegro started the conflict by declaring war on the Ottoman Empire. A few days later  Greece, Bulgaria, and Serbia joined the war and created the Balkan League. The 7-month long war ended with a decisive Balkan League victory. Dissatisfaction over the spoils of the war led to the Second Balkan War a year later.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1871</span>
-                <div class="event-content">
-                    <p class="event-description">Great Chicago fire begins. The fire that destroyed most of Chicago’s business district began in a barn on the evening of October 8, 1871. A very dry summer and an early autumn fanned the fire, which raged for 2 days. It killed over 300 people and destroyed property worth millions of dollars.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1871</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Great Chicago fire begins. The fire that destroyed most of Chicago’s business district began in a barn on the evening of October 8, 1871. A very dry summer and an early autumn fanned the fire, which raged for 2 days. It killed over 300 people and destroyed property worth millions of dollars.</p>
                     
                 </div>
             </div>
@@ -231,11 +241,11 @@
             <div class="nav-controls">
                 <button class="nav-btn" id="dateSelector">
                     <i class="fas fa-calendar-alt"></i>
-                    <span>Select Date</span>
+                    <span>选择日期</span>
                 </button>
                 <button class="nav-btn" id="languageSelector">
-                    <span class="flag">🇺🇸</span>
-                    <span>English</span>
+                    <span class="flag">🇨🇳</span>
+                    <span>中文</span>
                 </button>
             </div>
         </div>
@@ -270,82 +280,266 @@
             <aside class="sidebar">
                 <!-- Birthday Checker -->
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title">Birthday Query</h3>
-                    <p class="sidebar-desc">What happened on your birthday?</p>
+                    <h3 class="sidebar-title">生日查询</h3>
+                    <p class="sidebar-desc">查看你的生日发生了什么</p>
                     <div class="birthday-form">
                         <select id="birthMonth" class="select-minimal">
-                            <option value="">Month</option>
+                            <option value="">月份</option>
                         </select>
                         <select id="birthDay" class="select-minimal">
-                            <option value="">Day</option>
+                            <option value="">日期</option>
                         </select>
-                        <button class="btn-primary" id="checkBirthday">Check Birthday</button>
+                        <button class="btn-primary" id="checkBirthday">查看生日</button>
                     </div>
                 </div>
 
                 <!-- On This Day Navigation -->
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title">Navigation</h3>
+                    <h3 class="sidebar-title">导航</h3>
                     <nav class="today-nav">
-                        <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">名人生日</a>
-                                    <a href="#deaths" class="nav-link">名人逝世</a>
-                                </nav>
-                            </div>
+                        <a href="#events" class="nav-link active">历史事件</a>
+                        <a href="#births" class="nav-link">名人生日</a>
+                        <a href="#deaths" class="nav-link">名人逝世</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- 生日查询 -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">生日查询</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择月份</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">选择日期</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">查看生日</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">历史上的今天</h2>
+                        <p class="section-subtitle">历史事件</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1956</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The first perfect game in Major League Baseball World Series. New York Yankees’ Don Larsen pitched the only no-hitter game against the  Brooklyn Dodgers in the history of the World Series.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1948</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">World’s first internal pacemaker implanted. A 43-year-old man called Arne Larsson was the recipient of the pacemaker which worked only for a few hours. However, Larsson lived long after the pacemaker stopped working. He died in 2001 at the age of 86.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1919</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">World’s first transcontinental air race. 63 airplanes – 15 from San Francisco and 48 from New York – took part in this 5400-mile round-trip race. The winner, Lieutenant Belvin Maynard, took 3 days and 21 hours to return to New York.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1912</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First Balkan war begins. Montenegro started the conflict by declaring war on the Ottoman Empire. A few days later  Greece, Bulgaria, and Serbia joined the war and created the Balkan League. The 7-month long war ended with a decisive Balkan League victory. Dissatisfaction over the spoils of the war led to the Second Balkan War a year later.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1871</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Great Chicago fire begins. The fire that destroyed most of Chicago’s business district began in a barn on the evening of October 8, 1871. A very dry summer and an early autumn fanned the fire, which raged for 2 days. It killed over 300 people and destroyed property worth millions of dollars.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- 日期导航 -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">名人生日</h2>
+                        <p class="section-subtitle">生于这一天</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Bruno Mars" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Bruno Mars</h4>
+                    <p class="person-years">1985</p>
+                    <p class="person-description">American singer-songwriter, producer, actor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Matt Damon" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Matt Damon</h4>
+                    <p class="person-years">1970</p>
+                    <p class="person-description">American actor, screenwriter, producer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Chevy Chase" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Chevy Chase</h4>
+                    <p class="person-years">1943</p>
+                    <p class="person-description">American comedian, actor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Harvey Pekar" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Harvey Pekar</h4>
+                    <p class="person-years">1939</p>
+                    <p class="person-description">American author</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Juan Perón" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Juan Perón</h4>
+                    <p class="person-years">1895</p>
+                    <p class="person-description">Argentine military officer, politician, 29th President of Argentina</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">名人逝世</h2>
+                        <p class="section-subtitle">逝于这一天</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Willy Brandt" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Willy Brandt</h4>
+                    <p class="person-years">1992</p>
+                    <p class="person-description">German politician, 4th Chancellor of Germany, Nobel Prize laureate</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Clement Attlee" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Clement Attlee</h4>
+                    <p class="person-years">1967</p>
+                    <p class="person-description">English politician, Prime Minister of the United Kingdom</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Premchand" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Premchand</h4>
+                    <p class="person-years">1936</p>
+                    <p class="person-description">Indian author</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Franklin Pierce" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Franklin Pierce</h4>
+                    <p class="person-years">1869</p>
+                    <p class="person-description">American politician, 14th President of the United States</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="John Hancock" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">John Hancock</h4>
+                    <p class="person-years">1793</p>
+                    <p class="person-description">American politician, 1st Governor of Massachusetts</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>探索历史，发现精彩</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">关于我们</a>
+                        <a href="/privacy" id="privacy-link">隐私政策</a>
+                        <a href="/terms" id="terms-link">服务条款</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>探索历史，发现精彩</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">关于我们</a>
-                            <a href="/privacy-zh">隐私政策</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
-                <p>Data Source: Wikipedia, Historical Database</p>
+                <p>&copy; 2025 TimeRemind.Today. 保留所有权利</p>
+                <p>数据来源: 维基百科，历史数据库</p>
             </div>
         </div>
     </footer>
@@ -354,22 +548,22 @@
     <div class="modal" id="dateModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Select Date</h3>
+                <h3>选择日期</h3>
                 <button class="modal-close" id="modalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择月份</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">选择日期</option>
                     </select>
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn-secondary" id="modalCancel">Cancel</button>
-                <button class="btn-primary" id="modalConfirm">Confirm</button>
+                <button class="btn-secondary" id="modalCancel">取消</button>
+                <button class="btn-primary" id="modalConfirm">确认</button>
             </div>
         </div>
     </div>
@@ -378,18 +572,18 @@
     <div class="modal" id="languageModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Select Language</h3>
+                <h3>选择语言</h3>
                 <button class="modal-close" id="langModalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
-                        <span class="flag">🇺🇸</span>
-                        <span>English</span>
-                    </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇨🇳</span>
                         <span>中文</span>
+                    </button>
+                    <button class="lang-option" data-lang="en-US">
+                        <span class="flag">🇺🇸</span>
+                        <span>English</span>
                     </button>
                 </div>
             </div>

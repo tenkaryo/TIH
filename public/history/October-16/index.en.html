@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>OCTOBER 16 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">1986</span>
-                <div class="event-content">
-                    <p class="event-description">First Person to Scale all Eight-Thousanders. Italian Mountaineer, Reinhold Messner, scaled the Lhotse, in Nepal. It is the world’s 4th tallest peak, and it is one of the 14 eight-thousanders – mountains that are more than 8000 meters above sea level.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1986</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First Person to Scale all Eight-Thousanders. Italian Mountaineer, Reinhold Messner, scaled the Lhotse, in Nepal. It is the world’s 4th tallest peak, and it is one of the 14 eight-thousanders – mountains that are more than 8000 meters above sea level.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1978</span>
-                <div class="event-content">
-                    <p class="event-description">First Non-Italian to Win the Papacy since 1523. Karol Józef Wojtyła, the Archbishop of Kraków, won the papal elections that were held after his predecessor Pope John Paul I died after only 33 days in office. As Pope, Wojtyła took on the name of John Paul II. He was the second-longest serving pope in modern history, after Pope Pius IX, who was in office for over 31 years.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1978</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First Non-Italian to Win the Papacy since 1523. Karol Józef Wojtyła, the Archbishop of Kraków, won the papal elections that were held after his predecessor Pope John Paul I died after only 33 days in office. As Pope, Wojtyła took on the name of John Paul II. He was the second-longest serving pope in modern history, after Pope Pius IX, who was in office for over 31 years.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1964</span>
-                <div class="event-content">
-                    <p class="event-description">First Chinese Nuclear Test. Codenamed Chic-1 or 596, the 22 kiloton uranium fission device was dropped at Lop Nur. With this test, China became the fifth nuclear power state in the World. The other four are the United States, Russia, the United Kingdom, and France. Israel is thought to have nuclear weapons, however, they do not publicly admit the fact.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1964</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First Chinese Nuclear Test. Codenamed Chic-1 or 596, the 22 kiloton uranium fission device was dropped at Lop Nur. With this test, China became the fifth nuclear power state in the World. The other four are the United States, Russia, the United Kingdom, and France. Israel is thought to have nuclear weapons, however, they do not publicly admit the fact.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1945</span>
-                <div class="event-content">
-                    <p class="event-description">Food and Agriculture Organization established. The Food and Agriculture Organization, popularly known as the FAO was established in Quebec City, Canada.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1945</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Food and Agriculture Organization established. The Food and Agriculture Organization, popularly known as the FAO was established in Quebec City, Canada.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1923</span>
-                <div class="event-content">
-                    <p class="event-description">The Walt Disney Company is Founded. A leader in the international entertainment industry, the company was created by brothers Walt and Roy as the Disney Brothers Cartoon Studio. Today, the company is synonymous with cartoon and animated movies and characters.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1923</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The Walt Disney Company is Founded. A leader in the international entertainment industry, the company was created by brothers Walt and Roy as the Disney Brothers Cartoon Studio. Today, the company is synonymous with cartoon and animated movies and characters.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1986</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First Person to Scale all Eight-Thousanders. Italian Mountaineer, Reinhold Messner, scaled the Lhotse, in Nepal. It is the world’s 4th tallest peak, and it is one of the 14 eight-thousanders – mountains that are more than 8000 meters above sea level.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1978</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First Non-Italian to Win the Papacy since 1523. Karol Józef Wojtyła, the Archbishop of Kraków, won the papal elections that were held after his predecessor Pope John Paul I died after only 33 days in office. As Pope, Wojtyła took on the name of John Paul II. He was the second-longest serving pope in modern history, after Pope Pius IX, who was in office for over 31 years.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1964</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First Chinese Nuclear Test. Codenamed Chic-1 or 596, the 22 kiloton uranium fission device was dropped at Lop Nur. With this test, China became the fifth nuclear power state in the World. The other four are the United States, Russia, the United Kingdom, and France. Israel is thought to have nuclear weapons, however, they do not publicly admit the fact.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1945</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Food and Agriculture Organization established. The Food and Agriculture Organization, popularly known as the FAO was established in Quebec City, Canada.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1923</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The Walt Disney Company is Founded. A leader in the international entertainment industry, the company was created by brothers Walt and Roy as the Disney Brothers Cartoon Studio. Today, the company is synonymous with cartoon and animated movies and characters.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="John Mayer" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">John Mayer</h4>
+                    <p class="person-years">1977</p>
+                    <p class="person-description">American singer-songwriter, guitarist, producer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Paul Kariya" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Paul Kariya</h4>
+                    <p class="person-years">1974</p>
+                    <p class="person-description">Canadian ice hockey player</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Angela Lansbury" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Angela Lansbury</h4>
+                    <p class="person-years">1925</p>
+                    <p class="person-description">English/American actress, singer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Eugene O'Neill" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Eugene O'Neill</h4>
+                    <p class="person-years">1888</p>
+                    <p class="person-description">American playwright, Nobel Prize laureate</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="David Ben-Gurion" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">David Ben-Gurion</h4>
+                    <p class="person-years">1886</p>
+                    <p class="person-description">Israeli politician, 1st Prime Minister of Israel</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Dan Wheldon" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Dan Wheldon</h4>
+                    <p class="person-years">2011</p>
+                    <p class="person-description">English race car driver</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Moshe Dayan" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Moshe Dayan</h4>
+                    <p class="person-years">1981</p>
+                    <p class="person-description">Israeli general, politician, 5th Minister of Foreign Affairs for Israel)</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Liaquat Ali Khan" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Liaquat Ali Khan</h4>
+                    <p class="person-years">1951</p>
+                    <p class="person-description">Indian/Pakistani lawyer, politician, Prime Minister of Pakistan</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Marie Antoinette" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Marie Antoinette</h4>
+                    <p class="person-years">1793</p>
+                    <p class="person-description">Austrian wife of Louis XVI of France</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Grigory Potemkin" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Grigory Potemkin</h4>
+                    <p class="person-years">1791</p>
+                    <p class="person-description">Russian military leader, politician</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

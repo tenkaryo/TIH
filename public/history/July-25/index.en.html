@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>JULY 25 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2007</span>
-                <div class="event-content">
-                    <p class="event-description">India gets its first female president. Pratibha Patil, a politician stayed in office as the head of state of the South Asian country for 5 years.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2007</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">India gets its first female president. Pratibha Patil, a politician stayed in office as the head of state of the South Asian country for 5 years.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1984</span>
-                <div class="event-content">
-                    <p class="event-description">Svetlana Savitskaya Becomes the First Woman to Walk in Space. The Soviet cosmonaut was part of the Soyuz T-12 mission, which docked at the Salyut 7 Space station. As part of the mission, she spent 3.5 hours in space testing tools. Savitskaya was also the second woman to go into space and the first to go to space twice.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1984</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Svetlana Savitskaya Becomes the First Woman to Walk in Space. The Soviet cosmonaut was part of the Soyuz T-12 mission, which docked at the Salyut 7 Space station. As part of the mission, she spent 3.5 hours in space testing tools. Savitskaya was also the second woman to go into space and the first to go to space twice.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1978</span>
-                <div class="event-content">
-                    <p class="event-description">World's first test tube baby is born. Louise Joy Brown was the first person to be conceived using in-vitro fertilization or IVF technology, pioneered by doctors Patrick Steptoe and Robert Edwards.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1978</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">World's first test tube baby is born. Louise Joy Brown was the first person to be conceived using in-vitro fertilization or IVF technology, pioneered by doctors Patrick Steptoe and Robert Edwards.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1976</span>
-                <div class="event-content">
-                    <p class="event-description">The famous Face on Mars photo is taken. Viking 1, the first space probe to successfully land on Mars took the famous photo of the Cydonia region on the Red Planet.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1976</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The famous Face on Mars photo is taken. Viking 1, the first space probe to successfully land on Mars took the famous photo of the Cydonia region on the Red Planet.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1956</span>
-                <div class="event-content">
-                    <p class="event-description">Tunisia gains its independence from France. The northernmost African country, became a French protectorate in 1881, under the  Treaty of Bardo. The path to independence in the country was marred by civil unrest and conflict and was led by Habib Bourguiba, who became the first president of the independent country.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1956</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Tunisia gains its independence from France. The northernmost African country, became a French protectorate in 1881, under the  Treaty of Bardo. The path to independence in the country was marred by civil unrest and conflict and was led by Habib Bourguiba, who became the first president of the independent country.</p>
                     
                 </div>
             </div>
@@ -277,61 +287,234 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2007</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">India gets its first female president. Pratibha Patil, a politician stayed in office as the head of state of the South Asian country for 5 years.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1984</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Svetlana Savitskaya Becomes the First Woman to Walk in Space. The Soviet cosmonaut was part of the Soyuz T-12 mission, which docked at the Salyut 7 Space station. As part of the mission, she spent 3.5 hours in space testing tools. Savitskaya was also the second woman to go into space and the first to go to space twice.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1978</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">World's first test tube baby is born. Louise Joy Brown was the first person to be conceived using in-vitro fertilization or IVF technology, pioneered by doctors Patrick Steptoe and Robert Edwards.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1976</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The famous Face on Mars photo is taken. Viking 1, the first space probe to successfully land on Mars took the famous photo of the Cydonia region on the Red Planet.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1956</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Tunisia gains its independence from France. The northernmost African country, became a French protectorate in 1881, under the  Treaty of Bardo. The path to independence in the country was marred by civil unrest and conflict and was led by Habib Bourguiba, who became the first president of the independent country.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Nelson Piquet, Jr.Brazilian race car driver" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Nelson Piquet, Jr.Brazilian race car driver</h4>
+                    <p class="person-years">1985</p>
+                    <p class="person-description"></p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Jack Thompson" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Jack Thompson</h4>
+                    <p class="person-years">1951</p>
+                    <p class="person-description">American lawyer, activist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Emmett Till" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Emmett Till</h4>
+                    <p class="person-years">1941</p>
+                    <p class="person-description">American murder victim</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Rosalind Franklin" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Rosalind Franklin</h4>
+                    <p class="person-years">1920</p>
+                    <p class="person-description">English scientist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Henry Knox" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Henry Knox</h4>
+                    <p class="person-years">1750</p>
+                    <p class="person-description">American general</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Harry Patch" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Harry Patch</h4>
+                    <p class="person-years">2009</p>
+                    <p class="person-description">British super-centenarian, last survivor of the WWI trenches</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Ben Hogan" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Ben Hogan</h4>
+                    <p class="person-years">1997</p>
+                    <p class="person-description">American golfer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Vladimir Vysotsky" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Vladimir Vysotsky</h4>
+                    <p class="person-years">1980</p>
+                    <p class="person-description">Russian singer-songwriter, actor, poet</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Samuel Taylor Coleridge" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Samuel Taylor Coleridge</h4>
+                    <p class="person-years">1834</p>
+                    <p class="person-description">English poet, philosopher</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -349,10 +532,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -372,11 +555,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

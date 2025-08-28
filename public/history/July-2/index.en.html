@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>JULY 2 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2002</span>
-                <div class="event-content">
-                    <p class="event-description">American businessman, Steve Fossett completes the first solo around-the-world Balloon Flight. This was Fossett's 6th attempt to circumnavigate the world. It took him 13 days in a balloon called Spirit of Freedom to cover 20,000 miles.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2002</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">American businessman, Steve Fossett completes the first solo around-the-world Balloon Flight. This was Fossett's 6th attempt to circumnavigate the world. It took him 13 days in a balloon called Spirit of Freedom to cover 20,000 miles.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">2001</span>
-                <div class="event-content">
-                    <p class="event-description">World's First Self-Contained Artificial Heart Transplant. 59-year old American Robert L. Tools became the first person to receive the a self-contained artificial heart transplant called the  AbioCor at the Jewish Hospital in Louisville, Kentucky. The AbioCor is an artificial heart that is not connected to wires or an external pump.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2001</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">World's First Self-Contained Artificial Heart Transplant. 59-year old American Robert L. Tools became the first person to receive the a self-contained artificial heart transplant called the  AbioCor at the Jewish Hospital in Louisville, Kentucky. The AbioCor is an artificial heart that is not connected to wires or an external pump.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1937</span>
-                <div class="event-content">
-                    <p class="event-description">American aviator Amelia Earhart and her navigator Fred Noonan are heard for the last time before disappearing. They were attempting to make the first around-the-world flight in a Lockheed Model 10 Electra. Neither they nor the plane has ever been found and that has led to speculation about what happened to them. An accomplished pilot, Earhart was the first woman to fly solo across the Atlantic Ocean.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1937</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">American aviator Amelia Earhart and her navigator Fred Noonan are heard for the last time before disappearing. They were attempting to make the first around-the-world flight in a Lockheed Model 10 Electra. Neither they nor the plane has ever been found and that has led to speculation about what happened to them. An accomplished pilot, Earhart was the first woman to fly solo across the Atlantic Ocean.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1900</span>
-                <div class="event-content">
-                    <p class="event-description">The Zeppelin Takes Off for the First Time. The rigid aircraft named after Count Ferdinand von Zeppelin, the inventor of the dirigible and founder of the Zeppelin Airship Construction Company, made its first flight over Lake Constance in Germany.  Unlike blimps or balloons, Zeppelins are built by stretching material over a rigid framework, usually made of metal. Zeppelins can be steered and they were used by the German Air Force to conduct aerial attacks during the First World War.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1900</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The Zeppelin Takes Off for the First Time. The rigid aircraft named after Count Ferdinand von Zeppelin, the inventor of the dirigible and founder of the Zeppelin Airship Construction Company, made its first flight over Lake Constance in Germany.  Unlike blimps or balloons, Zeppelins are built by stretching material over a rigid framework, usually made of metal. Zeppelins can be steered and they were used by the German Air Force to conduct aerial attacks during the First World War.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1843</span>
-                <div class="event-content">
-                    <p class="event-description">Alligator Falls Out of the Sky in Charleston, South Carolina during a thunderstorm.. It is believed that the strange incident happened when a waterspout carried an alligator from a body of water and dropped in on the city.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1843</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Alligator Falls Out of the Sky in Charleston, South Carolina during a thunderstorm.. It is believed that the strange incident happened when a waterspout carried an alligator from a body of water and dropped in on the city.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2002</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">American businessman, Steve Fossett completes the first solo around-the-world Balloon Flight. This was Fossett's 6th attempt to circumnavigate the world. It took him 13 days in a balloon called Spirit of Freedom to cover 20,000 miles.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2001</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">World's First Self-Contained Artificial Heart Transplant. 59-year old American Robert L. Tools became the first person to receive the a self-contained artificial heart transplant called the  AbioCor at the Jewish Hospital in Louisville, Kentucky. The AbioCor is an artificial heart that is not connected to wires or an external pump.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1937</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">American aviator Amelia Earhart and her navigator Fred Noonan are heard for the last time before disappearing. They were attempting to make the first around-the-world flight in a Lockheed Model 10 Electra. Neither they nor the plane has ever been found and that has led to speculation about what happened to them. An accomplished pilot, Earhart was the first woman to fly solo across the Atlantic Ocean.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1900</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The Zeppelin Takes Off for the First Time. The rigid aircraft named after Count Ferdinand von Zeppelin, the inventor of the dirigible and founder of the Zeppelin Airship Construction Company, made its first flight over Lake Constance in Germany.  Unlike blimps or balloons, Zeppelins are built by stretching material over a rigid framework, usually made of metal. Zeppelins can be steered and they were used by the German Air Force to conduct aerial attacks during the First World War.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1843</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Alligator Falls Out of the Sky in Charleston, South Carolina during a thunderstorm.. It is believed that the strange incident happened when a waterspout carried an alligator from a body of water and dropped in on the city.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Lindsay Lohan" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Lindsay Lohan</h4>
+                    <p class="person-years">1986</p>
+                    <p class="person-description">American actress, singer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Patrice Lumumba" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Patrice Lumumba</h4>
+                    <p class="person-years">1925</p>
+                    <p class="person-description">Congolese politician, 1st Prime Minister of the Democratic Republic of the Congo</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Medgar Evers" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Medgar Evers</h4>
+                    <p class="person-years">1925</p>
+                    <p class="person-description">American civil rights activist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Hermann Hesse" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Hermann Hesse</h4>
+                    <p class="person-years">1877</p>
+                    <p class="person-description">German writer, Nobel Prize laureate</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Thomas Cranmer" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Thomas Cranmer</h4>
+                    <p class="person-years">1489</p>
+                    <p class="person-description">English Archbishop of Canterbury</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Vladimir Nabokov" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Vladimir Nabokov</h4>
+                    <p class="person-years">1977</p>
+                    <p class="person-description">Russian/American author</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Ernest Hemingway" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Ernest Hemingway</h4>
+                    <p class="person-years">1961</p>
+                    <p class="person-description">American writer, Nobel Prize laureate</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Joseph Chamberlain" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Joseph Chamberlain</h4>
+                    <p class="person-years">1914</p>
+                    <p class="person-description">British politician</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Jean-Jacques Rousseau" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Jean-Jacques Rousseau</h4>
+                    <p class="person-years">1778</p>
+                    <p class="person-description">Swiss philosopher, polymath</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Nostradamus" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Nostradamus</h4>
+                    <p class="person-years">1566</p>
+                    <p class="person-description">French astrologer</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

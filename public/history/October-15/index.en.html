@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>OCTOBER 15 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2003</span>
-                <div class="event-content">
-                    <p class="event-description">Shenzhou 5, China's first human space flight mission launched. Launched from the Jiuquan Satellite Launch Center in the middle of the Gobi desert in northern China, this launch brought the Chinese into the exclusive club of countries who have achieved manned space flight. The other countries are the USA and the Soviet Union/Russia.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2003</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Shenzhou 5, China's first human space flight mission launched. Launched from the Jiuquan Satellite Launch Center in the middle of the Gobi desert in northern China, this launch brought the Chinese into the exclusive club of countries who have achieved manned space flight. The other countries are the USA and the Soviet Union/Russia.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1990</span>
-                <div class="event-content">
-                    <p class="event-description">Mikhail Gorbachev is Awarded the Nobel Peace Prize. The then President of the Soviet Union received the prestigious award given out by the  Norwegian Nobel Committee, for his role in lessening tensions during the Cold War.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1990</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mikhail Gorbachev is Awarded the Nobel Peace Prize. The then President of the Soviet Union received the prestigious award given out by the  Norwegian Nobel Committee, for his role in lessening tensions during the Cold War.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1987</span>
-                <div class="event-content">
-                    <p class="event-description">Thomas Sankara killed. Thomas Sankara, the President of Burkina Faso, was killed during a coup led by Blaise Compaoré.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1987</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Thomas Sankara killed. Thomas Sankara, the President of Burkina Faso, was killed during a coup led by Blaise Compaoré.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1951</span>
-                <div class="event-content">
-                    <p class="event-description">I Love Lucy Airs for the First Time. The American sitcom aired on CBS and featured real-life couple Lucille Ball and Desi Arnaz. The popular show lasted for 6 years and it had several spin-offs after it went off air.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1951</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">I Love Lucy Airs for the First Time. The American sitcom aired on CBS and featured real-life couple Lucille Ball and Desi Arnaz. The popular show lasted for 6 years and it had several spin-offs after it went off air.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1783</span>
-                <div class="event-content">
-                    <p class="event-description">World’s First Manned Balloon Flight. Jean-François Pilâtre de Rozier, a teacher from France, spent about 4 minutes in the air in a balloon made by flight pioneers Joseph-Michael and Jacques-Ètienne Montgolfier. The Montgolfier brothers were responsible for the world’s first balloon flight and for sending the first living being – a duck – on a balloon.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1783</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">World’s First Manned Balloon Flight. Jean-François Pilâtre de Rozier, a teacher from France, spent about 4 minutes in the air in a balloon made by flight pioneers Joseph-Michael and Jacques-Ètienne Montgolfier. The Montgolfier brothers were responsible for the world’s first balloon flight and for sending the first living being – a duck – on a balloon.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2003</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Shenzhou 5, China's first human space flight mission launched. Launched from the Jiuquan Satellite Launch Center in the middle of the Gobi desert in northern China, this launch brought the Chinese into the exclusive club of countries who have achieved manned space flight. The other countries are the USA and the Soviet Union/Russia.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1990</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mikhail Gorbachev is Awarded the Nobel Peace Prize. The then President of the Soviet Union received the prestigious award given out by the  Norwegian Nobel Committee, for his role in lessening tensions during the Cold War.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1987</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Thomas Sankara killed. Thomas Sankara, the President of Burkina Faso, was killed during a coup led by Blaise Compaoré.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1951</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">I Love Lucy Airs for the First Time. The American sitcom aired on CBS and featured real-life couple Lucille Ball and Desi Arnaz. The popular show lasted for 6 years and it had several spin-offs after it went off air.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1783</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">World’s First Manned Balloon Flight. Jean-François Pilâtre de Rozier, a teacher from France, spent about 4 minutes in the air in a balloon made by flight pioneers Joseph-Michael and Jacques-Ètienne Montgolfier. The Montgolfier brothers were responsible for the world’s first balloon flight and for sending the first living being – a duck – on a balloon.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Fela Kuti" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Fela Kuti</h4>
+                    <p class="person-years">1938</p>
+                    <p class="person-description">Nigerian singer-songwriter, musician, activist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="A. P. J. Abdul Kalam" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">A. P. J. Abdul Kalam</h4>
+                    <p class="person-years">1931</p>
+                    <p class="person-description">Indian scientist, politician, 11th President of India</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Michel Foucault" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Michel Foucault</h4>
+                    <p class="person-years">1926</p>
+                    <p class="person-description">French philosopher</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="P. G. Wodehouse" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">P. G. Wodehouse</h4>
+                    <p class="person-years">1881</p>
+                    <p class="person-description">English author</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Friedrich Nietzsche" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Friedrich Nietzsche</h4>
+                    <p class="person-years">1844</p>
+                    <p class="person-description">German philosopher</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Cole Porter" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Cole Porter</h4>
+                    <p class="person-years">1964</p>
+                    <p class="person-description">American composer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Stepan Bandera" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Stepan Bandera</h4>
+                    <p class="person-years">1959</p>
+                    <p class="person-description">Ukrainian politician</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Hermann Göring" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Hermann Göring</h4>
+                    <p class="person-years">1946</p>
+                    <p class="person-description">German military leader, politician, Minister President of Prussia</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Mata Hari" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Mata Hari</h4>
+                    <p class="person-years">1917</p>
+                    <p class="person-description">Dutch spy</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Tadeusz Kościuszko" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Tadeusz Kościuszko</h4>
+                    <p class="person-years">1817</p>
+                    <p class="person-description">Polish/American general</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

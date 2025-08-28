@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>MAY 20 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2006</span>
-                <div class="event-content">
-                    <p class="event-description">The Three Gorges Dam is officially opened. The hydroelectric dam is the world's largest power station in terms of installed capacity. Despite its benefits, the project remains controversial because it flooded archeological and cultural sites and displaced some 1.3 million people.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2006</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The Three Gorges Dam is officially opened. The hydroelectric dam is the world's largest power station in terms of installed capacity. Despite its benefits, the project remains controversial because it flooded archeological and cultural sites and displaced some 1.3 million people.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1983</span>
-                <div class="event-content">
-                    <p class="event-description">In South Africa, a car bomb planted by anti-Apartheid fighters kills 19. The Church Street Bombing was carried out by the military wing of the African National Congress (ANC). It was one of the bloodiest chapters in the ANC’s long and difficult struggle against racial segregation and oppression in South Africa.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1983</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">In South Africa, a car bomb planted by anti-Apartheid fighters kills 19. The Church Street Bombing was carried out by the military wing of the African National Congress (ANC). It was one of the bloodiest chapters in the ANC’s long and difficult struggle against racial segregation and oppression in South Africa.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1940</span>
-                <div class="event-content">
-                    <p class="event-description">The first prisoners arrive at Auschwitz concentration camp. Auschwitz was the biggest extermination camp during World War II. From 1940 to 1945, the Nazi regime murdered at least 1.1 million people here.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1940</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The first prisoners arrive at Auschwitz concentration camp. Auschwitz was the biggest extermination camp during World War II. From 1940 to 1945, the Nazi regime murdered at least 1.1 million people here.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1927</span>
-                <div class="event-content">
-                    <p class="event-description">Charles Lindbergh takes off on the first solo non-stop transatlantic flight. He departed from Long Island in the United States and arrived in Paris, France at 22:22 on the next day.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1927</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Charles Lindbergh takes off on the first solo non-stop transatlantic flight. He departed from Long Island in the United States and arrived in Paris, France at 22:22 on the next day.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1873</span>
-                <div class="event-content">
-                    <p class="event-description">Blue jeans are patented. Levi Strauss and Jacob Davis invented the garment, which today represents one of the most popular types of trousers worldwide.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1873</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Blue jeans are patented. Levi Strauss and Jacob Davis invented the garment, which today represents one of the most popular types of trousers worldwide.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2006</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The Three Gorges Dam is officially opened. The hydroelectric dam is the world's largest power station in terms of installed capacity. Despite its benefits, the project remains controversial because it flooded archeological and cultural sites and displaced some 1.3 million people.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1983</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">In South Africa, a car bomb planted by anti-Apartheid fighters kills 19. The Church Street Bombing was carried out by the military wing of the African National Congress (ANC). It was one of the bloodiest chapters in the ANC’s long and difficult struggle against racial segregation and oppression in South Africa.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1940</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The first prisoners arrive at Auschwitz concentration camp. Auschwitz was the biggest extermination camp during World War II. From 1940 to 1945, the Nazi regime murdered at least 1.1 million people here.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1927</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Charles Lindbergh takes off on the first solo non-stop transatlantic flight. He departed from Long Island in the United States and arrived in Paris, France at 22:22 on the next day.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1873</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Blue jeans are patented. Levi Strauss and Jacob Davis invented the garment, which today represents one of the most popular types of trousers worldwide.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Tony Stewart" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Tony Stewart</h4>
+                    <p class="person-years">1971</p>
+                    <p class="person-description">American race car driver</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Cher" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Cher</h4>
+                    <p class="person-years">1946</p>
+                    <p class="person-description">American singer-songwriter, actress, producer, director</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Joe Cocker" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Joe Cocker</h4>
+                    <p class="person-years">1944</p>
+                    <p class="person-description">English singer-songwriter</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Moshe Dayan" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Moshe Dayan</h4>
+                    <p class="person-years">1915</p>
+                    <p class="person-description">Israeli general, politician, 5th Minister of Foreign Affairs for Israel)</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Honoré de Balzac" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Honoré de Balzac</h4>
+                    <p class="person-years">1799</p>
+                    <p class="person-description">French author, playwright</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Robin Gibb" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Robin Gibb</h4>
+                    <p class="person-years">2012</p>
+                    <p class="person-description">English singer-songwriter, producer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Stephen Jay Gould" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Stephen Jay Gould</h4>
+                    <p class="person-years">2002</p>
+                    <p class="person-description">American paleontologist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Clara Schumann" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Clara Schumann</h4>
+                    <p class="person-years">1896</p>
+                    <p class="person-description">German pianist, composer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Gilbert du Motier, Marquis de Lafayette" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Gilbert du Motier, Marquis de Lafayette</h4>
+                    <p class="person-years">1834</p>
+                    <p class="person-description">French general</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Christopher Columbus" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Christopher Columbus</h4>
+                    <p class="person-years">1506</p>
+                    <p class="person-description">Italian explorer, discovered the Americas</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

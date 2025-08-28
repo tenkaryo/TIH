@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>6月15日 - 历史上的今天 | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">1991</span>
-                <div class="event-content">
-                    <p class="event-description">Mount Pinatubo explodes. The stratovolcano's eruption was one of the most violent of the 20th century. About 800 people died, but the event had also global consequences. For example, it caused a global temperature drop of 0.5 °C (0.9 °F).</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1991</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mount Pinatubo explodes. The stratovolcano's eruption was one of the most violent of the 20th century. About 800 people died, but the event had also global consequences. For example, it caused a global temperature drop of 0.5 °C (0.9 °F).</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1977</span>
-                <div class="event-content">
-                    <p class="event-description">Spain holds the first free elections since 1936. The transition to democracy followed nearly four decades of right-wing dictatorship under Francisco Franco. Adolfo Suárez became Spain's first democratically elected Prime Minister.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1977</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Spain holds the first free elections since 1936. The transition to democracy followed nearly four decades of right-wing dictatorship under Francisco Franco. Adolfo Suárez became Spain's first democratically elected Prime Minister.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1954</span>
-                <div class="event-content">
-                    <p class="event-description">The Union of European Football Associations is founded. The UEFA is the umbrella organization for association football in Europe. It comprises 54 member countries in Europe and Asia.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1954</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The Union of European Football Associations is founded. The UEFA is the umbrella organization for association football in Europe. It comprises 54 member countries in Europe and Asia.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1844</span>
-                <div class="event-content">
-                    <p class="event-description">Charles Goodyear patents vulcanization. The American inventor is credited with developing the basic concept of strengthening rubber by adding sulfur or similar materials. Vulcanized rubber is today used for a wide array of products, such as tires and shoe soles.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1844</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Charles Goodyear patents vulcanization. The American inventor is credited with developing the basic concept of strengthening rubber by adding sulfur or similar materials. Vulcanized rubber is today used for a wide array of products, such as tires and shoe soles.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1667</span>
-                <div class="event-content">
-                    <p class="event-description">The first human blood transfusion is administered. Jean-Baptiste Denys, physician to King Louis XIV of France, transfused sheep blood into a 15-year-old boy. He survived, most likely due to the relatively small amount of blood used.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1667</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The first human blood transfusion is administered. Jean-Baptiste Denys, physician to King Louis XIV of France, transfused sheep blood into a 15-year-old boy. He survived, most likely due to the relatively small amount of blood used.</p>
                     
                 </div>
             </div>
@@ -231,11 +241,11 @@
             <div class="nav-controls">
                 <button class="nav-btn" id="dateSelector">
                     <i class="fas fa-calendar-alt"></i>
-                    <span>Select Date</span>
+                    <span>选择日期</span>
                 </button>
                 <button class="nav-btn" id="languageSelector">
-                    <span class="flag">🇺🇸</span>
-                    <span>English</span>
+                    <span class="flag">🇨🇳</span>
+                    <span>中文</span>
                 </button>
             </div>
         </div>
@@ -270,82 +280,266 @@
             <aside class="sidebar">
                 <!-- Birthday Checker -->
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title">Birthday Query</h3>
-                    <p class="sidebar-desc">What happened on your birthday?</p>
+                    <h3 class="sidebar-title">生日查询</h3>
+                    <p class="sidebar-desc">查看你的生日发生了什么</p>
                     <div class="birthday-form">
                         <select id="birthMonth" class="select-minimal">
-                            <option value="">Month</option>
+                            <option value="">月份</option>
                         </select>
                         <select id="birthDay" class="select-minimal">
-                            <option value="">Day</option>
+                            <option value="">日期</option>
                         </select>
-                        <button class="btn-primary" id="checkBirthday">Check Birthday</button>
+                        <button class="btn-primary" id="checkBirthday">查看生日</button>
                     </div>
                 </div>
 
                 <!-- On This Day Navigation -->
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title">Navigation</h3>
+                    <h3 class="sidebar-title">导航</h3>
                     <nav class="today-nav">
-                        <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">名人生日</a>
-                                    <a href="#deaths" class="nav-link">名人逝世</a>
-                                </nav>
-                            </div>
+                        <a href="#events" class="nav-link active">历史事件</a>
+                        <a href="#births" class="nav-link">名人生日</a>
+                        <a href="#deaths" class="nav-link">名人逝世</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- 生日查询 -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">生日查询</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择月份</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">选择日期</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">查看生日</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">历史上的今天</h2>
+                        <p class="section-subtitle">历史事件</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1991</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mount Pinatubo explodes. The stratovolcano's eruption was one of the most violent of the 20th century. About 800 people died, but the event had also global consequences. For example, it caused a global temperature drop of 0.5 °C (0.9 °F).</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1977</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Spain holds the first free elections since 1936. The transition to democracy followed nearly four decades of right-wing dictatorship under Francisco Franco. Adolfo Suárez became Spain's first democratically elected Prime Minister.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1954</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The Union of European Football Associations is founded. The UEFA is the umbrella organization for association football in Europe. It comprises 54 member countries in Europe and Asia.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1844</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Charles Goodyear patents vulcanization. The American inventor is credited with developing the basic concept of strengthening rubber by adding sulfur or similar materials. Vulcanized rubber is today used for a wide array of products, such as tires and shoe soles.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1667</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The first human blood transfusion is administered. Jean-Baptiste Denys, physician to King Louis XIV of France, transfused sheep blood into a 15-year-old boy. He survived, most likely due to the relatively small amount of blood used.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- 日期导航 -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">名人生日</h2>
+                        <p class="section-subtitle">生于这一天</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Tim Lincecum" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Tim Lincecum</h4>
+                    <p class="person-years">1984</p>
+                    <p class="person-description">American baseball player</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Oliver Kahn" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Oliver Kahn</h4>
+                    <p class="person-years">1969</p>
+                    <p class="person-description">German footballer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Michael Laudrup" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Michael Laudrup</h4>
+                    <p class="person-years">1964</p>
+                    <p class="person-description">Danish footballer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Neal Adams" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Neal Adams</h4>
+                    <p class="person-years">1941</p>
+                    <p class="person-description">American artist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Harry Nilsson" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Harry Nilsson</h4>
+                    <p class="person-years">1941</p>
+                    <p class="person-description">American singer-songwriter, musician</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">名人逝世</h2>
+                        <p class="section-subtitle">逝于这一天</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Ella Fitzgerald" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Ella Fitzgerald</h4>
+                    <p class="person-years">1996</p>
+                    <p class="person-description">American singer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="James Hunt" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">James Hunt</h4>
+                    <p class="person-years">1993</p>
+                    <p class="person-description">English Grand Prix driver, 1976 World Drivers' Champion</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Evelyn Underhill" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Evelyn Underhill</h4>
+                    <p class="person-years">1941</p>
+                    <p class="person-description">English poet</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Frederick III, German Emperor" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Frederick III, German Emperor</h4>
+                    <p class="person-years">1888</p>
+                    <p class="person-description"></p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="James K. Polk" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">James K. Polk</h4>
+                    <p class="person-years">1849</p>
+                    <p class="person-description">American politician, 11th President of the United States</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>探索历史，发现精彩</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">关于我们</a>
+                        <a href="/privacy" id="privacy-link">隐私政策</a>
+                        <a href="/terms" id="terms-link">服务条款</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>探索历史，发现精彩</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">关于我们</a>
-                            <a href="/privacy-zh">隐私政策</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
-                <p>Data Source: Wikipedia, Historical Database</p>
+                <p>&copy; 2025 TimeRemind.Today. 保留所有权利</p>
+                <p>数据来源: 维基百科，历史数据库</p>
             </div>
         </div>
     </footer>
@@ -354,22 +548,22 @@
     <div class="modal" id="dateModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Select Date</h3>
+                <h3>选择日期</h3>
                 <button class="modal-close" id="modalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择月份</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">选择日期</option>
                     </select>
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn-secondary" id="modalCancel">Cancel</button>
-                <button class="btn-primary" id="modalConfirm">Confirm</button>
+                <button class="btn-secondary" id="modalCancel">取消</button>
+                <button class="btn-primary" id="modalConfirm">确认</button>
             </div>
         </div>
     </div>
@@ -378,18 +572,18 @@
     <div class="modal" id="languageModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Select Language</h3>
+                <h3>选择语言</h3>
                 <button class="modal-close" id="langModalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
-                        <span class="flag">🇺🇸</span>
-                        <span>English</span>
-                    </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇨🇳</span>
                         <span>中文</span>
+                    </button>
+                    <button class="lang-option" data-lang="en-US">
+                        <span class="flag">🇺🇸</span>
+                        <span>English</span>
                     </button>
                 </div>
             </div>

@@ -61,12 +61,14 @@ function renderEvents(events, language = 'zh-CN') {
             : event.description;
         
         return `
-            <div class="timeline-event">
-                <span class="event-year">${event.year}</span>
-                <div class="event-content">
-                    <p class="event-description">${description}</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">${event.year}</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">${description}</p>
                     ${event.image ? `
-                        <div class="event-image">
+                        <div class="timeline-image">
                             <img src="${event.image}" alt="${description}" loading="lazy" onerror="this.style.display='none'">
                         </div>
                     ` : ''}

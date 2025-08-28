@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>MAY 24 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2001</span>
-                <div class="event-content">
-                    <p class="event-description">23 die in the Jerusalem wedding hall disaster. Hundreds of wedding guests fell two stories deep when a portion of the third floor collapsed. The tragedy was Israel's worst civil disaster.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2001</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">23 die in the Jerusalem wedding hall disaster. Hundreds of wedding guests fell two stories deep when a portion of the third floor collapsed. The tragedy was Israel's worst civil disaster.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1970</span>
-                <div class="event-content">
-                    <p class="event-description">Engineers begin drilling the world's deepest hole. The Kola Superdeep Borehole had reached the unsurpassed depth of 12,262 meters (40,230 feet) before the project was abandoned due to a lack of funding.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1970</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Engineers begin drilling the world's deepest hole. The Kola Superdeep Borehole had reached the unsurpassed depth of 12,262 meters (40,230 feet) before the project was abandoned due to a lack of funding.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1956</span>
-                <div class="event-content">
-                    <p class="event-description">The first Eurovision Song Contest is held. Lys Assia won the first edition for Switzerland. The ESC is a major song contest in Europe and one of the world's longest-running TV programs. It is held in a different country each year.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1956</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The first Eurovision Song Contest is held. Lys Assia won the first edition for Switzerland. The ESC is a major song contest in Europe and one of the world's longest-running TV programs. It is held in a different country each year.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1930</span>
-                <div class="event-content">
-                    <p class="event-description">Amy Johnson flies solo from England to Australia. The English aviatrix was the first woman to achieve this feat. Her 18,000 km (11,000 mi) flight aboard a de Havilland Gypsy Moth aircraft took her from Croydon, U.K. to Darwin, Australia in 19 days.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1930</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Amy Johnson flies solo from England to Australia. The English aviatrix was the first woman to achieve this feat. Her 18,000 km (11,000 mi) flight aboard a de Havilland Gypsy Moth aircraft took her from Croydon, U.K. to Darwin, Australia in 19 days.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1830</span>
-                <div class="event-content">
-                    <p class="event-description">Mary had a little lamb is published. Sarah Josepha Hale's poem is one of the best-known English language nursery rhymes.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1830</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mary had a little lamb is published. Sarah Josepha Hale's poem is one of the best-known English language nursery rhymes.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2001</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">23 die in the Jerusalem wedding hall disaster. Hundreds of wedding guests fell two stories deep when a portion of the third floor collapsed. The tragedy was Israel's worst civil disaster.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1970</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Engineers begin drilling the world's deepest hole. The Kola Superdeep Borehole had reached the unsurpassed depth of 12,262 meters (40,230 feet) before the project was abandoned due to a lack of funding.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1956</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The first Eurovision Song Contest is held. Lys Assia won the first edition for Switzerland. The ESC is a major song contest in Europe and one of the world's longest-running TV programs. It is held in a different country each year.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1930</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Amy Johnson flies solo from England to Australia. The English aviatrix was the first woman to achieve this feat. Her 18,000 km (11,000 mi) flight aboard a de Havilland Gypsy Moth aircraft took her from Croydon, U.K. to Darwin, Australia in 19 days.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1830</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mary had a little lamb is published. Sarah Josepha Hale's poem is one of the best-known English language nursery rhymes.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Michael Chabon" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Michael Chabon</h4>
+                    <p class="person-years">1963</p>
+                    <p class="person-description">American author</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Priscilla Presley" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Priscilla Presley</h4>
+                    <p class="person-years">1945</p>
+                    <p class="person-description">American actress, businesswoman</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Bob Dylan" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Bob Dylan</h4>
+                    <p class="person-years">1941</p>
+                    <p class="person-description">American singer-songwriter, guitarist, producer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Queen Victoriaof the United Kingdom" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Queen Victoriaof the United Kingdom</h4>
+                    <p class="person-years">1819</p>
+                    <p class="person-description"></p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Gian Gastone de' Medici, Grand Duke of Tuscany" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Gian Gastone de' Medici, Grand Duke of Tuscany</h4>
+                    <p class="person-years">1671</p>
+                    <p class="person-description"></p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Bill Johnston" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Bill Johnston</h4>
+                    <p class="person-years">2007</p>
+                    <p class="person-description">Australian cricketer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Duke Ellington" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Duke Ellington</h4>
+                    <p class="person-years">1974</p>
+                    <p class="person-description">American pianist, composer, bandleader</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Robert Hues" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Robert Hues</h4>
+                    <p class="person-years">1632</p>
+                    <p class="person-description">English mathematician, geographer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Nicolaus Copernicus" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Nicolaus Copernicus</h4>
+                    <p class="person-years">1543</p>
+                    <p class="person-description">Polish mathematician, astronomer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="David I of Scotland" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">David I of Scotland</h4>
+                    <p class="person-years">1153</p>
+                    <p class="person-description"></p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

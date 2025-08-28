@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>SEPTEMBER 29 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">1994</span>
-                <div class="event-content">
-                    <p class="event-description">Sinking of MS Estonia. MS Estonia, a passenger and car ferry, sank in the Baltic Sea killing more than 800 passengers. It is considered to be the worst maritime peace-time disaster of the 20th century.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1994</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Sinking of MS Estonia. MS Estonia, a passenger and car ferry, sank in the Baltic Sea killing more than 800 passengers. It is considered to be the worst maritime peace-time disaster of the 20th century.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1991</span>
-                <div class="event-content">
-                    <p class="event-description">Coup in Haiti. President Jean-Bertrand Aristide was deposed in a military coup. Aristide had been elected in a national election held 8 months before the coup.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1991</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Coup in Haiti. President Jean-Bertrand Aristide was deposed in a military coup. Aristide had been elected in a national election held 8 months before the coup.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1962</span>
-                <div class="event-content">
-                    <p class="event-description">First Canadian Satellite. Canada launched its first ever satellite, Alouette 1, on this day from the  Vandenberg Air Force Base in California, United States. A joint venture between NASA and Defence Research and Development Canada, the satellite was sent to study the Earth's ionosphere.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1962</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First Canadian Satellite. Canada launched its first ever satellite, Alouette 1, on this day from the  Vandenberg Air Force Base in California, United States. A joint venture between NASA and Defence Research and Development Canada, the satellite was sent to study the Earth's ionosphere.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1954</span>
-                <div class="event-content">
-                    <p class="event-description">CERN established. The European Organization for Nuclear Research, popularly known as  CERN, was established by 12 European governments.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1954</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">CERN established. The European Organization for Nuclear Research, popularly known as  CERN, was established by 12 European governments.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1941</span>
-                <div class="event-content">
-                    <p class="event-description">Babi Yar massacre. About 33,000 Soviet Jews were killed at the Babi Yar ravine in Kiev by the Nazis in a two-day massacre that started on this day.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1941</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Babi Yar massacre. About 33,000 Soviet Jews were killed at the Babi Yar ravine in Kiev by the Nazis in a two-day massacre that started on this day.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1994</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Sinking of MS Estonia. MS Estonia, a passenger and car ferry, sank in the Baltic Sea killing more than 800 passengers. It is considered to be the worst maritime peace-time disaster of the 20th century.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1991</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Coup in Haiti. President Jean-Bertrand Aristide was deposed in a military coup. Aristide had been elected in a national election held 8 months before the coup.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1962</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First Canadian Satellite. Canada launched its first ever satellite, Alouette 1, on this day from the  Vandenberg Air Force Base in California, United States. A joint venture between NASA and Defence Research and Development Canada, the satellite was sent to study the Earth's ionosphere.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1954</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">CERN established. The European Organization for Nuclear Research, popularly known as  CERN, was established by 12 European governments.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1941</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Babi Yar massacre. About 33,000 Soviet Jews were killed at the Babi Yar ravine in Kiev by the Nazis in a two-day massacre that started on this day.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Julia Gillard" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Julia Gillard</h4>
+                    <p class="person-years">1961</p>
+                    <p class="person-description">Australian politician, 27th Prime Minister of Australia</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Michelle Bachelet" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Michelle Bachelet</h4>
+                    <p class="person-years">1951</p>
+                    <p class="person-description">Chilean politician, 34th President of Chile</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Silvio Berlusconi" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Silvio Berlusconi</h4>
+                    <p class="person-years">1936</p>
+                    <p class="person-description">Italian politician, 50th Prime Minister of Italy</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Enrico Fermi" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Enrico Fermi</h4>
+                    <p class="person-years">1901</p>
+                    <p class="person-description">Italian physicist, Nobel Prize laureate</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Michael Servetus" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Michael Servetus</h4>
+                    <p class="person-years">1511</p>
+                    <p class="person-description">Spanish theologian, physician, cartographer</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Pavel Popovich" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Pavel Popovich</h4>
+                    <p class="person-years">2009</p>
+                    <p class="person-description">Soviet astronaut</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Roy Lichtenstein" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Roy Lichtenstein</h4>
+                    <p class="person-years">1997</p>
+                    <p class="person-description">American painter, sculptor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Bill Shankly" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Bill Shankly</h4>
+                    <p class="person-years">1981</p>
+                    <p class="person-description">Scottish footballer, manager</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="W. H. Auden" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">W. H. Auden</h4>
+                    <p class="person-years">1973</p>
+                    <p class="person-description">English/American poet</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Émile Zola" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Émile Zola</h4>
+                    <p class="person-years">1902</p>
+                    <p class="person-description">French author, critic</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

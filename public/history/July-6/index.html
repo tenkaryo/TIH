@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>7月6日 - 历史上的今天 | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2013</span>
-                <div class="event-content">
-                    <p class="event-description">Asiana Airlines Flight 214 crash lands in San Francisco International Airport. The plane was en route to San Francisco from Incheon International Airport, South Korea. The crash, which killed 3 people and injured at least 190 others, was the first fatal incident involving a Boeing 777 since it came on the market in 1995.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2013</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Asiana Airlines Flight 214 crash lands in San Francisco International Airport. The plane was en route to San Francisco from Incheon International Airport, South Korea. The crash, which killed 3 people and injured at least 190 others, was the first fatal incident involving a Boeing 777 since it came on the market in 1995.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">2006</span>
-                <div class="event-content">
-                    <p class="event-description">Nathula Pass, a trading post between India and China opens for business. The trading post had been closed since the Sino-Indian war of 1962. Part of the Silk Road, the pass connects Tibet with the Indian state of Sikkim.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2006</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Nathula Pass, a trading post between India and China opens for business. The trading post had been closed since the Sino-Indian war of 1962. Part of the Silk Road, the pass connects Tibet with the Indian state of Sikkim.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1975</span>
-                <div class="event-content">
-                    <p class="event-description">Comoros becomes independent. The Comoros Islands gained independence after about 137 years of French rule. Their official name is the Union of the Comoros.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1975</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Comoros becomes independent. The Comoros Islands gained independence after about 137 years of French rule. Their official name is the Union of the Comoros.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1964</span>
-                <div class="event-content">
-                    <p class="event-description">Malawi gains its independence from Britain. Between 1953 and 1963, the Southeast African country was part of a British controlled federation called Federation of Rhodesia and Nyasaland. After dissolution of the federation and independence, Nyasaland changed its name to Malawi.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1964</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Malawi gains its independence from Britain. Between 1953 and 1963, the Southeast African country was part of a British controlled federation called Federation of Rhodesia and Nyasaland. After dissolution of the federation and independence, Nyasaland changed its name to Malawi.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1912</span>
-                <div class="event-content">
-                    <p class="event-description">The fifth Summer Olympics are officially opened in Stockholm. The international multi-event sports meet was the first such event in history to introduce the photo finish and automatic timing devices for track competitions. 28 countries, including Japan, participated in the games, making it the first time representatives from all 6 continents were present at an Olympics.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1912</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The fifth Summer Olympics are officially opened in Stockholm. The international multi-event sports meet was the first such event in history to introduce the photo finish and automatic timing devices for track competitions. 28 countries, including Japan, participated in the games, making it the first time representatives from all 6 continents were present at an Olympics.</p>
                     
                 </div>
             </div>
@@ -231,11 +241,11 @@
             <div class="nav-controls">
                 <button class="nav-btn" id="dateSelector">
                     <i class="fas fa-calendar-alt"></i>
-                    <span>Select Date</span>
+                    <span>选择日期</span>
                 </button>
                 <button class="nav-btn" id="languageSelector">
-                    <span class="flag">🇺🇸</span>
-                    <span>English</span>
+                    <span class="flag">🇨🇳</span>
+                    <span>中文</span>
                 </button>
             </div>
         </div>
@@ -270,82 +280,266 @@
             <aside class="sidebar">
                 <!-- Birthday Checker -->
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title">Birthday Query</h3>
-                    <p class="sidebar-desc">What happened on your birthday?</p>
+                    <h3 class="sidebar-title">生日查询</h3>
+                    <p class="sidebar-desc">查看你的生日发生了什么</p>
                     <div class="birthday-form">
                         <select id="birthMonth" class="select-minimal">
-                            <option value="">Month</option>
+                            <option value="">月份</option>
                         </select>
                         <select id="birthDay" class="select-minimal">
-                            <option value="">Day</option>
+                            <option value="">日期</option>
                         </select>
-                        <button class="btn-primary" id="checkBirthday">Check Birthday</button>
+                        <button class="btn-primary" id="checkBirthday">查看生日</button>
                     </div>
                 </div>
 
                 <!-- On This Day Navigation -->
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title">Navigation</h3>
+                    <h3 class="sidebar-title">导航</h3>
                     <nav class="today-nav">
-                        <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">名人生日</a>
-                                    <a href="#deaths" class="nav-link">名人逝世</a>
-                                </nav>
-                            </div>
+                        <a href="#events" class="nav-link active">历史事件</a>
+                        <a href="#births" class="nav-link">名人生日</a>
+                        <a href="#deaths" class="nav-link">名人逝世</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- 生日查询 -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">生日查询</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择月份</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">选择日期</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">查看生日</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">历史上的今天</h2>
+                        <p class="section-subtitle">历史事件</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2013</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Asiana Airlines Flight 214 crash lands in San Francisco International Airport. The plane was en route to San Francisco from Incheon International Airport, South Korea. The crash, which killed 3 people and injured at least 190 others, was the first fatal incident involving a Boeing 777 since it came on the market in 1995.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2006</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Nathula Pass, a trading post between India and China opens for business. The trading post had been closed since the Sino-Indian war of 1962. Part of the Silk Road, the pass connects Tibet with the Indian state of Sikkim.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1975</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Comoros becomes independent. The Comoros Islands gained independence after about 137 years of French rule. Their official name is the Union of the Comoros.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1964</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Malawi gains its independence from Britain. Between 1953 and 1963, the Southeast African country was part of a British controlled federation called Federation of Rhodesia and Nyasaland. After dissolution of the federation and independence, Nyasaland changed its name to Malawi.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1912</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The fifth Summer Olympics are officially opened in Stockholm. The international multi-event sports meet was the first such event in history to introduce the photo finish and automatic timing devices for track competitions. 28 countries, including Japan, participated in the games, making it the first time representatives from all 6 continents were present at an Olympics.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- 日期导航 -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">名人生日</h2>
+                        <p class="section-subtitle">生于这一天</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="George W. Bush" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">George W. Bush</h4>
+                    <p class="person-years">1946</p>
+                    <p class="person-description">American politician, 43rd President of the United States</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="14th Dalai Lama" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">14th Dalai Lama</h4>
+                    <p class="person-years">1935</p>
+                    <p class="person-description">Tibetan Spiritual leader since 1950</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Nancy Reagan" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Nancy Reagan</h4>
+                    <p class="person-years">1921</p>
+                    <p class="person-description">American actress, 40th First Lady of the United States</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Frida Kahlo" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Frida Kahlo</h4>
+                    <p class="person-years">1907</p>
+                    <p class="person-description">Mexican painter</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Stamford Raffles" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Stamford Raffles</h4>
+                    <p class="person-years">1781</p>
+                    <p class="person-description">British statesman</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">名人逝世</h2>
+                        <p class="section-subtitle">逝于这一天</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Louis Armstrong" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Louis Armstrong</h4>
+                    <p class="person-years">1971</p>
+                    <p class="person-description">American trumpeter, singer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="William Faulkner" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">William Faulkner</h4>
+                    <p class="person-years">1962</p>
+                    <p class="person-description">American author, Nobel Prize laureate</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Guy de Maupassant" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Guy de Maupassant</h4>
+                    <p class="person-years">1893</p>
+                    <p class="person-description">French writer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="John Marshall" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">John Marshall</h4>
+                    <p class="person-years">1835</p>
+                    <p class="person-description">American jurist, 4th Chief Justice of the United States</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Edward VI of England" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Edward VI of England</h4>
+                    <p class="person-years">1553</p>
+                    <p class="person-description"></p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>探索历史，发现精彩</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">关于我们</a>
+                        <a href="/privacy" id="privacy-link">隐私政策</a>
+                        <a href="/terms" id="terms-link">服务条款</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>探索历史，发现精彩</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">关于我们</a>
-                            <a href="/privacy-zh">隐私政策</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
-                <p>Data Source: Wikipedia, Historical Database</p>
+                <p>&copy; 2025 TimeRemind.Today. 保留所有权利</p>
+                <p>数据来源: 维基百科，历史数据库</p>
             </div>
         </div>
     </footer>
@@ -354,22 +548,22 @@
     <div class="modal" id="dateModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Select Date</h3>
+                <h3>选择日期</h3>
                 <button class="modal-close" id="modalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择月份</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">选择日期</option>
                     </select>
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn-secondary" id="modalCancel">Cancel</button>
-                <button class="btn-primary" id="modalConfirm">Confirm</button>
+                <button class="btn-secondary" id="modalCancel">取消</button>
+                <button class="btn-primary" id="modalConfirm">确认</button>
             </div>
         </div>
     </div>
@@ -378,18 +572,18 @@
     <div class="modal" id="languageModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Select Language</h3>
+                <h3>选择语言</h3>
                 <button class="modal-close" id="langModalClose">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
-                        <span class="flag">🇺🇸</span>
-                        <span>English</span>
-                    </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇨🇳</span>
                         <span>中文</span>
+                    </button>
+                    <button class="lang-option" data-lang="en-US">
+                        <span class="flag">🇺🇸</span>
+                        <span>English</span>
                     </button>
                 </div>
             </div>

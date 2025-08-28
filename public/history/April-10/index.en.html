@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>APRIL 10 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2010</span>
-                <div class="event-content">
-                    <p class="event-description">The President of Poland, Lech Kaczyński, dies in a plane crash. Several high-ranking officials, senior members of the Polish clergy, as well as relatives of the Katyn massacre victims were killed. The accident was blamed on pilot error and bad weather.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2010</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The President of Poland, Lech Kaczyński, dies in a plane crash. Several high-ranking officials, senior members of the Polish clergy, as well as relatives of the Katyn massacre victims were killed. The accident was blamed on pilot error and bad weather.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">2001</span>
-                <div class="event-content">
-                    <p class="event-description">Mercy killings become legal in the Netherlands. In a controversial decision the Dutch senate approved a bill legalizing euthanasia for patients with unbearable, terminal illness.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2001</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mercy killings become legal in the Netherlands. In a controversial decision the Dutch senate approved a bill legalizing euthanasia for patients with unbearable, terminal illness.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1998</span>
-                <div class="event-content">
-                    <p class="event-description">Negotiators in Northern Ireland reach an historic peace deal. The Good Friday Agreement ended 30 years of violent conflict about Northern Ireland's constitutional status (“The Troubles”).</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1998</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Negotiators in Northern Ireland reach an historic peace deal. The Good Friday Agreement ended 30 years of violent conflict about Northern Ireland's constitutional status (“The Troubles”).</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1970</span>
-                <div class="event-content">
-                    <p class="event-description">The Beatles break up as Paul McCartney leaves the band. In their ten years of existence, the British rock group became one of the most successful bands of all time, selling over a billion albums, according to EMI. McCartney's announcement came a week before the release of his debut solo album, the starting point of a successful solo career.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1970</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The Beatles break up as Paul McCartney leaves the band. In their ten years of existence, the British rock group became one of the most successful bands of all time, selling over a billion albums, according to EMI. McCartney's announcement came a week before the release of his debut solo album, the starting point of a successful solo career.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1815</span>
-                <div class="event-content">
-                    <p class="event-description">Mount Tambora explodes in one of the largest volcanic eruptions in recorded history. At least 71,000 people were killed by the eruption. The explosion was heard up to 2000 km (1200 mi) away.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1815</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mount Tambora explodes in one of the largest volcanic eruptions in recorded history. At least 71,000 people were killed by the eruption. The explosion was heard up to 2000 km (1200 mi) away.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2010</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The President of Poland, Lech Kaczyński, dies in a plane crash. Several high-ranking officials, senior members of the Polish clergy, as well as relatives of the Katyn massacre victims were killed. The accident was blamed on pilot error and bad weather.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2001</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mercy killings become legal in the Netherlands. In a controversial decision the Dutch senate approved a bill legalizing euthanasia for patients with unbearable, terminal illness.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1998</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Negotiators in Northern Ireland reach an historic peace deal. The Good Friday Agreement ended 30 years of violent conflict about Northern Ireland's constitutional status (“The Troubles”).</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1970</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The Beatles break up as Paul McCartney leaves the band. In their ten years of existence, the British rock group became one of the most successful bands of all time, selling over a billion albums, according to EMI. McCartney's announcement came a week before the release of his debut solo album, the starting point of a successful solo career.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1815</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mount Tambora explodes in one of the largest volcanic eruptions in recorded history. At least 71,000 people were killed by the eruption. The explosion was heard up to 2000 km (1200 mi) away.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Hayley Westenra" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Hayley Westenra</h4>
+                    <p class="person-years">1987</p>
+                    <p class="person-description">New Zealand soprano</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="David Helvarg" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">David Helvarg</h4>
+                    <p class="person-years">1951</p>
+                    <p class="person-description">American journalist, activist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Omar Sharif" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Omar Sharif</h4>
+                    <p class="person-years">1932</p>
+                    <p class="person-description">Egyptian actor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Joseph Pulitzer" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Joseph Pulitzer</h4>
+                    <p class="person-years">1847</p>
+                    <p class="person-description">Hungarian/American politician, journalist, publisher, founded Pulitzer, Inc.</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="William Hazlitt" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">William Hazlitt</h4>
+                    <p class="person-years">1778</p>
+                    <p class="person-description">English critic, painter</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Evelyn Waugh" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Evelyn Waugh</h4>
+                    <p class="person-years">1966</p>
+                    <p class="person-description">English author, journalist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Linda Darnell" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Linda Darnell</h4>
+                    <p class="person-years">1965</p>
+                    <p class="person-description">American actress</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Pierre Teilhard de Chardin" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Pierre Teilhard de Chardin</h4>
+                    <p class="person-years">1955</p>
+                    <p class="person-description">French/American priest, palaeontologist, philosopher</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Kahlil Gibran" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Kahlil Gibran</h4>
+                    <p class="person-years">1931</p>
+                    <p class="person-description">Lebanese/American poet</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Emiliano Zapata" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Emiliano Zapata</h4>
+                    <p class="person-years">1919</p>
+                    <p class="person-description">Mexican general</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

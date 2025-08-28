@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>MAY 10 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">1994</span>
-                <div class="event-content">
-                    <p class="event-description">Nelson Mandela becomes South Africa's first black president. Mandela's inauguration came after more than 300 years of white rule. Before becoming president, he was a pivotal figure in the fight against the racist apartheid regime and was incarcerated for 27 years.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1994</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Nelson Mandela becomes South Africa's first black president. Mandela's inauguration came after more than 300 years of white rule. Before becoming president, he was a pivotal figure in the fight against the racist apartheid regime and was incarcerated for 27 years.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1954</span>
-                <div class="event-content">
-                    <p class="event-description">Bill Haley releases “Rock Around the Clock”. It was the first rock song to top the Billboard charts and has become a classic of the early rock era.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1954</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Bill Haley releases “Rock Around the Clock”. It was the first rock song to top the Billboard charts and has become a classic of the early rock era.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1941</span>
-                <div class="event-content">
-                    <p class="event-description">Adolf Hitler's deputy, Rudolf Hess, parachutes into Scotland to broker a peace agreement. Hess was captured and interrogated. He was the last in a long line of prominent figures to be incarcerated in the Tower of London. Hitler characterized his peace mission four years before the end of World War II as treason.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1941</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Adolf Hitler's deputy, Rudolf Hess, parachutes into Scotland to broker a peace agreement. Hess was captured and interrogated. He was the last in a long line of prominent figures to be incarcerated in the Tower of London. Hitler characterized his peace mission four years before the end of World War II as treason.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1933</span>
-                <div class="event-content">
-                    <p class="event-description">Nazis ceremonially burn about 25,000 allegedly “un-German” books. The book burnings were part of the right-wing German Student Union's Action against the Un-German Spirit. Among the burnt books were works by Albert Einstein, Bertolt Brecht, Sigmund Freud, and Franz Kafka.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1933</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Nazis ceremonially burn about 25,000 allegedly “un-German” books. The book burnings were part of the right-wing German Student Union's Action against the Un-German Spirit. Among the burnt books were works by Albert Einstein, Bertolt Brecht, Sigmund Freud, and Franz Kafka.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1869</span>
-                <div class="event-content">
-                    <p class="event-description">In the United States, the first coast to coast railroad is completed. The Central Pacific and Union Pacific railroad systems were joined at Promontory Summit in Utah, using a “Golden Spike”. This last spike is now housed in the Cantor Arts Museum at Stanford University.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1869</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">In the United States, the first coast to coast railroad is completed. The Central Pacific and Union Pacific railroad systems were joined at Promontory Summit in Utah, using a “Golden Spike”. This last spike is now housed in the Cantor Arts Museum at Stanford University.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1994</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Nelson Mandela becomes South Africa's first black president. Mandela's inauguration came after more than 300 years of white rule. Before becoming president, he was a pivotal figure in the fight against the racist apartheid regime and was incarcerated for 27 years.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1954</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Bill Haley releases “Rock Around the Clock”. It was the first rock song to top the Billboard charts and has become a classic of the early rock era.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1941</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Adolf Hitler's deputy, Rudolf Hess, parachutes into Scotland to broker a peace agreement. Hess was captured and interrogated. He was the last in a long line of prominent figures to be incarcerated in the Tower of London. Hitler characterized his peace mission four years before the end of World War II as treason.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1933</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Nazis ceremonially burn about 25,000 allegedly “un-German” books. The book burnings were part of the right-wing German Student Union's Action against the Un-German Spirit. Among the burnt books were works by Albert Einstein, Bertolt Brecht, Sigmund Freud, and Franz Kafka.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1869</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">In the United States, the first coast to coast railroad is completed. The Central Pacific and Union Pacific railroad systems were joined at Promontory Summit in Utah, using a “Golden Spike”. This last spike is now housed in the Cantor Arts Museum at Stanford University.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Nick Heidfeld" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Nick Heidfeld</h4>
+                    <p class="person-years">1977</p>
+                    <p class="person-description">German race car driver</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Bono" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Bono</h4>
+                    <p class="person-years">1960</p>
+                    <p class="person-description">Irish singer-songwriter, actor, activist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Sid Vicious" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Sid Vicious</h4>
+                    <p class="person-years">1957</p>
+                    <p class="person-description">English singer, bass player</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Donovan" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Donovan</h4>
+                    <p class="person-years">1946</p>
+                    <p class="person-description">Scottish/English singer-songwriter, guitarist, producer, actor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Fred Astaire" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Fred Astaire</h4>
+                    <p class="person-years">1899</p>
+                    <p class="person-description">American actor, singer, dancer</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Joan Crawford" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Joan Crawford</h4>
+                    <p class="person-years">1977</p>
+                    <p class="person-description">American actress</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Andrés Bonifacio" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Andrés Bonifacio</h4>
+                    <p class="person-years">1897</p>
+                    <p class="person-description">Filipino activist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Stonewall Jackson" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Stonewall Jackson</h4>
+                    <p class="person-years">1863</p>
+                    <p class="person-description">American general</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Paul Revere" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Paul Revere</h4>
+                    <p class="person-years">1818</p>
+                    <p class="person-description">American military officer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Louis XV of France" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Louis XV of France</h4>
+                    <p class="person-years">1774</p>
+                    <p class="person-description"></p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

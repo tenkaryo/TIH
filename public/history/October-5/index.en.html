@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>OCTOBER 5 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2000</span>
-                <div class="event-content">
-                    <p class="event-description">Bulldozer Revolution in former  Federal Republic of Yugoslavia. President Slobodan Milosevic was overthrown after hundreds of thousands of protesters gathered in Belgrade to protest against recently held elections. While largely peaceful, the protesters burnt down the Parliament building. Milosevic resigned and stepped down from his office two days later.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2000</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Bulldozer Revolution in former  Federal Republic of Yugoslavia. President Slobodan Milosevic was overthrown after hundreds of thousands of protesters gathered in Belgrade to protest against recently held elections. While largely peaceful, the protesters burnt down the Parliament building. Milosevic resigned and stepped down from his office two days later.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1984</span>
-                <div class="event-content">
-                    <p class="event-description">First Canadian to go into space. Marc Garneau flew as the payload specialist on STS-41-G, the 6th flight of NASA’s Space Shuttle Challenger. The flight that launched on this day was also the first space mission to have 2 women - Sally Ride and Kathryn Sullivan.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1984</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First Canadian to go into space. Marc Garneau flew as the payload specialist on STS-41-G, the 6th flight of NASA’s Space Shuttle Challenger. The flight that launched on this day was also the first space mission to have 2 women - Sally Ride and Kathryn Sullivan.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1969</span>
-                <div class="event-content">
-                    <p class="event-description">Monty Python’s Flying Circus makes its debut. The British sketch comedy series lasted for a year on the British Broadcasting Corporation (BBC). The show was a commentary on daily life in Britain and had several recurring themes and characters played by Eric Idle, Graham Chapman John Cleese, Michael Palin, Terry Gilliam, and Terry Jones. The sketches are often thought to have had a strong influence on television comedy around the world.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1969</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Monty Python’s Flying Circus makes its debut. The British sketch comedy series lasted for a year on the British Broadcasting Corporation (BBC). The show was a commentary on daily life in Britain and had several recurring themes and characters played by Eric Idle, Graham Chapman John Cleese, Michael Palin, Terry Gilliam, and Terry Jones. The sketches are often thought to have had a strong influence on television comedy around the world.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1962</span>
-                <div class="event-content">
-                    <p class="event-description">James Bond makes his theatrical debut. The fictional British spy with the code name 007 was featured on the big screen for the first time in Dr. No. Based on the 1958 Ian Fleming novel of the same name, the movie starred Sean Connery as James Bond.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1962</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">James Bond makes his theatrical debut. The fictional British spy with the code name 007 was featured on the big screen for the first time in Dr. No. Based on the 1958 Ian Fleming novel of the same name, the movie starred Sean Connery as James Bond.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1947</span>
-                <div class="event-content">
-                    <p class="event-description">First televised presidential speech in the United States. Harry Truman, the 33rd President of the US, called on Americans to use less grain to help Europe which was still reeling from the effects of the Second World War. He asked people to avoid eating meat on Tuesdays and eggs and poultry on Thursdays, and to consume 1 less slice of bread every day.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1947</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First televised presidential speech in the United States. Harry Truman, the 33rd President of the US, called on Americans to use less grain to help Europe which was still reeling from the effects of the Second World War. He asked people to avoid eating meat on Tuesdays and eggs and poultry on Thursdays, and to consume 1 less slice of bread every day.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2000</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Bulldozer Revolution in former  Federal Republic of Yugoslavia. President Slobodan Milosevic was overthrown after hundreds of thousands of protesters gathered in Belgrade to protest against recently held elections. While largely peaceful, the protesters burnt down the Parliament building. Milosevic resigned and stepped down from his office two days later.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1984</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First Canadian to go into space. Marc Garneau flew as the payload specialist on STS-41-G, the 6th flight of NASA’s Space Shuttle Challenger. The flight that launched on this day was also the first space mission to have 2 women - Sally Ride and Kathryn Sullivan.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1969</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Monty Python’s Flying Circus makes its debut. The British sketch comedy series lasted for a year on the British Broadcasting Corporation (BBC). The show was a commentary on daily life in Britain and had several recurring themes and characters played by Eric Idle, Graham Chapman John Cleese, Michael Palin, Terry Gilliam, and Terry Jones. The sketches are often thought to have had a strong influence on television comedy around the world.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1962</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">James Bond makes his theatrical debut. The fictional British spy with the code name 007 was featured on the big screen for the first time in Dr. No. Based on the 1958 Ian Fleming novel of the same name, the movie starred Sean Connery as James Bond.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1947</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">First televised presidential speech in the United States. Harry Truman, the 33rd President of the US, called on Americans to use less grain to help Europe which was still reeling from the effects of the Second World War. He asked people to avoid eating meat on Tuesdays and eggs and poultry on Thursdays, and to consume 1 less slice of bread every day.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Kate Winslet" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Kate Winslet</h4>
+                    <p class="person-years">1975</p>
+                    <p class="person-description">English actress, singer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Neil de" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Neil de</h4>
+                    <p class="person-years">1958</p>
+                    <p class="person-description">Grasse TysonAmerican astrophysicist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Václav Havel" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Václav Havel</h4>
+                    <p class="person-years">1936</p>
+                    <p class="person-description">Czech politician, 1st President of the Czech Republic</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Robert H. Goddard" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Robert H. Goddard</h4>
+                    <p class="person-years">1882</p>
+                    <p class="person-description">American physicist, inventor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Chester A. Arthur" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Chester A. Arthur</h4>
+                    <p class="person-years">1829</p>
+                    <p class="person-description">American politician, 21st President of the United States</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Steve Jobs" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Steve Jobs</h4>
+                    <p class="person-years">2011</p>
+                    <p class="person-description">American businessman, co-founded Apple Inc., Pixar</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Louis Brandeis" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Louis Brandeis</h4>
+                    <p class="person-years">1941</p>
+                    <p class="person-description">American jurist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Sam Warner" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Sam Warner</h4>
+                    <p class="person-years">1927</p>
+                    <p class="person-description">American film producer, co-founded Warner Bros.</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Jacques Offenbach" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Jacques Offenbach</h4>
+                    <p class="person-years">1880</p>
+                    <p class="person-description">German/French composer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Tecumseh" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Tecumseh</h4>
+                    <p class="person-years">1813</p>
+                    <p class="person-description">American tribal leader</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

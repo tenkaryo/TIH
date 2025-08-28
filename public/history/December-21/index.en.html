@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>DECEMBER 21 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">1995</span>
-                <div class="event-content">
-                    <p class="event-description">Palestinians take control of Bethlehem. Isreali troops withdrew from the city under the Interim Agreement on the West Bank and the Gaza Strip signed in September 1995. The city was under a British mandate from 1920 to 1948, and then it was captured by Jordan during the Arab-Israeli War in 1948. Most recently, it was taken over by Israel during the Six-Day War in 1967.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1995</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Palestinians take control of Bethlehem. Isreali troops withdrew from the city under the Interim Agreement on the West Bank and the Gaza Strip signed in September 1995. The city was under a British mandate from 1920 to 1948, and then it was captured by Jordan during the Arab-Israeli War in 1948. Most recently, it was taken over by Israel during the Six-Day War in 1967.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1988</span>
-                <div class="event-content">
-                    <p class="event-description">Lockerbie Bombing. A bomb exploded on Pan Am Flight number 103 on its way from Frankfurt, Germany, to Detroit, United States, over the Scottish city of Lockerbie. The terrorist attack killed all the passengers and crew on board and 11 people on the ground.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1988</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Lockerbie Bombing. A bomb exploded on Pan Am Flight number 103 on its way from Frankfurt, Germany, to Detroit, United States, over the Scottish city of Lockerbie. The terrorist attack killed all the passengers and crew on board and 11 people on the ground.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1965</span>
-                <div class="event-content">
-                    <p class="event-description">The adoption of the International Convention on the Elimination of All Forms of Racial Discrimination (ICERD). The human rights convention was adopted by the United Nations' member states and was put into force on January 4, 1969. It attempts to eliminate racial discrimination in the world.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1965</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The adoption of the International Convention on the Elimination of All Forms of Racial Discrimination (ICERD). The human rights convention was adopted by the United Nations' member states and was put into force on January 4, 1969. It attempts to eliminate racial discrimination in the world.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1937</span>
-                <div class="event-content">
-                    <p class="event-description">Snow White and the Seven Dwarfs released. The movie made by Walt Disney Productions was the world's first full-length animated feature film and it was based on a German fairy tale of the same name by the Brothers Grimm.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1937</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Snow White and the Seven Dwarfs released. The movie made by Walt Disney Productions was the world's first full-length animated feature film and it was based on a German fairy tale of the same name by the Brothers Grimm.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1872</span>
-                <div class="event-content">
-                    <p class="event-description">Phileas Fogg wins his wager. The fictional character created by French writer Jules Verne for his book, Around the World in Eighty Days, finished circumnavigating the world and reached London to win the wager he had set with his friends. The date also coincides with the publication of the last of the series that ended up becoming the now popular science fiction novel.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1872</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Phileas Fogg wins his wager. The fictional character created by French writer Jules Verne for his book, Around the World in Eighty Days, finished circumnavigating the world and reached London to win the wager he had set with his friends. The date also coincides with the publication of the last of the series that ended up becoming the now popular science fiction novel.</p>
                     
                 </div>
             </div>
@@ -277,61 +287,234 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1995</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Palestinians take control of Bethlehem. Isreali troops withdrew from the city under the Interim Agreement on the West Bank and the Gaza Strip signed in September 1995. The city was under a British mandate from 1920 to 1948, and then it was captured by Jordan during the Arab-Israeli War in 1948. Most recently, it was taken over by Israel during the Six-Day War in 1967.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1988</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Lockerbie Bombing. A bomb exploded on Pan Am Flight number 103 on its way from Frankfurt, Germany, to Detroit, United States, over the Scottish city of Lockerbie. The terrorist attack killed all the passengers and crew on board and 11 people on the ground.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1965</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The adoption of the International Convention on the Elimination of All Forms of Racial Discrimination (ICERD). The human rights convention was adopted by the United Nations' member states and was put into force on January 4, 1969. It attempts to eliminate racial discrimination in the world.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1937</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Snow White and the Seven Dwarfs released. The movie made by Walt Disney Productions was the world's first full-length animated feature film and it was based on a German fairy tale of the same name by the Brothers Grimm.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1872</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Phileas Fogg wins his wager. The fictional character created by French writer Jules Verne for his book, Around the World in Eighty Days, finished circumnavigating the world and reached London to win the wager he had set with his friends. The date also coincides with the publication of the last of the series that ended up becoming the now popular science fiction novel.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Philip Humber" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Philip Humber</h4>
+                    <p class="person-years">1982</p>
+                    <p class="person-description">American baseball player</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Kiefer Sutherland" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Kiefer Sutherland</h4>
+                    <p class="person-years">1966</p>
+                    <p class="person-description">English/Canadian actor, director, producer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Frank Zappa" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Frank Zappa</h4>
+                    <p class="person-years">1940</p>
+                    <p class="person-description">American singer-songwriter, guitarist, producer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Benjamin Disraeli" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Benjamin Disraeli</h4>
+                    <p class="person-years">1804</p>
+                    <p class="person-description">English politician, Prime Minister of the United Kingdom</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Thomas Becket" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Thomas Becket</h4>
+                    <p class="person-years">1118</p>
+                    <p class="person-description">English archbishop</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Jack Hobbs" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Jack Hobbs</h4>
+                    <p class="person-years">1963</p>
+                    <p class="person-description">English cricketer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="George S. Patton" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">George S. Patton</h4>
+                    <p class="person-years">1945</p>
+                    <p class="person-description">American general</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="F. Scott Fitzgerald" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">F. Scott Fitzgerald</h4>
+                    <p class="person-years">1940</p>
+                    <p class="person-description">American author</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Kurt Tucholsky" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Kurt Tucholsky</h4>
+                    <p class="person-years">1935</p>
+                    <p class="person-description">German journalist</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -349,10 +532,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -372,11 +555,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

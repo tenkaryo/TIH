@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>NOVEMBER 10 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">1969</span>
-                <div class="event-content">
-                    <p class="event-description">Sesame Street premieres. Sesame Street, the long-running American children's television series, premiered on TV stations.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1969</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Sesame Street premieres. Sesame Street, the long-running American children's television series, premiered on TV stations.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1951</span>
-                <div class="event-content">
-                    <p class="event-description">North American Numbering Plan begins. The plan standardized distance calling and gave phone numbers in cities a fixed 3 digit prefix, also called an area code. This made making long-distance calls faster and easier and without the involvement of an operator. The first call under the plan was made between the mayors of Englewood, New Jersey and Alameda, California.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1951</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">North American Numbering Plan begins. The plan standardized distance calling and gave phone numbers in cities a fixed 3 digit prefix, also called an area code. This made making long-distance calls faster and easier and without the involvement of an operator. The first call under the plan was made between the mayors of Englewood, New Jersey and Alameda, California.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1903</span>
-                <div class="event-content">
-                    <p class="event-description">Windshield wiper patented. The US patent office granted inventor Mary Anderson a patent for automatic windshield wipers - a device that is used to remove or wipe the front and back windshields in automobiles.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1903</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Windshield wiper patented. The US patent office granted inventor Mary Anderson a patent for automatic windshield wipers - a device that is used to remove or wipe the front and back windshields in automobiles.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1898</span>
-                <div class="event-content">
-                    <p class="event-description">Wilmington riots begin. Thought to be one of the only incidents of insurrection against a local government in the United States, the Wilmington Race Riots of 1898 or the Wilmington Massacre of 1898 began after an election voted in a biracial city council. In retaliation, white supremacists overthrew the council, destroyed a lot of property and  killed many black people in the city over the course of a few days.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1898</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Wilmington riots begin. Thought to be one of the only incidents of insurrection against a local government in the United States, the Wilmington Race Riots of 1898 or the Wilmington Massacre of 1898 began after an election voted in a biracial city council. In retaliation, white supremacists overthrew the council, destroyed a lot of property and  killed many black people in the city over the course of a few days.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1775</span>
-                <div class="event-content">
-                    <p class="event-description">US Marine Corps is created. The elite military force capable of operating on land, sea and air was founded in Philadelphia during the American Revolutionary War. A resolution of the Second Continental Congress formed two battalions of Continental Marines that became the forerunners of today's marine corps.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1775</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">US Marine Corps is created. The elite military force capable of operating on land, sea and air was founded in Philadelphia during the American Revolutionary War. A resolution of the Second Continental Congress formed two battalions of Continental Marines that became the forerunners of today's marine corps.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1969</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Sesame Street premieres. Sesame Street, the long-running American children's television series, premiered on TV stations.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1951</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">North American Numbering Plan begins. The plan standardized distance calling and gave phone numbers in cities a fixed 3 digit prefix, also called an area code. This made making long-distance calls faster and easier and without the involvement of an operator. The first call under the plan was made between the mayors of Englewood, New Jersey and Alameda, California.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1903</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Windshield wiper patented. The US patent office granted inventor Mary Anderson a patent for automatic windshield wipers - a device that is used to remove or wipe the front and back windshields in automobiles.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1898</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Wilmington riots begin. Thought to be one of the only incidents of insurrection against a local government in the United States, the Wilmington Race Riots of 1898 or the Wilmington Massacre of 1898 began after an election voted in a biracial city council. In retaliation, white supremacists overthrew the council, destroyed a lot of property and  killed many black people in the city over the course of a few days.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1775</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">US Marine Corps is created. The elite military force capable of operating on land, sea and air was founded in Philadelphia during the American Revolutionary War. A resolution of the Second Continental Congress formed two battalions of Continental Marines that became the forerunners of today's marine corps.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Tracy Morgan" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Tracy Morgan</h4>
+                    <p class="person-years">1968</p>
+                    <p class="person-description">American comedian, actor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Neil Gaiman" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Neil Gaiman</h4>
+                    <p class="person-years">1960</p>
+                    <p class="person-description">English author, illustrator, screenwriter</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Ennio Morricone" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Ennio Morricone</h4>
+                    <p class="person-years">1928</p>
+                    <p class="person-description">Italian composer, conductor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Friedrich Schiller" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Friedrich Schiller</h4>
+                    <p class="person-years">1759</p>
+                    <p class="person-description">German poet, playwright, historian</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Martin Luther" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Martin Luther</h4>
+                    <p class="person-years">1483</p>
+                    <p class="person-description">German monk, priest, leader of the Protestant Reformation</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Helmut Schmidt" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Helmut Schmidt</h4>
+                    <p class="person-years">2015</p>
+                    <p class="person-description">German politician, 5th Chancellor of Germany</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Norman Mailer" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Norman Mailer</h4>
+                    <p class="person-years">2007</p>
+                    <p class="person-description">American author, journalist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Leonid Brezhnev" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Leonid Brezhnev</h4>
+                    <p class="person-years">1982</p>
+                    <p class="person-description">Soviet politician</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Mustafa Kemal Atatürk" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Mustafa Kemal Atatürk</h4>
+                    <p class="person-years">1938</p>
+                    <p class="person-description">Turkish army officer, politician, 1st President of Turkey</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Harry Trott" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Harry Trott</h4>
+                    <p class="person-years">1917</p>
+                    <p class="person-description">Australian cricketer</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>JUNE 13 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2002</span>
-                <div class="event-content">
-                    <p class="event-description">The United States withdraw from the Anti-Ballistic Missile Treaty. The ABM Treaty was signed in 1972 by the Soviet Union and the United States. It regulated the establishment of anti-ballistic missile shields against nuclear missiles. Critics bemoaned the treaty's termination for its potential negative effect on nuclear proliferation.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2002</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The United States withdraw from the Anti-Ballistic Missile Treaty. The ABM Treaty was signed in 1972 by the Soviet Union and the United States. It regulated the establishment of anti-ballistic missile shields against nuclear missiles. Critics bemoaned the treaty's termination for its potential negative effect on nuclear proliferation.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">2000</span>
-                <div class="event-content">
-                    <p class="event-description">The leaders of South Korea and North Korea meet in an historic summit. The talks were initiated by then President of South Korea, Kim Dae-jung. For the implementation of his “Sunshine Policy”, he was awarded the Nobel Peace Prize in 2000.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2000</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The leaders of South Korea and North Korea meet in an historic summit. The talks were initiated by then President of South Korea, Kim Dae-jung. For the implementation of his “Sunshine Policy”, he was awarded the Nobel Peace Prize in 2000.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1983</span>
-                <div class="event-content">
-                    <p class="event-description">Pioneer 10 becomes the first man-made object to leave the central solar system. The U.S. space probe crossed the orbit of Neptune, which at the time was classified as the furthest planet from the Sun.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1983</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Pioneer 10 becomes the first man-made object to leave the central solar system. The U.S. space probe crossed the orbit of Neptune, which at the time was classified as the furthest planet from the Sun.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1971</span>
-                <div class="event-content">
-                    <p class="event-description">The New York Times publishes the “Pentagon Papers”. The secret study of the United States' involvement in the Vietnam War revealed the government's lies concerning the scale of U.S. activities in Vietnam and neighboring countries. Daniel Ellsberg, an employee of the RAND Corporation, leaked the documents to the New York Times, and he was later tried but not convicted of  espionage.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1971</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The New York Times publishes the “Pentagon Papers”. The secret study of the United States' involvement in the Vietnam War revealed the government's lies concerning the scale of U.S. activities in Vietnam and neighboring countries. Daniel Ellsberg, an employee of the RAND Corporation, leaked the documents to the New York Times, and he was later tried but not convicted of  espionage.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1950</span>
-                <div class="event-content">
-                    <p class="event-description">South Africa implements the Group Areas Act. The law assigned geographically separate residential and business areas for different racial groups, forcing non-whites from the most developed areas. It was a major pillar of the apartheid system of racial segregation and oppression.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1950</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">South Africa implements the Group Areas Act. The law assigned geographically separate residential and business areas for different racial groups, forcing non-whites from the most developed areas. It was a major pillar of the apartheid system of racial segregation and oppression.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2002</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The United States withdraw from the Anti-Ballistic Missile Treaty. The ABM Treaty was signed in 1972 by the Soviet Union and the United States. It regulated the establishment of anti-ballistic missile shields against nuclear missiles. Critics bemoaned the treaty's termination for its potential negative effect on nuclear proliferation.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2000</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The leaders of South Korea and North Korea meet in an historic summit. The talks were initiated by then President of South Korea, Kim Dae-jung. For the implementation of his “Sunshine Policy”, he was awarded the Nobel Peace Prize in 2000.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1983</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Pioneer 10 becomes the first man-made object to leave the central solar system. The U.S. space probe crossed the orbit of Neptune, which at the time was classified as the furthest planet from the Sun.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1971</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The New York Times publishes the “Pentagon Papers”. The secret study of the United States' involvement in the Vietnam War revealed the government's lies concerning the scale of U.S. activities in Vietnam and neighboring countries. Daniel Ellsberg, an employee of the RAND Corporation, leaked the documents to the New York Times, and he was later tried but not convicted of  espionage.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1950</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">South Africa implements the Group Areas Act. The law assigned geographically separate residential and business areas for different racial groups, forcing non-whites from the most developed areas. It was a major pillar of the apartheid system of racial segregation and oppression.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Ban Ki-moon" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Ban Ki-moon</h4>
+                    <p class="person-years">1944</p>
+                    <p class="person-description">South Korean diplomat, 8th Secretary-General of the United Nations</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Paavo Nurmi" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Paavo Nurmi</h4>
+                    <p class="person-years">1897</p>
+                    <p class="person-description">Finnish runner</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Fernando Pessoa" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Fernando Pessoa</h4>
+                    <p class="person-years">1888</p>
+                    <p class="person-description">Portuguese poet</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Gerald Gardner" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Gerald Gardner</h4>
+                    <p class="person-years">1884</p>
+                    <p class="person-description">English occultist</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="W. B. Yeats" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">W. B. Yeats</h4>
+                    <p class="person-years">1865</p>
+                    <p class="person-description">Irish poet, Nobel Prize laureate</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Charles Haughey" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Charles Haughey</h4>
+                    <p class="person-years">2006</p>
+                    <p class="person-description">Irish politician, 7th Prime Minister of Ireland</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Demetrio Stratos" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Demetrio Stratos</h4>
+                    <p class="person-years">1979</p>
+                    <p class="person-description">Egyptian/Italian singer-songwriter</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Grand Duke Michael Alexandrovich of Russia" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Grand Duke Michael Alexandrovich of Russia</h4>
+                    <p class="person-years">1918</p>
+                    <p class="person-description"></p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Ludwig II of Bavaria" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Ludwig II of Bavaria</h4>
+                    <p class="person-years">1886</p>
+                    <p class="person-description"></p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Miyamoto Musashi" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Miyamoto Musashi</h4>
+                    <p class="person-years">1645</p>
+                    <p class="person-description">Japanese swordsman, author</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

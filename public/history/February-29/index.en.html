@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>FEBRUARY 29 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2012</span>
-                <div class="event-content">
-                    <p class="event-description">The world's tallest tower is completed. The Tokyo Skytree measures 634 m (2080 ft). It is also the world's second tallest man-made structure, after Burj Khalifa in Dubai, United Arab Emirates.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2012</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The world's tallest tower is completed. The Tokyo Skytree measures 634 m (2080 ft). It is also the world's second tallest man-made structure, after Burj Khalifa in Dubai, United Arab Emirates.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">2004</span>
-                <div class="event-content">
-                    <p class="event-description">Jean-Bertrand Aristide is removed as President of Haiti. The country's first democratically elected president was toppled in a coup d'etat following the assassination of a gang leader. Aristide went into exile in South Africa and returned to Haiti in 2011.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2004</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Jean-Bertrand Aristide is removed as President of Haiti. The country's first democratically elected president was toppled in a coup d'etat following the assassination of a gang leader. Aristide went into exile in South Africa and returned to Haiti in 2011.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1996</span>
-                <div class="event-content">
-                    <p class="event-description">The siege of Sarajevo is lifted after nearly 4 years. The siege of Bosnia and Herzegovina's capital during the Bosnian War was the longest lasting siege of a capital city in the history of modern warfare.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1996</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The siege of Sarajevo is lifted after nearly 4 years. The siege of Bosnia and Herzegovina's capital during the Bosnian War was the longest lasting siege of a capital city in the history of modern warfare.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1996</span>
-                <div class="event-content">
-                    <p class="event-description">A Boeing 737 crashes in the Andes, killing all 123 on board. A wrong barometric altimeter setting caused the pilots to fly too low during an approach to Rodríguez Ballón International Airport in Arequipa, Peru.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1996</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">A Boeing 737 crashes in the Andes, killing all 123 on board. A wrong barometric altimeter setting caused the pilots to fly too low during an approach to Rodríguez Ballón International Airport in Arequipa, Peru.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1940</span>
-                <div class="event-content">
-                    <p class="event-description">Hattie McDaniel becomes the first black actor to win an Academy Award. She won Best Supporting Actress for her role as Mammy in  the 1939 historical romance “Gone with the Wind”.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1940</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Hattie McDaniel becomes the first black actor to win an Academy Award. She won Best Supporting Actress for her role as Mammy in  the 1939 historical romance “Gone with the Wind”.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2012</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The world's tallest tower is completed. The Tokyo Skytree measures 634 m (2080 ft). It is also the world's second tallest man-made structure, after Burj Khalifa in Dubai, United Arab Emirates.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2004</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Jean-Bertrand Aristide is removed as President of Haiti. The country's first democratically elected president was toppled in a coup d'etat following the assassination of a gang leader. Aristide went into exile in South Africa and returned to Haiti in 2011.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1996</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The siege of Sarajevo is lifted after nearly 4 years. The siege of Bosnia and Herzegovina's capital during the Bosnian War was the longest lasting siege of a capital city in the history of modern warfare.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1996</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">A Boeing 737 crashes in the Andes, killing all 123 on board. A wrong barometric altimeter setting caused the pilots to fly too low during an approach to Rodríguez Ballón International Airport in Arequipa, Peru.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1940</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Hattie McDaniel becomes the first black actor to win an Academy Award. She won Best Supporting Actress for her role as Mammy in  the 1939 historical romance “Gone with the Wind”.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Mervyn Warren" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Mervyn Warren</h4>
+                    <p class="person-years">1964</p>
+                    <p class="person-description">American singer-songwriter, producer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Khaled" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Khaled</h4>
+                    <p class="person-years">1960</p>
+                    <p class="person-description">Algerian singer-songwriter</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Dinah Shore" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Dinah Shore</h4>
+                    <p class="person-years">1916</p>
+                    <p class="person-description">American singer, actress</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Pepper Martin" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Pepper Martin</h4>
+                    <p class="person-years">1904</p>
+                    <p class="person-description">American baseball player, manager</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Gioachino Rossini" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Gioachino Rossini</h4>
+                    <p class="person-years">1792</p>
+                    <p class="person-description">Italian composer</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Davy Jones" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Davy Jones</h4>
+                    <p class="person-years">2012</p>
+                    <p class="person-description">English singer, actor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Elpidio Quirino" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Elpidio Quirino</h4>
+                    <p class="person-years">1956</p>
+                    <p class="person-description">Filipino politician, 6th President of the Philippines</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="E. F. Benson" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">E. F. Benson</h4>
+                    <p class="person-years">1940</p>
+                    <p class="person-description">English writer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Ina Coolbrith" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Ina Coolbrith</h4>
+                    <p class="person-years">1928</p>
+                    <p class="person-description">American poet</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Pat Garrett" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Pat Garrett</h4>
+                    <p class="person-years">1908</p>
+                    <p class="person-description">American sheriff</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

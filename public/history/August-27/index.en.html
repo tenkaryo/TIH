@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>AUGUST 27 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2003</span>
-                <div class="event-content">
-                    <p class="event-description">World’s Biggest Battery is Plugged in. The battery, which takes up about 2,000 square metres of space and weighs about 1,300 tonnes is set up to provide emergency electricity to the residents of Fairbanks in Alaska, for about 7 minutes.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2003</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">World’s Biggest Battery is Plugged in. The battery, which takes up about 2,000 square metres of space and weighs about 1,300 tonnes is set up to provide emergency electricity to the residents of Fairbanks in Alaska, for about 7 minutes.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">2003</span>
-                <div class="event-content">
-                    <p class="event-description">Mars approaches closest to the Earth since 57,617 BC. The next time the two planets will be this close will be in 2287.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2003</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mars approaches closest to the Earth since 57,617 BC. The next time the two planets will be this close will be in 2287.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1991</span>
-                <div class="event-content">
-                    <p class="event-description">Moldova gains its Independence. The Eastern European country was part of the Soviet Union since August 2, 1940, from parts of Romania and parts of the  Moldavian Autonomous Soviet Socialist Republic. In 1991, after the dissolution of the USSR, the country gained its independence.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1991</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Moldova gains its Independence. The Eastern European country was part of the Soviet Union since August 2, 1940, from parts of Romania and parts of the  Moldavian Autonomous Soviet Socialist Republic. In 1991, after the dissolution of the USSR, the country gained its independence.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1985</span>
-                <div class="event-content">
-                    <p class="event-description">Military coup in Nigeria. General Ibrahim Badamasi Babangida took over the government after overthrowing  Muhammadu Buhari in a bloodless coup.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1985</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Military coup in Nigeria. General Ibrahim Badamasi Babangida took over the government after overthrowing  Muhammadu Buhari in a bloodless coup.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1962</span>
-                <div class="event-content">
-                    <p class="event-description">NASA Launches Mariner 2. Part of NASA’s Mariner program, the unmanned space probe was the first man-made object to flyby another planet – it encountered Venus on December 14, 1962. The space probe made its last contact with scientists on Earth on January 3, 1963.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1962</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">NASA Launches Mariner 2. Part of NASA’s Mariner program, the unmanned space probe was the first man-made object to flyby another planet – it encountered Venus on December 14, 1962. The space probe made its last contact with scientists on Earth on January 3, 1963.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2003</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">World’s Biggest Battery is Plugged in. The battery, which takes up about 2,000 square metres of space and weighs about 1,300 tonnes is set up to provide emergency electricity to the residents of Fairbanks in Alaska, for about 7 minutes.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2003</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Mars approaches closest to the Earth since 57,617 BC. The next time the two planets will be this close will be in 2287.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1991</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Moldova gains its Independence. The Eastern European country was part of the Soviet Union since August 2, 1940, from parts of Romania and parts of the  Moldavian Autonomous Soviet Socialist Republic. In 1991, after the dissolution of the USSR, the country gained its independence.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1985</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Military coup in Nigeria. General Ibrahim Badamasi Babangida took over the government after overthrowing  Muhammadu Buhari in a bloodless coup.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1962</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">NASA Launches Mariner 2. Part of NASA’s Mariner program, the unmanned space probe was the first man-made object to flyby another planet – it encountered Venus on December 14, 1962. The space probe made its last contact with scientists on Earth on January 3, 1963.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Mark Webber" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Mark Webber</h4>
+                    <p class="person-years">1976</p>
+                    <p class="person-description">Australian race car driver</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Paul Reubens" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Paul Reubens</h4>
+                    <p class="person-years">1952</p>
+                    <p class="person-description">American actor</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Donald Bradman" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Donald Bradman</h4>
+                    <p class="person-years">1908</p>
+                    <p class="person-description">Australian cricketer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Lyndon B. Johnson" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Lyndon B. Johnson</h4>
+                    <p class="person-years">1908</p>
+                    <p class="person-description">American politician, 36th President of the United States</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Georg Wilhelm Friedrich Hegel" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Georg Wilhelm Friedrich Hegel</h4>
+                    <p class="person-years">1770</p>
+                    <p class="person-description">German philosopher</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Stevie Ray Vaughan" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Stevie Ray Vaughan</h4>
+                    <p class="person-years">1990</p>
+                    <p class="person-description">American singer-songwriter, guitarist, producer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Louis Mountbatten, 1st Earl Mountbatten of Burma" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Louis Mountbatten, 1st Earl Mountbatten of Burma</h4>
+                    <p class="person-years">1979</p>
+                    <p class="person-description">British statesman, naval officer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Haile Selassie IEthiopian Emperor" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Haile Selassie IEthiopian Emperor</h4>
+                    <p class="person-years">1975</p>
+                    <p class="person-description"></p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Brian Epstein" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Brian Epstein</h4>
+                    <p class="person-years">1967</p>
+                    <p class="person-description">English talent manager</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="W. E. B. Du Bois" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">W. E. B. Du Bois</h4>
+                    <p class="person-years">1963</p>
+                    <p class="person-description">American sociologist, historian, activist</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>

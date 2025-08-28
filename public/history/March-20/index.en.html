@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- 动态SEO元数据 - 将由服务器端填充 -->
     <title>MARCH 20 - Today in History | TimeRemind.Today</title>
@@ -69,42 +69,52 @@
     <!-- 预渲染的关键内容用于SEO -->
     <div id="ssr-content" style="display: none;">
         
-            <div class="timeline-event">
-                <span class="event-year">2003</span>
-                <div class="event-content">
-                    <p class="event-description">The United States invade Iraq, assisted by the United Kingdom, Australia, and Poland. The Iraq War, which was termed illegal by then UN Secretary, Kofi Annan, caused hundreds of thousands of Iraqi deaths.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2003</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The United States invade Iraq, assisted by the United Kingdom, Australia, and Poland. The Iraq War, which was termed illegal by then UN Secretary, Kofi Annan, caused hundreds of thousands of Iraqi deaths.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1995</span>
-                <div class="event-content">
-                    <p class="event-description">Japanese terrorists release poisonous gas in the Tokyo subway. 12 people died and thousands are wounded after members of the religious cult, Aum Shinrikyo, had places containers leaking sarin on 5 different trains.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1995</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Japanese terrorists release poisonous gas in the Tokyo subway. 12 people died and thousands are wounded after members of the religious cult, Aum Shinrikyo, had places containers leaking sarin on 5 different trains.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1969</span>
-                <div class="event-content">
-                    <p class="event-description">John Lennon and Yoko Ono marry. After the wedding in Gibraltar, the artists spent their honeymoon in Amsterdam with a Bed-In for Peace, which lasted a whole week.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1969</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">John Lennon and Yoko Ono marry. After the wedding in Gibraltar, the artists spent their honeymoon in Amsterdam with a Bed-In for Peace, which lasted a whole week.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1916</span>
-                <div class="event-content">
-                    <p class="event-description">Albert Einstein presents his general theory of relativity. The revolutionary theory describes the interdependency of matter on the one hand and space and time on the other. It is one of the most influential theories in Physics.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1916</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Albert Einstein presents his general theory of relativity. The revolutionary theory describes the interdependency of matter on the one hand and space and time on the other. It is one of the most influential theories in Physics.</p>
                     
                 </div>
             </div>
         
-            <div class="timeline-event">
-                <span class="event-year">1852</span>
-                <div class="event-content">
-                    <p class="event-description">Harriet Beecher Stowe publishes her novel Uncle Tom's Cabin. The anti-slavery story played an important role in setting the scene for the American Civil War.</p>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1852</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Harriet Beecher Stowe publishes her novel Uncle Tom's Cabin. The anti-slavery story played an important role in setting the scene for the American Civil War.</p>
                     
                 </div>
             </div>
@@ -288,61 +298,245 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                                    <a href="#births" class="nav-link">Famous Birthdays</a>
-                                    <a href="#deaths" class="nav-link">Famous Deaths</a>
-                                </nav>
-                            </div>
+                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#deaths" class="nav-link">Famous Deaths</a>
+                    </nav>
+                </div>
+            </aside>
 
-                            <!-- Birthday Query -->
-                            <div class="sidebar-section">
-                                <h3 class="sidebar-title">Birthday Query</h3>
-                                <p class="sidebar-desc">查看你的生日当天发生了什么</p>
-                                <div class="birthday-form">
-                                    <select id="birthMonth" class="form-select">
-                                        <option value="">选择Month</option>
-                                    </select>
-                                    <select id="birthDay" class="form-select">
-                                        <option value="">Select Date</option>
-                                    </select>
-                                    <button id="checkBirthday" class="btn btn-primary">Check Birthday</button>
-                                </div>
-                            </div>
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Historical Events -->
+                <section class="content-section" id="events">
+                    <header class="section-header">
+                        <h2 class="section-title">Today in History</h2>
+                        <p class="section-subtitle">Historical Events</p>
+                    </header>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-events" id="historyEvents">
+                            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">2003</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">The United States invade Iraq, assisted by the United Kingdom, Australia, and Poland. The Iraq War, which was termed illegal by then UN Secretary, Kofi Annan, caused hundreds of thousands of Iraqi deaths.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1995</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Japanese terrorists release poisonous gas in the Tokyo subway. 12 people died and thousands are wounded after members of the religious cult, Aum Shinrikyo, had places containers leaking sarin on 5 different trains.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1969</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">John Lennon and Yoko Ono marry. After the wedding in Gibraltar, the artists spent their honeymoon in Amsterdam with a Bed-In for Peace, which lasted a whole week.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1916</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Albert Einstein presents his general theory of relativity. The revolutionary theory describes the interdependency of matter on the one hand and space and time on the other. It is one of the most influential theories in Physics.</p>
+                    
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <span class="timeline-year">1852</span>
+                </div>
+                <div class="timeline-content">
+                    <p class="timeline-description">Harriet Beecher Stowe publishes her novel Uncle Tom's Cabin. The anti-slavery story played an important role in setting the scene for the American Civil War.</p>
+                    
+                </div>
+            </div>
+        
+                        </div>
+                    </div>
+                </section>
 
-                            <!-- DayNavigation -->
-                            <div class="date-navigation">
-                                <button id="prevDate" class="nav-date-btn">
-                                    <span class="nav-arrow">←</span>
-                                    <span id="prevDateText">前一天</span>
-                                </button>
-                                <button id="nextDate" class="nav-date-btn">
-                                    <span id="nextDateText">后一天</span>
-                                    <span class="nav-arrow">→</span>
-                                </button>
-                            </div>
-                        </aside>
+                <!-- Famous Birthdays -->
+                <section class="content-section" id="births">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Birthdays</h2>
+                        <p class="section-subtitle">Born on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousBirthdays">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Fernando Torres" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Fernando Torres</h4>
+                    <p class="person-years">1984</p>
+                    <p class="person-description">Spanish footballer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Sting" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Sting</h4>
+                    <p class="person-years">1959</p>
+                    <p class="person-description">American wrestler</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Spike Lee" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Spike Lee</h4>
+                    <p class="person-years">1957</p>
+                    <p class="person-description">American actor, director, screenwriter, producer</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Brian Mulroney" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Brian Mulroney</h4>
+                    <p class="person-years">1939</p>
+                    <p class="person-description">Canadian politician 18th Prime Minister of Canada</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Henrik Ibsen" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Henrik Ibsen</h4>
+                    <p class="person-years">1828</p>
+                    <p class="person-description">Norwegian poet, playwright, director</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+
+                <!-- Famous Deaths -->
+                <section class="content-section" id="deaths">
+                    <header class="section-header">
+                        <h2 class="section-title">Famous Deaths</h2>
+                        <p class="section-subtitle">Died on This Day</p>
+                    </header>
+                    
+                    <div class="people-grid" id="famousDeaths">
+                        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Juliana of the Netherlands" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Juliana of the Netherlands</h4>
+                    <p class="person-years">2004</p>
+                    <p class="person-description"></p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="George Curzon, 1st Marquess Curzon of Kedleston" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">George Curzon, 1st Marquess Curzon of Kedleston</h4>
+                    <p class="person-years">1925</p>
+                    <p class="person-description">English politician, Governor-General of India</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Apollon Maykov" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Apollon Maykov</h4>
+                    <p class="person-years">1897</p>
+                    <p class="person-description">Russian poet</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="William Murray, 1st Earl of Mansfield" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">William Murray, 1st Earl of Mansfield</h4>
+                    <p class="person-years">1793</p>
+                    <p class="person-description">Scottish judge, politician</p>
+                </div>
+            </div>
+        
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="/avatar.png" alt="Isaac Newton" loading="lazy" onerror="this.src='/avatar.png'">
+                </div>
+                <div class="person-info">
+                    <h4 class="person-name">Isaac Newton</h4>
+                    <p class="person-years">1726</p>
+                    <p class="person-description">English physicist, mathematician, astronomer, philosopher, theologian</p>
+                </div>
+            </div>
+        
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Mobile Date Navigation -->
+        <section class="mobile-date-navigation">
+            <button class="nav-compact-btn" id="prevDateMobile">
+                <i class="fas fa-chevron-left"></i>
+                <span id="prevDateTextMobile">--</span>
+            </button>
+            <button class="nav-compact-btn" id="nextDateMobile">
+                <span id="nextDateTextMobile">--</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TimeRemind.Today</h3>
+                    <p>Explore history, discover the extraordinary</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="/about" id="about-link">About Us</a>
+                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
+                        <a href="/terms" id="terms-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-brand">
-                        <h3>TimeRemind.Today</h3>
-                        <p>Explore history, discover the extraordinary</p>
-                    </div>
-                    
-                    <div class="footer-columns">
-                        <div class="footer-column">
-                            <a href="/about-zh">About Us</a>
-                            <a href="/privacy-zh">Privacy Policy</a>
-                            <a href="/terms-zh">使用条款</a>
-                        </div>
-                    </div>
-                </div>
-                
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
                 <p>Data Source: Wikipedia, Historical Database</p>
@@ -360,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">Select Month</option>
+                        <option value="">选择Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Day</option>
+                        <option value="">Select Date</option>
                     </select>
                 </div>
             </div>
@@ -383,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="en-US">
+                    <button class="lang-option active" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
