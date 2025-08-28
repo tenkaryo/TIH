@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- 动态SEO元数据 - 将由服务器端填充 -->
+    <!-- Dynamic SEO metadata - to be filled by server-side -->
     <title>JULY 13 - Today in History | TimeRemind.Today</title>
     <meta name="description" content="Important historical events that happened on JULY 13, including 5 historical events, 5 famous birthdays, and 5 notable deaths. Explore history, discover the extraordinary.">
     <meta name="keywords" content="JULY 13, historical events, famous birthdays, today in history, history, July 13">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
-    <!-- Open Graph 元数据 -->
+    <!-- Open Graph metadata -->
     <meta property="og:title" content="JULY 13 - Today in History | TimeRemind.Today">
     <meta property="og:description" content="Important historical events that happened on JULY 13, including 5 historical events, 5 famous birthdays, and 5 notable deaths. Explore history, discover the extraordinary.">
     <meta property="og:type" content="article">
@@ -280,8 +280,8 @@
             <aside class="sidebar">
                 <!-- Birthday Checker -->
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title">Birthday Query</h3>
-                    <p class="sidebar-desc">What happened on your birthday?</p>
+                    <h3 class="sidebar-title">Birthday Checker</h3>
+                    <p class="sidebar-desc">See what happened on your birthday</p>
                     <div class="birthday-form">
                         <select id="birthMonth" class="select-minimal">
                             <option value="">Month</option>
@@ -298,7 +298,7 @@
                     <h3 class="sidebar-title">Navigation</h3>
                     <nav class="today-nav">
                         <a href="#events" class="nav-link active">Historical Events</a>
-                        <a href="#births" class="nav-link">Famous Birthdays</a>
+                        <a href="#births" class="nav-link">Famous Births</a>
                         <a href="#deaths" class="nav-link">Famous Deaths</a>
                     </nav>
                 </div>
@@ -373,8 +373,8 @@
                 <!-- Famous Birthdays -->
                 <section class="content-section" id="births">
                     <header class="section-header">
-                        <h2 class="section-title">Famous Birthdays</h2>
-                        <p class="section-subtitle">Born on This Day</p>
+                        <h2 class="section-title">Famous Births</h2>
+                        <p class="section-subtitle">Born on this day</p>
                     </header>
                     
                     <div class="people-grid" id="famousBirthdays">
@@ -441,7 +441,7 @@
                 <section class="content-section" id="deaths">
                     <header class="section-header">
                         <h2 class="section-title">Famous Deaths</h2>
-                        <p class="section-subtitle">Died on This Day</p>
+                        <p class="section-subtitle">Died on this day</p>
                     </header>
                     
                     <div class="people-grid" id="famousDeaths">
@@ -525,21 +525,21 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>TimeRemind.Today</h3>
-                    <p>Explore history, discover the extraordinary</p>
+                    <p>Explore History, Discover Amazing Stories</p>
                 </div>
                 
                 <div class="footer-links">
                     <div class="footer-column">
-                        <a href="/about" id="about-link">About Us</a>
-                        <a href="/privacy" id="privacy-link">Privacy Policy</a>
-                        <a href="/terms" id="terms-link">Terms of Service</a>
+                        <a href="/about" id="about-link">About</a>
+                        <a href="/privacy" id="privacy-link">Privacy</a>
+                        <a href="/terms" id="terms-link">Terms</a>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p>&copy; 2025 TimeRemind.Today. All rights reserved</p>
-                <p>Data Source: Wikipedia, Historical Database</p>
+                <p>Data sources: Wikipedia, historical databases</p>
             </div>
         </div>
     </footer>
@@ -554,10 +554,10 @@
             <div class="modal-body">
                 <div class="date-picker">
                     <select id="modalMonth" class="date-select">
-                        <option value="">选择Month</option>
+                        <option value="">Select Month</option>
                     </select>
                     <select id="modalDay" class="date-select">
-                        <option value="">Select Date</option>
+                        <option value="">Select Day</option>
                     </select>
                 </div>
             </div>
@@ -577,11 +577,11 @@
             </div>
             <div class="modal-body">
                 <div class="language-options">
-                    <button class="lang-option active" data-lang="zh-CN">
+                    <button class="lang-option" data-lang="zh-CN">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
-                    <button class="lang-option" data-lang="en-US">
+                    <button class="lang-option active" data-lang="en-US">
                         <span class="flag">🇺🇸</span>
                         <span>English</span>
                     </button>
@@ -590,26 +590,26 @@
         </div>
     </div>
 
-    <!-- JavaScript 文件 -->
+    <!-- JavaScript files -->
     <script>
-        // 设置当前Day参数用于JavaScript
+        // Set current date parameters for JavaScript
         window.CURRENT_DATE = 'July-13';
         window.CURRENT_LANG = 'en-US';
     </script>
     <script src="/data.js"></script>
     <script src="/script.js"></script>
     
-    <!-- 初始化应用 -->
+    <!-- Initialize application -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 首先初始化应用（这会设置正确的Day和加载数据）
+            // First initialize the application (this will set the correct date and load data)
             window.app = new OnThisDay(window.CURRENT_DATE);
             
-            // 如果有预渲染内容，确保页面正确显示
+            // If there is pre-rendered content, ensure the page displays correctly
             const ssrContent = document.getElementById('ssr-content');
             if (ssrContent && ssrContent.innerHTML.trim()) {
                 document.body.classList.add('ssr-rendered');
-                // 预渲染内容主要用于SEO，JavaScript初始化后会重新加载数据
+                // Pre-rendered content is mainly for SEO, JavaScript will reload data after initialization
             }
         });
     </script>
