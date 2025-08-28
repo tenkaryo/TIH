@@ -3,8 +3,20 @@ const historyData = require('../historyData.js');
 
 export default function handler(_req, res) {
     try {
-        // Get all available dates
-        const dates = Object.keys(historyData);
+        // Get all available dates and convert MM-DD to Month-Day format
+        const rawDates = Object.keys(historyData);
+        const monthNames = {
+            '01': 'January', '02': 'February', '03': 'March', '04': 'April',
+            '05': 'May', '06': 'June', '07': 'July', '08': 'August',
+            '09': 'September', '10': 'October', '11': 'November', '12': 'December'
+        };
+        
+        const convertToUrlFormat = (mmdd) => {
+            const [month, day] = mmdd.split('-');
+            return `${monthNames[month]}-${parseInt(day)}`;
+        };
+        
+        const dates = rawDates.map(convertToUrlFormat);
         const baseUrl = 'https://timeremind.today';
         const currentDate = new Date().toISOString().split('T')[0];
         
